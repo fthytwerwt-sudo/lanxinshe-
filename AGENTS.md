@@ -12,7 +12,8 @@
 
 - 当前项目：澜心社数字人直播｜AI 直播协作系统
 - 当前仓库：`fthytwerwt-sudo/lanxinshe-`
-- 当前 workspace（当前工作目录 / 工作区）：`/Users/fan/Documents/澜心社直播`
+- 当前 workspace（当前工作目录 / 工作区）：`/Volumes/WD_BLACK/澜心社直播`
+- 旧 workspace（历史路径，不再作为本项目 Codex 授权工作区）：`/Users/fan/Documents/澜心社直播`
 - 当前 remote（Git 远端仓库地址）：`https://github.com/fthytwerwt-sudo/lanxinshe-.git`
 - 本仓库职责：承载当前项目事实、配合机制同步包、Codex（本地执行、验证、落库层）报告、执行记录、文档和验证证据。
 
@@ -106,7 +107,7 @@ git remote -v
 git status
 ```
 
-如果当前 workspace（当前工作目录 / 工作区）不是 `/Users/fan/Documents/澜心社直播`，必须停止并标：
+如果当前 workspace（当前工作目录 / 工作区）不是 `/Volumes/WD_BLACK/澜心社直播`，必须停止并标：
 
 ```text
 blocked_wrong_workspace
@@ -120,7 +121,9 @@ blocked_existing_wrong_remote
 
 ## 本地工作区硬约束
 
-Codex 在当前项目中只能在用户授权的 `/Users/fan/Documents/澜心社直播` 内工作。
+Codex 在当前项目中只能在用户授权的 `/Volumes/WD_BLACK/澜心社直播` 内工作。
+
+旧 workspace `/Users/fan/Documents/澜心社直播` 仅作为历史路径记录，不再作为本项目 Codex 授权工作区。
 
 除非用户本轮明确授权，禁止在该目录外：
 

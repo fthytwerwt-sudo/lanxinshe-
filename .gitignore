@@ -64,3 +64,6 @@ temp/
 *.gz
 
 .codex_tmp_readonly/
+
+# 本地临时产物：音频、视频、缓存、测试运行输出，不提交
+本地临时产物_temp_outputs/
