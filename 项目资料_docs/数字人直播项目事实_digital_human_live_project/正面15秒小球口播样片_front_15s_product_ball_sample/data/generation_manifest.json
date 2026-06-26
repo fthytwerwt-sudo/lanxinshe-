@@ -1,5 +1,5 @@
 {
-  "status": "generated_but_mouth_open_failed_threshold",
+  "status": "completed",
   "created_at": "2026-06-26T19:34:50",
   "workspace": "/Volumes/WD_BLACK/澜心社直播",
   "remote": "https://github.com/fthytwerwt-sudo/lanxinshe-.git",
@@ -101,7 +101,7 @@
   },
   "video_probe": {
     "path": "/Volumes/WD_BLACK/澜心社直播/outputs/front_15s_product_ball_mouth_control/front_15s_product_ball_mouth_control.mp4",
-    "duration": 14.633333,
+    "duration": 14.581995,
     "width": 720,
     "height": 1280,
     "resolution": "720x1280",
@@ -111,27 +111,27 @@
   },
   "contact_sheet": "/Volumes/WD_BLACK/澜心社直播/outputs/front_15s_product_ball_mouth_control/generated_contact_sheet.jpg",
   "mouth_metrics": {
-    "avg_mouth_open_ratio": 0.16750998993695343,
-    "detected_count": 234,
+    "avg_mouth_open_ratio": 0.05788959656798251,
+    "detected_count": 233,
     "detection_failed_count": 0,
-    "fail_frame_count": 7,
-    "fail_frame_percent": 2.9914529914529915,
-    "input_count": 234,
-    "longest_fail_streak": 4,
-    "max_mouth_face_ratio": 0.15824611485004425,
-    "max_mouth_open_ratio": 0.5365898708061552,
-    "p90_mouth_face_ratio": 0.08985602706670762,
-    "p90_mouth_open_ratio": 0.2891281092255942
+    "fail_frame_count": 0,
+    "fail_frame_percent": 0,
+    "input_count": 233,
+    "longest_fail_streak": 0,
+    "max_mouth_face_ratio": 0.06413623690605164,
+    "max_mouth_open_ratio": 0.22347499783672603,
+    "p90_mouth_face_ratio": 0.030434972047805795,
+    "p90_mouth_open_ratio": 0.10403372181307027
   },
   "mouth_evaluation": {
     "detection_rate": 1.0,
     "landmark_detection_passed": true,
-    "mouth_threshold_passed": false,
-    "status": "generated_but_mouth_open_failed_threshold",
+    "mouth_threshold_passed": true,
+    "status": "completed",
     "threshold_rule": "p90_mouth_open_ratio <= 0.32, fail_frame_percent <= 15, longest_fail_streak < 5, mouth_face_ratio_p90 <= 0.075"
   },
   "reference_frame_observation": "```json\n{\n  \"face_visibility\": \"high\",\n  \"mouth_state\": \"closed\",\n  \"teeth_visibility\": \"none\",\n  \"eye_visibility\": \"high\",\n  \"expression\": \"neutral\",\n  \"occlusion\": \"none\",\n  \"background_consistency\": \"high\",\n  \"reference_frame_suitability\": \"good\",\n  \"mouth_open_risk\": \"low\"\n}\n```",
-  "generated_video_observation": "```json\n{\n  \"analysis\": \"该视频为一段15秒的正面数字人口播视频，主体为一位女性，坐姿端正，背景为浅色窗帘与装饰物（花瓶、橙色果实枝条等），整体画面稳定，无明显晃动或抖动。以下为详细观察分析：\",\n  \"face_stability\": \"面部保持相对稳定，无明显偏移或倾斜，头部位置基本固定，符合正面口播的标准要求。\",\n  \"mouth_opening_amplitude\": \"嘴巴张合幅度适中，符合正常说话节奏，开口程度在自然范围内，未出现过度夸张或闭合过紧的情况。\",\n  \"teeth_visibility\": \"牙齿在说话过程中偶有露出，但未持续暴露，属于自然状态下的语言表达表现。\",\n  \"corner_of_mouth\": \"嘴角动作自然，随语音变化呈现微笑或中性表情，无僵硬或不协调现象。\",\n  \"eye_movement\": \"眼神直视镜头，专注且稳定，未出现频繁游移或偏离焦点的情况。\",\n  \"blinking\": \"眨眼频率正常，约每3-4秒一次，符合人类自然生理节奏，无异常快速或长时间闭眼。\",\n  \"slight_nodding\": \"存在轻微点头动作，频率较低，通常伴随语义强调，动作幅度小，不影响整体稳定性。\",\n  \"head_and_shoulder_movement\": \"头肩动作控制良好，仅在说话时有极微小的上下或左右调整，未出现大幅度晃动或身体前倾后仰。\",\n  \"hand_gesture_obstruction\": \"双手交叠置于大腿上，偶尔有轻微手势动作（如手指轻动），但未遮挡面部或关键区域，不影响视觉传达。\",\n  \"voice_rhythm\": \"声音节奏平稳流畅，语速适中，与唇形同步性较高，未发现明显口型与语音不同步的现象。\",\n  \"overall_evaluation\": \"整体表现自然、专业，符合高质量数字人视频标准。模型辅助观察结果仅供参考，非人工审核通过。\"\n}\n```",
+  "generated_video_observation": "```json\n{\n  \"视频分析\": {\n    \"模型辅助观察\": true,\n    \"说明\": \"本分析基于AI模型对视频帧的自动识别与行为特征提取，非人工审核结果。\",\n    \"正面稳定性\": {\n      \"描述\": \"人物在整个15秒视频中保持正面朝向镜头，身体姿态稳定，无明显左右偏移或前后晃动。\"\n    },\n    \"嘴巴张嘴幅度\": {\n      \"描述\": \"嘴巴张合幅度适中，符合正常口语表达范围，未出现过度夸张或过大开合现象，整体收敛自然。\",\n      \"细节\": \"在说话过程中，嘴唇开合节奏平稳，最大张口程度约为2-3厘米，未露出牙齿或牙龈。\"\n    },\n    \"牙齿暴露情况\": {\n      \"描述\": \"未观察到牙齿暴露，说话时唇部闭合良好，无露齿笑或咬合动作。\",\n      \"备注\": \"全程未见牙齿清晰可见，符合低强度口播要求。\"\n    },\n    \"嘴角变化\": {\n      \"描述\": \"嘴角有轻微上扬趋势，尤其在语调上升或强调语气时，呈现温和微笑状态。\",\n      \"频率\": \"约每3-4秒出现一次轻微上扬，持续时间短，不突兀。\"\n    },\n    \"眼神表现\": {\n      \"描述\": \"眼神直视镜头，专注度高，偶有轻微向下或侧方移动，但迅速回归正视。\",\n      \"眨眼频率\": \"平均每3秒眨眼一次，自然且均匀，无频繁眨眼或长时间凝视。\"\n    },\n    \"头部动作\": {\n      \"轻微点头\": {\n        \"描述\": \"存在轻微点头动作，频率约为每6-8秒一次，幅度小（约5-10度），用于强调语句重点。\",\n        \"判断\": \"属于自然语言表达中的配合动作，不影响画面稳定性。\"\n      },\n      \"头肩动作\": {\n        \"描述\": \"头部和肩部基本保持静止，无大幅度转动或倾斜。仅在个别语句结尾有极轻微前倾，幅度小于10度。\",\n        \"结论\": \"整体头肩动作控制良好，符合专业口播标准。\"\n      }\n    },\n    \"手势遮挡\": {\n      \"描述\": \"双手始终置于大腿上方，手指交叉或轻触，未遮挡面部或关键区域。\",\n      \"动作特点\": \"手部动作缓慢、协调，无突然抬手或挥动，未造成视觉干扰。\",\n      \"遮挡风险\": \"无任何手势遮挡脸部、颈部或麦克风区域。\"\n    },\n    \"声音节奏\": {\n      \"描述\": \"根据口型与表情同步推断，语音节奏平稳，语速适中，停顿合理，无急促或拖沓现象。\",\n      \"推测\": \"语调起伏自然，重音处理得当，符合教学类或讲解类视频风格。\"\n    },\n    \"综合评价\": \"该数字人口播视频在正面稳定性、表情控制、肢体语言及声音节奏方面均表现良好，符合高质量口播内容的标准。所有动作自然流畅，无异常或干扰性行为。\"\n  }\n}\n```",
   "qwen_results": [
     {
       "label": "reference_frame",
@@ -225,6 +225,27 @@
           "cached_tokens": 0
         }
       }
+    },
+    {
+      "label": "final_postprocessed_video",
+      "model": "qwen-vl-max",
+      "status": "connected",
+      "latency_ms": 22211.8,
+      "request_id": "492b7e8d-b736-9219-b89d-3dc279828970",
+      "summary": "```json\n{\n  \"视频分析\": {\n    \"模型辅助观察\": true,\n    \"说明\": \"本分析基于AI模型对视频帧的自动识别与行为特征提取，非人工审核结果。\",\n    \"正面稳定性\": {\n      \"描述\": \"人物在整个15秒视频中保持正面朝向镜头，身体姿态稳定，无明显左右偏移或前后晃动。\"\n    },\n    \"嘴巴张嘴幅度\": {\n      \"描述\": \"嘴巴张合幅度适中，符合正常口语表达范围，未出现过度夸张或过大开合现象，整体收敛自然。\",\n      \"细节\": \"在说话过程中，嘴唇开合节奏平稳，最大张口程度约为2-3厘米，未露出牙齿或牙龈。\"\n    },\n    \"牙齿暴露情况\": {\n      \"描述\": \"未观察到牙齿暴露，说话时唇部闭合良好，无露齿笑或咬合动作。\",\n      \"备注\": \"全程未见牙齿清晰可见，符合低强度口播要求。\"\n    },\n    \"嘴角变化\": {\n      \"描述\": \"嘴角有轻微上扬趋势，尤其在语调上升或强调语气时，呈现温和微笑状态。\",\n      \"频率\": \"约每3-4秒出现一次轻微上扬，持续时间短，不突兀。\"\n    },\n    \"眼神表现\": {\n      \"描述\": \"眼神直视镜头，专注度高，偶有轻微向下或侧方移动，但迅速回归正视。\",\n      \"眨眼频率\": \"平均每3秒眨眼一次，自然且均匀，无频繁眨眼或长时间凝视。\"\n    },\n    \"头部动作\": {\n      \"轻微点头\": {\n        \"描述\": \"存在轻微点头动作，频率约为每6-8秒一次，幅度小（约5-10度），用于强调语句重点。\",\n        \"判断\": \"属于自然语言表达中的配合动作，不影响画面稳定性。\"\n      },\n      \"头肩动作\": {\n        \"描述\": \"头部和肩部基本保持静止，无大幅度转动或倾斜。仅在个别语句结尾有极轻微前倾，幅度小于10度。\",\n        \"结论\": \"整体头肩动作控制良好，符合专业口播标准。\"\n      }\n    },\n    \"手势遮挡\": {\n      \"描述\": \"双手始终置于大腿上方，手指交叉或轻触，未遮挡面部或关键区域。\",\n      \"动作特点\": \"手部动作缓慢、协调，无突然抬手或挥动，未造成视觉干扰。\",\n      \"遮挡风险\": \"无任何手势遮挡脸部、颈部或麦克风区域。\"\n    },\n    \"声音节奏\": {\n      \"描述\": \"根据口型与表情同步推断，语音节奏平稳，语速适中，停顿合理，无急促或拖沓现象。\",\n      \"推测\": \"语调起伏自然，重音处理得当，符合教学类或讲解类视频风格。\"\n    },\n    \"综合评价\": \"该数字人口播视频在正面稳定性、表情控制、肢体语言及声音节奏方面均表现良好，符合高质量口播内容的标准。所有动作自然流畅，无异常或干扰性行为。\"\n  }\n}\n```",
+      "usage": {
+        "prompt_tokens": 8991,
+        "completion_tokens": 678,
+        "total_tokens": 9669,
+        "completion_tokens_details": {
+          "text_tokens": 678
+        },
+        "prompt_tokens_details": {
+          "video_tokens": 8912,
+          "text_tokens": 79,
+          "cached_tokens": 0
+        }
+      }
     }
   ],
   "validation_boundary": "technical_and_landmark_validation_only_not_human_review_or_business_acceptance",
@@ -237,5 +258,26 @@
     "/Volumes/WD_BLACK/澜心社直播/项目资料_docs/数字人直播项目事实_digital_human_live_project/正面15秒小球口播样片_front_15s_product_ball_sample/05_下一轮微调建议_next_tuning_recommendations.md",
     "/Volumes/WD_BLACK/澜心社直播/项目资料_docs/数字人直播项目事实_digital_human_live_project/正面15秒小球口播样片_front_15s_product_ball_sample/data/generation_manifest.json",
     "/Volumes/WD_BLACK/澜心社直播/项目资料_docs/数字人直播项目事实_digital_human_live_project/正面15秒小球口播样片_front_15s_product_ball_sample/data/mouth_open_metrics.json"
-  ]
+  ],
+  "raw_wan_mouth_metrics_before_postprocess": {
+    "avg_mouth_open_ratio": 0.16750998993695343,
+    "detected_count": 234,
+    "detection_failed_count": 0,
+    "fail_frame_count": 7,
+    "fail_frame_percent": 2.9914529914529915,
+    "input_count": 234,
+    "longest_fail_streak": 4,
+    "max_mouth_face_ratio": 0.15824611485004425,
+    "max_mouth_open_ratio": 0.5365898708061552,
+    "p90_mouth_face_ratio": 0.08985602706670762,
+    "p90_mouth_open_ratio": 0.2891281092255942
+  },
+  "final_postprocess": {
+    "applied": "yes",
+    "method": "local_mouth_region_vertical_compression_with_feather_blend",
+    "source_video_before_postprocess": "/Volumes/WD_BLACK/澜心社直播/outputs/front_15s_product_ball_mouth_control/front_15s_product_ball_mouth_control_attempt2_raw_failed_threshold.mp4",
+    "postprocessed_video_path": "/Volumes/WD_BLACK/澜心社直播/outputs/front_15s_product_ball_mouth_control/front_15s_product_ball_mouth_control_postprocessed.mp4",
+    "final_output_path": "/Volumes/WD_BLACK/澜心社直播/outputs/front_15s_product_ball_mouth_control/front_15s_product_ball_mouth_control.mp4",
+    "reason": "Wan raw output passed mouth_open_ratio but failed mouth_face_ratio_p90; local postprocess reduced mouth opening without adding another Wan retry."
+  }
 }
