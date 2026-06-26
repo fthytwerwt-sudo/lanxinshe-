@@ -66,6 +66,37 @@ WAN_VIDEO_GENERATION_CANDIDATES = [
     "wan2.2-s2v",
 ]
 
+# 视频口型替换模型：用于真人视频底片 + 新音频的口型替换，不是单图数字人生成，也不是实时直播。
+VIDEORETALK_MODEL_CANDIDATES = [
+    "videoretalk",
+]
+
+VIDEORETALK_SUBMIT_ENDPOINT = (
+    "https://dashscope.aliyuncs.com/api/v1/services/aigc/image2video/video-synthesis/"
+)
+VIDEORETALK_TASK_ENDPOINT_TEMPLATE = "https://dashscope.aliyuncs.com/api/v1/tasks/{task_id}"
+
+VIDEORETALK_API_SPEC = {
+    "category": "avatar_video_retalk",
+    "subcategory": "video_lip_sync",
+    "model": "videoretalk",
+    "provider": "alibaba_dashscope",
+    "api_type": "async_http",
+    "submit_endpoint": VIDEORETALK_SUBMIT_ENDPOINT,
+    "task_endpoint": VIDEORETALK_TASK_ENDPOINT_TEMPLATE,
+    "inputs": {
+        "video_url": "required_public_http_or_https_url",
+        "audio_url": "required_public_http_or_https_url",
+        "ref_image_url": "optional_public_http_or_https_url",
+    },
+    "parameters": {
+        "video_extension": "optional_boolean",
+        "query_face_threshold": "optional_integer_120_to_200",
+    },
+    "cost_guard": "default_skip_generation_unless_ALLOW_VIDEORETALK_GENERATION_PROBE_true",
+    "project_note": "VideoRetalk 是视频口型替换，不是单图数字人生成，也不是实时直播。",
+}
+
 
 MODEL_CATALOG = {
     "text": [
@@ -122,6 +153,15 @@ MODEL_CATALOG = {
         )
         for model in WAN_VIDEO_GENERATION_CANDIDATES
     ],
+    "avatar_video_retalk": [
+        ModelCandidate(
+            name=model,
+            purpose="真人视频底片 + 新音频的原生口型替换；不是单图数字人生成，也不是实时直播",
+            input_type="public_video_url_and_public_audio_url",
+            cost_guard="generation_disabled_without_ALLOW_VIDEORETALK_GENERATION_PROBE",
+        )
+        for model in VIDEORETALK_MODEL_CANDIDATES
+    ],
 }
 
 
@@ -145,4 +185,5 @@ SAFETY_SWITCH_ENV_KEYS = [
     "ALLOW_ALIBABA_MODEL_TEST",
     "ALLOW_QWEN_CHAT_TEST",
     "ALLOW_WAN_GENERATION_PROBE",
+    "ALLOW_VIDEORETALK_GENERATION_PROBE",
 ]
