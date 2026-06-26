@@ -1,0 +1,20 @@
+{
+  "input_count": 237,
+  "detected_count": 237,
+  "detection_failed_count": 0,
+  "max_mouth_open_ratio": 0.5007138427615425,
+  "avg_mouth_open_ratio": 0.2315266159657716,
+  "p90_mouth_open_ratio": 0.3746717632024776,
+  "fail_frame_count": 21,
+  "fail_frame_percent": 8.860759493670885,
+  "longest_fail_streak": 7,
+  "max_mouth_face_ratio": 0.17222067713737488,
+  "p90_mouth_face_ratio": 0.1202669620513916,
+  "detection_rate": 1.0,
+  "landmark_detection_passed": true,
+  "mouth_threshold_passed": false,
+  "threshold_rule": "p90_mouth_open_ratio <= 0.32, mouth_face_ratio_p90 <= 0.075, fail_frame_percent <= 15, longest_fail_streak < 5",
+  "raw_metrics_local_path": "outputs/videoretalk_15s_product_ball_lipsync/data/lipsync_metrics_raw.json",
+  "frame_sampling": "ffmpeg fps=16",
+  "status": "generated_but_lipsync_metric_risk"
+}

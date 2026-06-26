@@ -1,0 +1,2 @@
+status,task_id,task_status,result_duration_sec,has_audio,postprocess_used,p90_mouth_open_ratio,mouth_face_ratio_p90,fail_frame_percent,longest_fail_streak,mouth_threshold_passed,media_committed
+部分成立 / generated_but_lipsync_metric_risk,2dc5f7c4-ca3f-452d-ac47-203e237f2228,SUCCEEDED,14.84,true,no,0.3746717632024776,0.1202669620513916,8.860759493670885,7,false,no

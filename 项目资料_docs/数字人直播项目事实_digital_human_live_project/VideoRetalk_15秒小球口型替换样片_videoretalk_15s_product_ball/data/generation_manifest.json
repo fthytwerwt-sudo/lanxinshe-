@@ -1,0 +1,188 @@
+{
+  "status": "部分成立 / generated_but_lipsync_metric_risk",
+  "created_at": "2026-06-27T00:37:42",
+  "workspace": "/Volumes/WD_BLACK/澜心社直播",
+  "remote": "https://github.com/fthytwerwt-sudo/lanxinshe-.git",
+  "branch": "main",
+  "task_type": "videoretalk_15s_product_ball_lipsync_sample",
+  "source_copy": "不一样，姐妹给你们看一下，这是便宜的小球，我给你们也买回来了，除了便宜一无是处，软软塌塌的，是塑料材质，承重标 200 斤实际只有 180 斤。我们家这个三层加厚、防爆防压，承重能力 400 斤，能用三年，我还给你准备一年质量保险，一年内球有任何问题我都给你解决。材料用的是 PVC 进口母婴级材质，没有异味，用着放心。",
+  "source_copy_with_optional_opening": "品质真是不一样，姐妹给你们看一下，这是便宜的小球，我给你们也买回来了，除了便宜一无是处，软软塌塌的，是塑料材质，承重标 200 斤实际只有 180 斤。我们家这个三层加厚、防爆防压，承重能力 400 斤，能用三年，我还给你准备一年质量保险，一年内球有任何问题我都给你解决。材料用的是 PVC 进口母婴级材质，没有异味，用着放心。",
+  "spoken_copy": "品质真是不一样。便宜小球软塌塌，塑料感重。我们家三层加厚、防爆防压，承重 400 斤，母婴级 PVC，没有异味，用着放心。",
+  "copy_strategy": "first candidate exceeded 15.5s; selected compressed 15s spoken_copy without forced speed-up",
+  "models_used": {
+    "generation": "videoretalk",
+    "base_video_review": [
+      "qwen-vl-max",
+      "qwen-vl-plus"
+    ],
+    "result_review": [
+      "qwen-vl-max",
+      "qwen-vl-plus"
+    ],
+    "tts": "cosyvoice-v3-flash"
+  },
+  "models_not_used": [
+    "wan2.2-s2v",
+    "embedding",
+    "rerank",
+    "RAG"
+  ],
+  "base_video": {
+    "path": "/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_15s_product_ball_lipsync/input_base_video_15s.mp4",
+    "source": "参考/完整直播录屏/今年直播素材/C5824.MP4",
+    "time_range": "00:01:00-00:01:15",
+    "duration_sec": 15.0,
+    "width": 720,
+    "height": 1280,
+    "fps": 50.0,
+    "codec": "h264",
+    "selection_reason": "R02_C5824_C01_opening 是候选表高优先级 baseline 片段；正面、表情自然、动作连续、无遮挡风险低。",
+    "qwen_vl_max_observation": "```json\n{\n  \"visible_scene\": \"室内直播场景，背景为浅色窗帘，右侧有装饰花瓶和鼓状物品，左侧可见粉色瑜伽球。\",\n  \"anchor_action\": \"主播坐在椅子上，双手不断做出手势，包括合十、指向头部、比划数字等动作，表情丰富，口型与语言同步，似乎在讲解或引导观众。\",\n  \"product_or_prop\": \"无明显展示商品，但背景中存在装饰性花瓶（橙色果实）、鼓状道具及粉色瑜伽球，可能用于健身或冥想类内容。\",\n  \"live_ui_visible\": \"未见直播界面元素（如点赞、礼物、弹幕等）。\",\n  \"comment_area_visible\": \"未见评论区域。\",\n  \"lip_sync_risk_observation\": \"主播口型与语音基本同步，无明显唇形错位或延迟现象，风险较低。\",\n  \"blink_or_expression_observation\": \"主播眨眼频率正常，表情自然且富有变化，情绪投入，无异常僵硬或重复动作。\",\n  \"human_like_score_note\": \"主播行为自然，肢体语言流畅，面部表情生动，整体呈现高度拟人化特征，符合真人直播标准。\",\n  \"next_stage_recommendation\": \"建议继续观察后续内容是否涉及产品展示或互动环节，以判断是否需进行合规性审核；当前阶段可视为正常直播流程。\"\n}\n```",
+    "qwen_vl_plus_observation": "```json\n{\n  \"visible_scene\": \"室内，背景为浅色窗帘，右侧有一个装饰有橙色花朵的花瓶和一个彩色编织篮。\",\n  \"anchor_action\": \"一位穿着灰色无袖上衣和粉色宽松裤子的女性坐在椅子上，面带微笑，双手合十，随后开始说话并用手指比划数字（1、2、3），最后双手交叉放在胸前。\",\n  \"product_or_prop\": \"右侧有一个装饰性的花瓶，内插橙色花朵，旁边是一个彩色编织篮。\",\n  \"live_ui_visible\": \"未观察到直播界面元素。\",\n  \"comment_area_visible\": \"未观察到评论区。\",\n  \"lip_sync_risk_observation\": \"口型与声音同步，无明显不同步现象。\",\n  \"blink_or_expression_observation\": \"表情自然，微笑，眨眼频率正常，面部表情随讲话内容变化。\",\n  \"human_like_score_note\": \"表现自然，动作流畅，符合真人直播特征。\",\n  \"next_stage_recommendation\": \"建议增加互动环节，如提问观众或展示产品细节，以提高观众参与度。\"\n}\n```"
+  },
+  "audio": {
+    "path": "/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_15s_product_ball_lipsync/input_product_ball_audio.wav",
+    "tts_duration": 14.867563,
+    "tts_voice": "longyingxiao_v3",
+    "speech_rate": 0.88,
+    "normalization": "volume=-3dB + light compressor",
+    "first_candidate_duration_sec": 18.248125,
+    "selected_candidate_duration_sec": 14.867563
+  },
+  "videoretalk": {
+    "task_id": "2dc5f7c4-ca3f-452d-ac47-203e237f2228",
+    "task_status": "SUCCEEDED",
+    "run_dir": "outputs/videoretalk_probe/20260627_002954_submit",
+    "result_probe_path": "outputs/videoretalk_probe/20260627_002954_submit/result_video.mp4",
+    "result_video_path": "/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_15s_product_ball_lipsync/videoretalk_15s_product_ball_result.mp4",
+    "oss_upload_reports": [
+      {
+        "object_key": "lanxin-live/happyhorse/videoretalk_probe/20260627_002954/input_video.mp4",
+        "source_path": "outputs/videoretalk_15s_product_ball_lipsync/input_base_video_15s.mp4",
+        "content_type": "video/mp4",
+        "upload_success": true,
+        "signed_url_generated": true,
+        "signed_url_verified": true,
+        "signed_url_redacted": "https://zhibo11122.oss-cn-beijing.aliyuncs.com/lanxin-live%2Fhappyhorse%2Fvideoretalk_probe%2F20260627_002954%2Finput_video.mp4?[REDACTED_QUERY]",
+        "error": "",
+        "upload_status": 200,
+        "signed_url_verify_status": 206
+      },
+      {
+        "object_key": "lanxin-live/happyhorse/videoretalk_probe/20260627_002954/input_audio.wav",
+        "source_path": "outputs/videoretalk_15s_product_ball_lipsync/input_product_ball_audio.wav",
+        "content_type": "audio/x-wav",
+        "upload_success": true,
+        "signed_url_generated": true,
+        "signed_url_verified": true,
+        "signed_url_redacted": "https://zhibo11122.oss-cn-beijing.aliyuncs.com/lanxin-live%2Fhappyhorse%2Fvideoretalk_probe%2F20260627_002954%2Finput_audio.wav?[REDACTED_QUERY]",
+        "error": "",
+        "upload_status": 200,
+        "signed_url_verify_status": 206
+      },
+      {
+        "object_key": "lanxin-live/happyhorse/videoretalk_probe/20260627_002954/ref_image.jpg",
+        "source_path": "outputs/videoretalk_15s_product_ball_lipsync/input_ref_image.jpg",
+        "content_type": "image/jpeg",
+        "upload_success": true,
+        "signed_url_generated": true,
+        "signed_url_verified": true,
+        "signed_url_redacted": "https://zhibo11122.oss-cn-beijing.aliyuncs.com/lanxin-live%2Fhappyhorse%2Fvideoretalk_probe%2F20260627_002954%2Fref_image.jpg?[REDACTED_QUERY]",
+        "error": "",
+        "upload_status": 200,
+        "signed_url_verify_status": 206
+      }
+    ],
+    "redacted_payload": {
+      "model": "videoretalk",
+      "input": {
+        "video_url": "https://zhibo11122.oss-cn-beijing.aliyuncs.com/lanxin-live%2Fhappyhorse%2Fvideoretalk_probe%2F20260627_002954%2Finput_video.mp4?[REDACTED_QUERY]",
+        "audio_url": "https://zhibo11122.oss-cn-beijing.aliyuncs.com/lanxin-live%2Fhappyhorse%2Fvideoretalk_probe%2F20260627_002954%2Finput_audio.wav?[REDACTED_QUERY]",
+        "ref_image_url": "https://zhibo11122.oss-cn-beijing.aliyuncs.com/lanxin-live%2Fhappyhorse%2Fvideoretalk_probe%2F20260627_002954%2Fref_image.jpg?[REDACTED_QUERY]"
+      },
+      "parameters": {
+        "video_extension": false
+      }
+    },
+    "generation_probe_submitted": true,
+    "printed_secret": "no"
+  },
+  "result_video": {
+    "path": "/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_15s_product_ball_lipsync/videoretalk_15s_product_ball_result.mp4",
+    "duration_sec": 14.84,
+    "width": 720,
+    "height": 1280,
+    "fps": "50/1",
+    "video_codec": "h264",
+    "has_audio": true,
+    "audio_codec": "aac",
+    "audio_channels": 2,
+    "technical_validation": "passed",
+    "decode_validation": "passed"
+  },
+  "lipsync_metrics": {
+    "input_count": 237,
+    "detected_count": 237,
+    "detection_failed_count": 0,
+    "max_mouth_open_ratio": 0.5007138427615425,
+    "avg_mouth_open_ratio": 0.2315266159657716,
+    "p90_mouth_open_ratio": 0.3746717632024776,
+    "fail_frame_count": 21,
+    "fail_frame_percent": 8.860759493670885,
+    "longest_fail_streak": 7,
+    "max_mouth_face_ratio": 0.17222067713737488,
+    "p90_mouth_face_ratio": 0.1202669620513916,
+    "detection_rate": 1.0,
+    "landmark_detection_passed": true,
+    "mouth_threshold_passed": false,
+    "threshold_rule": "p90_mouth_open_ratio <= 0.32, mouth_face_ratio_p90 <= 0.075, fail_frame_percent <= 15, longest_fail_streak < 5",
+    "raw_metrics_local_path": "outputs/videoretalk_15s_product_ball_lipsync/data/lipsync_metrics_raw.json",
+    "frame_sampling": "ffmpeg fps=16",
+    "status": "generated_but_lipsync_metric_risk"
+  },
+  "quality_observation": {
+    "lip_sync_observation": "qwen-vl-max: 基本同步且唇形自然；qwen-vl-plus: 整体自然但提示可能有轻微同步风险；Vision landmark 严格口型阈值未过。",
+    "action_preservation": "qwen-vl-max/qwen-vl-plus 均观察到坐姿、手势、表情和直播背景保持自然；结果仍需用户人审确认。",
+    "micro_expression_preservation": "模型观察为眨眼频率正常、表情丰富自然；非人工验收。",
+    "edge_artifact_risk": "未做本地嘴部后处理；模型未报告明显撕裂，但因 mouth_face_ratio_p90 超阈值，嘴部区域仍标记中高风险。",
+    "qwen_vl_max_observation": "```json\n{\n  \"visible_scene\": \"室内直播场景，背景为浅色窗帘，右侧有装饰花瓶和鼓状物体，左侧可见粉色瑜伽球。\",\n  \"anchor_action\": \"主播坐在椅子上，双手不断做出手势，包括合十、指向头部、比划数字等动作，表情丰富，口型与语言同步，似乎在讲解或引导内容。\",\n  \"product_or_prop\": \"无明显展示商品，但背景中存在装饰性花瓶（橙色果实）、鼓状物体及粉色瑜伽球，可能用于营造氛围或暗示健身主题。\",\n  \"live_ui_visible\": \"未见直播界面元素如弹幕、礼物图标、点赞按钮等，画面为纯视频内容。\",\n  \"comment_area_visible\": \"未显示评论区，画面聚焦于主播本人。\",\n  \"lip_sync_risk_observation\": \"主播口型与语音基本同步，无明显脱节现象，唇形变化自然，符合正常讲话节奏。\",\n  \"blink_or_expression_observation\": \"主播眨眼频率正常，面部表情生动，时而微笑、时而严肃，情绪表达清晰，无异常僵硬或夸张表现。\",\n  \"human_like_score_note\": \"主播行为自然，肢体语言丰富，表情真实，整体呈现高度拟人化特征，符合真人直播标准。\",\n  \"next_stage_recommendation\": \"建议继续观察后续内容是否涉及产品展示或互动环节，当前阶段可判定为开场介绍或教学类直播，适合推进至内容深化或用户互动阶段。\"\n}\n```",
+    "qwen_vl_plus_observation": "```json\n{\n  \"visible_scene\": \"室内环境，背景为浅色窗帘，右侧有一个装饰有橙色果实的花瓶和一个彩色编织篮。\",\n  \"anchor_action\": \"一位穿着灰色背心和粉色宽松裤子的女性坐在椅子上，面带微笑，双手在胸前做着各种手势，包括合掌、张开、比划数字等，同时似乎在说话或讲解。\",\n  \"product_or_prop\": \"右侧有一个装饰性的花瓶，里面插有橙色果实，旁边还有一个彩色编织篮。\",\n  \"live_ui_visible\": \"未观察到明显的直播界面元素，如礼物、点赞、关注按钮等。\",\n  \"comment_area_visible\": \"未观察到评论区。\",\n  \"lip_sync_risk_observation\": \"由于画面中人物在说话，可能存在轻微的口型与声音不同步的风险，但整体表现自然。\",\n  \"blink_or_expression_observation\": \"人物表情丰富，时而微笑，时而认真，眨眼频率正常，面部表情自然生动。\",\n  \"human_like_score_note\": \"人物动作流畅自然，表情生动，符合真人直播的特点，整体表现较为真实。\",\n  \"next_stage_recommendation\": \"建议在接下来的画面中可以展示更多具体的产品细节或进行实际操作演示，以增加观众的参与感和互动性。\"\n}\n```"
+  },
+  "constraints_check": {
+    "postprocess_used": "no",
+    "local_mouth_edit_used": "no",
+    "wan2_2_s2v_used": "no",
+    "embedding_used": "no",
+    "rerank_used": "no",
+    "rag_used": "no",
+    "media_committed": "no",
+    "secret_printed": "no",
+    "signed_url_saved": "redacted_only",
+    "secret_scan": "passed"
+  },
+  "github": {
+    "report_dir": "/Volumes/WD_BLACK/澜心社直播/项目资料_docs/数字人直播项目事实_digital_human_live_project/VideoRetalk_15秒小球口型替换样片_videoretalk_15s_product_ball",
+    "media_committed": "no",
+    "commit": "pending",
+    "push": "pending",
+    "remote_head": "pending",
+    "secret_scan": "passed_before_stage"
+  },
+  "commands_summary": [
+    "pwd / git rev-parse --show-toplevel / git branch --show-current / git remote -v / git status --short / git rev-parse HEAD / git ls-remote origin main",
+    "git pull --ff-only",
+    "ffmpeg extract 15s base video and reference frame from C5824.MP4",
+    "DashScope cosyvoice-v3-flash TTS generated input_product_ball_audio.wav",
+    "python3 scripts/validate_videoretalk_inputs.py --video ... --audio ... --safe",
+    "python3 scripts/probe_qwen_vl_video_analysis.py --safe --max-duration-sec 15 --max-models 2 --video-path input_base_video_15s.mp4",
+    "ALLOW_VIDEORETALK_GENERATION_PROBE=true python3 scripts/probe_alibaba_videoretalk_connection.py --submit --safe --upload-local-assets ...",
+    "probe_video.sh videoretalk_15s_product_ball_result.mp4",
+    "ffmpeg -v error -i result.mp4 -f null -",
+    "python3 scripts/probe_qwen_vl_video_analysis.py --safe --max-duration-sec 15 --max-models 2 --video-path result.mp4",
+    "ffmpeg fps=16 frame extraction + swift mouth_landmark_metrics.swift"
+  ],
+  "failed_items": [
+    "strict_lipsync_metric_threshold_failed: p90_mouth_open_ratio and mouth_face_ratio_p90 exceeded target; longest_fail_streak exceeded target",
+    "nonblocking_cleanup_command_no_match: initial rm frame_*.jpg had no files to match, then find -delete succeeded"
+  ]
+}
