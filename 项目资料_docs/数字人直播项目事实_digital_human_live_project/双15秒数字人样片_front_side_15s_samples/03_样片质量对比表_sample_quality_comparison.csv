@@ -1,0 +1,3 @@
+sample_id,status,source_video,source_time_range,reference_frame_time,audio_time_range,duration_seconds,resolution,has_audio,video_codec,audio_codec,technical_validation,qwen_vl_status,wan_status,local_observation,risk,content_validation
+01_front_15s_sample,front_video_created,参考/完整直播录屏/今年直播素材/C5824.MP4,00:01:00-00:01:15,00:01:00,00:01:00-00:01:15,14.812500,512x896,true,h264,aac,passed,connected,completed,正脸清晰; 有口型和手部小幅动作; 非黑屏; 可解码,牙齿和张嘴幅度需人工复核; 口型同步需动态复核,pending_human_review
+02_side_15s_sample,side_video_created,参考/完整直播录屏/直播效果一般/C5834（上）.MP4,00:26:45-00:27:00,00:26:51,00:26:45-00:27:00,14.812500,512x896,true,h264,aac,passed,connected,completed,偏侧/侧身回头; 脸和嘴仍可见; 有手势和身体动态; 非黑屏; 可解码,侧向嘴巴开合偏大需复核; 手势自然度需动态复核,pending_human_review

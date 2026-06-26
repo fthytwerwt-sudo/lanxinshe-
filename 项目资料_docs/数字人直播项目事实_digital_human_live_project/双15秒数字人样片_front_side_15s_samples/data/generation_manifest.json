@@ -1,0 +1,192 @@
+{
+  "status": "two_samples_created",
+  "created_at": "2026-06-26T18:21:27",
+  "workspace": "/Volumes/WD_BLACK/澜心社直播",
+  "remote": "https://github.com/fthytwerwt-sudo/lanxinshe-.git",
+  "branch": "main",
+  "local_head_at_generation": "c0807213bbf12d23640ad9d2103a4cf254501ceb",
+  "embedding_used": "no",
+  "rerank_used": "no",
+  "media_committed": "no",
+  "qwen_results": [
+    {
+      "label": "front_video",
+      "model": "qwen-vl-max",
+      "status": "connected",
+      "latency_ms": 7531.5,
+      "request_id": "05fb6249-c707-9851-89cc-a3f92ee55bc5",
+      "summary": "```json\n{\n  \"face_visibility\": \"high\",\n  \"mouth_visibility\": \"high\",\n  \"eye_visibility\": \"high\",\n  \"mouth_open_state\": \"variable\",\n  \"teeth_visibility\": \"variable\",\n  \"blink_naturalness\": \"natural\",\n  \"head_motion\": \"moderate\",\n  \"shoulder_motion\": \"moderate\",\n  \"body_motion\": \"moderate\",\n  \"gesture_presence\": \"high\",\n  \"occlusion_risk\": \"low\",\n  \"reference_frame_suitability\": \"high\"\n}\n```",
+      "usage": {
+        "prompt_tokens": 8990,
+        "completion_tokens": 116,
+        "total_tokens": 9106,
+        "completion_tokens_details": {
+          "text_tokens": 116
+        },
+        "prompt_tokens_details": {
+          "video_tokens": 8912,
+          "text_tokens": 78,
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "label": "side_video",
+      "model": "qwen-vl-max",
+      "status": "connected",
+      "latency_ms": 6473.2,
+      "request_id": "080b770e-ff83-9d96-aa70-e97e5e2fe070",
+      "summary": "```json\n{\n  \"side_angle_degree_estimate\": 45,\n  \"face_still_visible\": true,\n  \"mouth_still_visible\": true,\n  \"eye_still_visible\": true,\n  \"head_turn_naturalness\": \"natural\",\n  \"profile_distortion_risk\": \"low\",\n  \"gesture_presence\": \"high\",\n  \"occlusion_risk\": \"low\",\n  \"side_reference_frame_suitability\": \"high\"\n}\n```",
+      "usage": {
+        "prompt_tokens": 9001,
+        "completion_tokens": 97,
+        "total_tokens": 9098,
+        "completion_tokens_details": {
+          "text_tokens": 97
+        },
+        "prompt_tokens_details": {
+          "video_tokens": 8912,
+          "text_tokens": 89,
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "label": "side_reference_frame",
+      "model": "qwen-vl-plus",
+      "status": "connected",
+      "latency_ms": 4786.7,
+      "request_id": "11da93b6-3f7a-9e9f-a8d7-75565551ee84",
+      "summary": "```json\n{\n  \"is_usable\": true,\n  \"reason\": \"The frame shows a clear three-quarter view of the subject's face with visible mouth, eyes, and no severe occlusion. The angle is within the 30-45 degree range, making it suitable for a digital human reference.\"\n}\n```",
+      "usage": {
+        "prompt_tokens": 941,
+        "completion_tokens": 68,
+        "total_tokens": 1009,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "text_tokens": 68
+        }
+      }
+    }
+  ],
+  "wan_results": [
+    {
+      "label": "front",
+      "status": "completed",
+      "task_id": "357d70f1-97a8-482c-908d-29c4ff230f48",
+      "attempt": 1,
+      "result_path": "/Volumes/WD_BLACK/澜心社直播/outputs/two_15s_avatar_samples_front_side/01_front_15s_sample.mp4",
+      "image_url_redacted": "https://zhibo11122.oss-cn-beijing.aliyuncs.com/lanxin-live%2Fhappyhorse%2Ftwo_15s_avatar_samples%2F20260626_182147%2Ffront_reference_frame.jpg?[REDACTED_QUERY]",
+      "audio_url_redacted": "https://zhibo11122.oss-cn-beijing.aliyuncs.com/lanxin-live%2Fhappyhorse%2Ftwo_15s_avatar_samples%2F20260626_182147%2Ffront_audio.wav?[REDACTED_QUERY]",
+      "usage": {
+        "duration": 14.81,
+        "size": "512*896",
+        "fps": 16,
+        "video_count": 1,
+        "SR": 480
+      },
+      "poll_output": {
+        "task_id": "357d70f1-97a8-482c-908d-29c4ff230f48",
+        "task_status": "SUCCEEDED",
+        "submit_time": "2026-06-26 18:21:50.161",
+        "scheduled_time": "2026-06-26 18:22:00.364",
+        "end_time": "2026-06-26 18:25:08.449",
+        "results": {
+          "video_url": "http://dashscope-result-hz.oss-cn-hangzhou.aliyuncs.com/1d/25/20260626/default/ab735e9127464056ae0f1c6f56e3ad72_wologo.mp4?[REDACTED_QUERY]"
+        }
+      }
+    },
+    {
+      "label": "side",
+      "status": "completed",
+      "task_id": "718aed54-8a50-4d6d-876b-04752a21b17e",
+      "attempt": 1,
+      "result_path": "/Volumes/WD_BLACK/澜心社直播/outputs/two_15s_avatar_samples_front_side/02_side_15s_sample.mp4",
+      "image_url_redacted": "https://zhibo11122.oss-cn-beijing.aliyuncs.com/lanxin-live%2Fhappyhorse%2Ftwo_15s_avatar_samples%2F20260626_182511%2Fside_reference_frame.jpg?[REDACTED_QUERY]",
+      "audio_url_redacted": "https://zhibo11122.oss-cn-beijing.aliyuncs.com/lanxin-live%2Fhappyhorse%2Ftwo_15s_avatar_samples%2F20260626_182511%2Fside_audio.wav?[REDACTED_QUERY]",
+      "usage": {
+        "duration": 14.81,
+        "size": "512*896",
+        "fps": 16,
+        "video_count": 1,
+        "SR": 480
+      },
+      "poll_output": {
+        "task_id": "718aed54-8a50-4d6d-876b-04752a21b17e",
+        "task_status": "SUCCEEDED",
+        "submit_time": "2026-06-26 18:25:13.553",
+        "scheduled_time": "2026-06-26 18:25:23.389",
+        "end_time": "2026-06-26 18:28:32.289",
+        "results": {
+          "video_url": "http://dashscope-result-hz.oss-cn-hangzhou.aliyuncs.com/1d/20/20260626/default/dd1fd67579f148a7b5835ce9f3cc3f50_wologo.mp4?[REDACTED_QUERY]"
+        }
+      }
+    }
+  ],
+  "technical_probe": {
+    "front": {
+      "file_path": "/Volumes/WD_BLACK/澜心社直播/outputs/two_15s_avatar_samples_front_side/01_front_15s_sample.mp4",
+      "exists": "true",
+      "file_size_bytes": "817407",
+      "duration_seconds": "14.812500",
+      "width": "512",
+      "height": "896",
+      "fps": "16.000",
+      "video_codec": "h264",
+      "audio_present": "true",
+      "audio_codec": "aac",
+      "audio_channels": "2",
+      "decodable": "true",
+      "ffprobe_available": "true",
+      "ffmpeg_available": "true",
+      "fallback_used": "false",
+      "validation_status": "passed"
+    },
+    "side": {
+      "file_path": "/Volumes/WD_BLACK/澜心社直播/outputs/two_15s_avatar_samples_front_side/02_side_15s_sample.mp4",
+      "exists": "true",
+      "file_size_bytes": "743170",
+      "duration_seconds": "14.812500",
+      "width": "512",
+      "height": "896",
+      "fps": "16.000",
+      "video_codec": "h264",
+      "audio_present": "true",
+      "audio_codec": "aac",
+      "audio_channels": "2",
+      "decodable": "true",
+      "ffprobe_available": "true",
+      "ffmpeg_available": "true",
+      "fallback_used": "false",
+      "validation_status": "passed"
+    }
+  },
+  "local_outputs": {
+    "front_video_path": "/Volumes/WD_BLACK/澜心社直播/outputs/two_15s_avatar_samples_front_side/01_front_15s_sample.mp4",
+    "side_video_path": "/Volumes/WD_BLACK/澜心社直播/outputs/two_15s_avatar_samples_front_side/02_side_15s_sample.mp4",
+    "front_reference_frame": "/Volumes/WD_BLACK/澜心社直播/outputs/two_15s_avatar_samples_front_side/input_front_reference_frame.jpg",
+    "side_reference_frame": "/Volumes/WD_BLACK/澜心社直播/outputs/two_15s_avatar_samples_front_side/input_side_reference_frame.jpg",
+    "front_audio": "/Volumes/WD_BLACK/澜心社直播/outputs/two_15s_avatar_samples_front_side/input_front_audio.wav",
+    "side_audio": "/Volumes/WD_BLACK/澜心社直播/outputs/two_15s_avatar_samples_front_side/input_side_audio.wav"
+  },
+  "selected_candidates": {
+    "front": {
+      "clip_id": "R02_C5824_C01_opening",
+      "source_video": "参考/完整直播录屏/今年直播素材/C5824.MP4",
+      "source_time_range": "00:01:00-00:01:15",
+      "reference_frame_time": "00:01:00",
+      "audio_time_range": "00:01:00-00:01:15"
+    },
+    "side": {
+      "clip_id": "R06_C5834_C02_middle",
+      "source_video": "参考/完整直播录屏/直播效果一般/C5834（上）.MP4",
+      "source_time_range": "00:26:45-00:27:00",
+      "reference_frame_time": "00:26:51",
+      "audio_time_range": "00:26:45-00:27:00",
+      "side_angle_estimate": "30-45 degree side / three-quarter return-to-camera, not 90 degree pure profile"
+    }
+  },
+  "validation_boundary": "technical_validation_only_not_human_review_or_business_acceptance"
+}
