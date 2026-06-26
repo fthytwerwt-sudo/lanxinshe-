@@ -1,0 +1,22 @@
+{
+  "path": "/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_final30_voice_gold_product_ball_rerun/videoretalk_final30_voice_gold_product_ball_15s.mp4",
+  "duration_sec": 15.06,
+  "size_bytes": 2389648,
+  "video_streams": [
+    {
+      "codec": "h264",
+      "width": 720,
+      "height": 1280,
+      "fps": "50/1"
+    }
+  ],
+  "audio_streams": [
+    {
+      "codec": "aac",
+      "sample_rate": "44100",
+      "channels": 2,
+      "duration": "15.046009"
+    }
+  ],
+  "has_audio": true
+}

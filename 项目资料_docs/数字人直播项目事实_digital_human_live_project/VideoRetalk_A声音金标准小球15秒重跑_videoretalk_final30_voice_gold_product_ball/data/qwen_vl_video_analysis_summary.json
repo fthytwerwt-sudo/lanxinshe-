@@ -1,0 +1,56 @@
+{
+  "media": {
+    "source_video_found": true,
+    "source_video_path": "",
+    "frame_path": "/Volumes/WD_BLACK/澜心社直播/outputs/probe_runs/20260627_015725_qwen_vl_video_analysis/media/probe_frame.jpg",
+    "clip_path": "/Volumes/WD_BLACK/澜心社直播/outputs/probe_runs/20260627_015725_qwen_vl_video_analysis/media/probe_clip_video_only.mp4",
+    "clip_with_audio_path": "/Volumes/WD_BLACK/澜心社直播/outputs/probe_runs/20260627_015725_qwen_vl_video_analysis/media/probe_clip_with_audio.mp4",
+    "error": ""
+  },
+  "results": [
+    {
+      "category": "vision_video",
+      "model": "qwen-vl-max",
+      "status": "connected",
+      "input_type": "video_base64_short_clip",
+      "latency_ms": 10218.2,
+      "summary": "```json\n{\n  \"visible_scene\": \"室内直播场景，背景为浅色窗帘，右侧有装饰花瓶和鼓状道具，左侧可见粉色气球。\",\n  \"anchor_action\": \"主播坐在椅子上，双手不断做出手势动作，包括合十、指向头部、比划数字等，表情丰富，口型与语言同步，似乎在讲解或引导观众。\",\n  \"product_or_prop\": \"无明显展示商品，但背景中有装饰性花瓶（橙色果实）、鼓状道具和粉色气球，可能用于营造氛围。\",\n  \"live_ui_visible\": \"未见直播界面元素（如弹幕、点赞按钮、礼物图标等）。\",\n  \"comment_area_visible\": \"未见评论区或互动区域。\",\n  \"lip_sync_risk_observation\": \"主播口型与语音基本匹配，无明显唇形错位或延迟现象，同步性良好。\",\n  \"blink_or_expression_observation\": \"主播表情自然，频繁眨眼，面部表情生动，符合正常交流状态，无异常僵硬或夸张表现。\",\n  \"human_like_score_note\": \"主播行为自然，肢体语言丰富，表情真实，整体呈现高度拟人化特征，符合真人直播标准。\",\n  \"next_stage_recommendation\": \"建议继续观察后续内容是否涉及产品展示或互动环节，以判断是否进入销售或推广阶段。\"\n}\n```",
+      "usage": {
+        "prompt_tokens": 1879,
+        "completion_tokens": 289,
+        "total_tokens": 2168,
+        "completion_tokens_details": {
+          "text_tokens": 289
+        },
+        "prompt_tokens_details": {
+          "video_tokens": 1802,
+          "text_tokens": 77,
+          "cached_tokens": 0
+        }
+      },
+      "request_id": "62abddff-330a-92de-8d13-5a7235dfb842",
+      "error_summary": ""
+    },
+    {
+      "category": "vision_video",
+      "model": "qwen-vl-plus",
+      "status": "connected",
+      "input_type": "video_base64_short_clip",
+      "latency_ms": 4158.0,
+      "summary": "```json\n{\n  \"visible_scene\": \"室内环境，背景为浅色窗帘，右侧有一个装饰有橙色花朵的花瓶，左侧可见部分粉色瑜伽球。\",\n  \"anchor_action\": \"一位穿着灰色无袖上衣和粉色宽松裤子的女性坐在椅子上，面带微笑，双手在胸前做着各种手势，包括合掌、轻拍大腿、比划数字等，表情生动，似乎在进行讲解或演示。\",\n  \"product_or_prop\": \"右侧的花瓶内插有橙色花朵，左侧可见一个粉色瑜伽球。\",\n  \"live_ui_visible\": \"未观察到明显的直播UI元素，如点赞数、礼物打赏界面等。\",\n  \"comment_area_visible\": \"未观察到评论区。\",\n  \"lip_sync_risk_observation\": \"口型与声音同步，无明显不同步现象。\",\n  \"blink_or_expression_observation\": \"女性眨眼自然，面部表情丰富，包括微笑、张嘴说话时的表情变化，整体显得自然且富有感染力。\",\n  \"human_like_score_note\": \"表现较为自然，动作流畅，表情生动，符合真人主播的特征。\",\n  \"next_stage_recommendation\": \"建议在接下来的画面中可以展示具体的产品或进行更详细的动作演示，以增强观众的参与感和理解度。\"\n}\n```",
+      "usage": {
+        "prompt_tokens": 1879,
+        "completion_tokens": 277,
+        "total_tokens": 2156,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "text_tokens": 277
+        }
+      },
+      "request_id": "2eb1b853-9090-90c7-ab7b-e064c6b8a6b6",
+      "error_summary": ""
+    }
+  ]
+}

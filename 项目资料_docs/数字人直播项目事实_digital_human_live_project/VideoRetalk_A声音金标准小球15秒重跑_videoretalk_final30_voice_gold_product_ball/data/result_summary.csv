@@ -1,0 +1,16 @@
+field,value
+status,completed_videoretalk_15s_sample_created_voice_clone_from_A_lipsync_metric_risk
+result_video_path,/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_final30_voice_gold_product_ball_rerun/videoretalk_final30_voice_gold_product_ball_15s.mp4
+input_audio_path,/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_final30_voice_gold_product_ball_rerun/input_audio_voiceclone_product_ball_final15.wav
+voice_clone_enabled,yes
+voice_id,cosyvoice-v3-flash-lxsvoice-9c8f0311c79a4b7584033a505cee576b
+final_task_id,e72e8957-4064-4eec-8b40-a48eceb2624d
+result_duration_sec,15.06
+has_audio,true
+input_audio_lufs,-18.97
+pause_density_minus30db_percent,9.498
+p90_mouth_open_ratio,0.355425
+mouth_face_ratio_p90,0.11274
+fail_frame_percent,7.054
+longest_fail_streak,4
+lipsync_metric_passed,false

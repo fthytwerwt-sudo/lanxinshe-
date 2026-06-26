@@ -1,0 +1,21 @@
+{
+  "A_reference_loudness_lufs": -19.0,
+  "B_reference_loudness_lufs": -30.4,
+  "A_reference_pause_density_percent_at_minus30db": 6.7,
+  "B_reference_pause_density_percent_at_minus30db": 47.37,
+  "input_audio_path": "/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_final30_voice_gold_product_ball_rerun/input_audio_voiceclone_product_ball_final15.wav",
+  "input_audio_duration_sec": 15.309313,
+  "input_audio_integrated_lufs_measured": -18.97,
+  "input_audio_output_loudnorm_lufs": -19.16,
+  "input_audio_true_peak_dbfs": -2.0,
+  "input_audio_pause_density_percent_at_minus30db": 9.498,
+  "preprocessing": [
+    "voice_clone_synthesis_wav_16k_mono",
+    "ffmpeg_loudnorm_I=-19_TP=-2_LRA=7",
+    "resample_16000Hz",
+    "mono_pcm_s16le_wav"
+  ],
+  "compression_used": false,
+  "forbidden_fallback_tts_used": false,
+  "forbidden_voices_used": []
+}

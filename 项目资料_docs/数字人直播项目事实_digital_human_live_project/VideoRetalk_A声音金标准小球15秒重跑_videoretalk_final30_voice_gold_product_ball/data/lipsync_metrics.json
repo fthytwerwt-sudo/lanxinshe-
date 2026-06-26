@@ -1,0 +1,20 @@
+{
+  "input_count": 241,
+  "detected_count": 241,
+  "detection_failed_count": 0,
+  "p90_mouth_open_ratio": 0.355425,
+  "max_mouth_open_ratio": 0.486137,
+  "avg_mouth_open_ratio": 0.206096,
+  "mouth_face_ratio_p90": 0.11274,
+  "max_mouth_face_ratio": 0.157139,
+  "fail_frame_count": 17,
+  "fail_frame_percent": 7.054,
+  "longest_fail_streak": 4,
+  "thresholds": {
+    "p90_mouth_open_ratio_max": 0.32,
+    "mouth_face_ratio_p90_max": 0.075,
+    "fail_frame_percent_max": 15.0,
+    "longest_fail_streak_max_exclusive": 5
+  },
+  "threshold_passed": false
+}

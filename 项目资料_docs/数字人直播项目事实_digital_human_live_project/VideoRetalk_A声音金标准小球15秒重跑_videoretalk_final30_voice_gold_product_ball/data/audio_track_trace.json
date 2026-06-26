@@ -1,0 +1,10 @@
+{
+  "input_audio_path": "/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_final30_voice_gold_product_ball_rerun/input_audio_voiceclone_product_ball_final15.wav",
+  "result_video_path": "/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_final30_voice_gold_product_ball_rerun/videoretalk_final30_voice_gold_product_ball_15s.mp4",
+  "result_audio_extracted_path": "/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_final30_voice_gold_product_ball_rerun/result_audio_extracted_16k_mono.wav",
+  "videoretalk_task_id": "e72e8957-4064-4eec-8b40-a48eceb2624d",
+  "output_audio_from_input_audio": "confirmed_by_videoretalk_payload_and_model_transcode; result audio is AAC 44.1k stereo in MP4 and extracted to 16k mono for checking",
+  "input_duration_sec": 15.309,
+  "result_extracted_duration_sec": 15.047,
+  "has_audio": true
+}

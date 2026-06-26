@@ -1,0 +1,154 @@
+{
+  "status": "completed_videoretalk_15s_sample_created_voice_clone_from_A_lipsync_metric_risk",
+  "workspace": "/Volumes/WD_BLACK/澜心社直播",
+  "voice_gold_standard": {
+    "name": "final_30s_alibaba_fixed_template audio",
+    "source_video_path": "/Volumes/WD_BLACK/澜心社直播/outputs/alibaba_fixed_template_30s_video/final_30s_alibaba_fixed_template.mp4",
+    "extracted_audio_path": "/Volumes/WD_BLACK/澜心社直播/outputs/audio_source_comparison_final30_vs_videoretalk/A_final30_audio_extracted.wav",
+    "source_type": "reference_video_original_audio_extraction_not_tts",
+    "locked_as_gold_standard": true,
+    "asr_task_id": "47bbd7aa-c9c5-471d-bc86-5591e0363df0",
+    "asr_text": "女性要收紧很重要的。所以说他们这方面的手法，我上次去学习的时候，那个六十多岁的妈妈她都做了三十多年，专门就给人家生了孩子的女人做这个。所以这套手法老师学习完过后啊，如果说大家想学习的，我可以教给你们怎么在家里面去做好，有没有？如果想学手法的姐妹可以扣个响Q了，响过后我们让小助理单独给你教你怎么进怎么学习手法课啊。好，站着怎么练习。我们的内部直播有站着练习的。\n女性要收紧很重要的。\n女性\n要\n收紧\n很\n重要\n的\n所以说他们这方面的手法，我上次去学习的时候，那个六十多岁的妈妈她都做了三十多年，专门就给人家生了孩子的女人做这个。\n所以说\n他们\n这方面\n手法\n我\n上次\n去\n学习\n时候\n那个\n六十多岁\n妈妈\n她\n都\n做了\n三十多年\n专门\n就\n给\n人家\n生\n了\n孩子\n女人\n做\n这个\n所以这套手法老师学习完过后啊，如果说大家想学习的，我可以教给你们怎么在家里面去做好，有没有？\n所以\n这套\n老师\n完\n过后\n啊\n如果说\n大家\n想\n我可以\n教给\n你们\n怎么\n在家\n里面\n做好\n有没有\n如果想学手法的姐妹可以扣个响Q了，响过后我们让小助理单独给你教你怎么进怎么学习手法课啊。\n如果\n学\n姐妹\n可以\n扣\n个\n响\nQ\n我们\n让\n小\n助理\n单独\n给你\n教\n你\n进\n课\n好，站着怎么练习。\n好\n站\n着\n练习\n我们的内部直播有站着练习的。\n我们的\n内部\n直播\n有",
+    "asr_matches_target_product_ball_copy": false
+  },
+  "voice_clone": {
+    "enabled": true,
+    "service": "Alibaba DashScope VoiceEnrollmentService",
+    "target_model": "cosyvoice-v3-flash",
+    "voice_id": "cosyvoice-v3-flash-lxsvoice-9c8f0311c79a4b7584033a505cee576b",
+    "source_audio": "/Volumes/WD_BLACK/澜心社直播/outputs/audio_source_comparison_final30_vs_videoretalk/A_final30_audio_extracted.wav",
+    "fallback_tts_used": false,
+    "forbidden_voices_used": [],
+    "excluded_voices": [
+      "longanxuan_v3",
+      "longyingxiao_v3"
+    ]
+  },
+  "copy": {
+    "source_copy": "不一样，姐妹给你们看一下，这是便宜的小球，我给你们也买回来了，除了便宜一无是处，软软塌塌的，是塑料材质，承重标 200 斤实际只有 180 斤。我们家这个三层加厚、防爆防压，承重能力 400 斤，能用三年，我还给你准备一年质量保险，一年内球有任何问题我都给你解决。材料用的是 PVC 进口母婴级材质，没有异味，用着放心。",
+    "spoken_copy": "品质真是不一样，姐妹们看这个便宜小球软塌塌的塑料感很重。我们家三层加厚防爆防压，承重四百斤，母婴级PVC没有异味，我还给你准备一年质量保险，用着更放心。",
+    "copy_adjustment_reason": "A audio ASR did not match target copy; generated target copy with A voice clone. The first VideoRetalk attempt failed DataInspectionFailed, so the risky 200-jin actual-weak comparative sentence was removed while retaining core product-ball selling points."
+  },
+  "inputs": {
+    "base_video_path": "/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_final30_voice_gold_product_ball_rerun/input_base_video_15s.mp4",
+    "ref_image_path": "/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_final30_voice_gold_product_ball_rerun/input_ref_image.jpg",
+    "input_audio_path": "/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_final30_voice_gold_product_ball_rerun/input_audio_voiceclone_product_ball_final15.wav",
+    "input_audio_source": "A_final30_voice_clone_generated_target_copy_audio",
+    "audio_quality_metrics": {
+      "A_reference_loudness_lufs": -19.0,
+      "B_reference_loudness_lufs": -30.4,
+      "A_reference_pause_density_percent_at_minus30db": 6.7,
+      "B_reference_pause_density_percent_at_minus30db": 47.37,
+      "input_audio_path": "/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_final30_voice_gold_product_ball_rerun/input_audio_voiceclone_product_ball_final15.wav",
+      "input_audio_duration_sec": 15.309313,
+      "input_audio_integrated_lufs_measured": -18.97,
+      "input_audio_output_loudnorm_lufs": -19.16,
+      "input_audio_true_peak_dbfs": -2.0,
+      "input_audio_pause_density_percent_at_minus30db": 9.498,
+      "preprocessing": [
+        "voice_clone_synthesis_wav_16k_mono",
+        "ffmpeg_loudnorm_I=-19_TP=-2_LRA=7",
+        "resample_16000Hz",
+        "mono_pcm_s16le_wav"
+      ],
+      "compression_used": false,
+      "forbidden_fallback_tts_used": false,
+      "forbidden_voices_used": []
+    }
+  },
+  "videoretalk": {
+    "model": "videoretalk",
+    "postprocess_used": "no_local_mouth_or_video_postprocess",
+    "attempts": [
+      {
+        "attempt": "first_voice_clone_videoretalk_attempt",
+        "run_dir": "outputs/videoretalk_probe/20260627_014535_submit",
+        "task_id": "85eee58c-a5dd-456d-8d4b-70e33254026b",
+        "status": "FAILED",
+        "failure_code": "DataInspectionFailed",
+        "input_audio_path": "/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_final30_voice_gold_product_ball_rerun/input_audio_voiceclone_product_ball.wav",
+        "note": "contained 200-jin actual-weak comparative sentence; removed for retry"
+      },
+      {
+        "attempt": "short_success_not_final",
+        "run_dir": "outputs/videoretalk_probe/20260627_014834_submit",
+        "task_id": "865357bd-449d-4a12-8845-9674c16cdb9e",
+        "status": "SUCCEEDED",
+        "result_duration_sec": 13.04,
+        "input_audio_path": "/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_final30_voice_gold_product_ball_rerun/input_audio_voiceclone_product_ball_retry_final.wav",
+        "note": "succeeded but too short for complete 15s requirement"
+      },
+      {
+        "attempt": "final_15s_success",
+        "run_dir": "outputs/videoretalk_probe/20260627_015248_submit",
+        "task_id": "e72e8957-4064-4eec-8b40-a48eceb2624d",
+        "status": "SUCCEEDED",
+        "result_duration_sec": 15.06,
+        "input_audio_path": "/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_final30_voice_gold_product_ball_rerun/input_audio_voiceclone_product_ball_final15.wav",
+        "note": "final selected output"
+      }
+    ],
+    "final_task_id": "e72e8957-4064-4eec-8b40-a48eceb2624d",
+    "final_status": "SUCCEEDED",
+    "video_extension": false,
+    "result_video_path": "/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_final30_voice_gold_product_ball_rerun/videoretalk_final30_voice_gold_product_ball_15s.mp4",
+    "result_duration_sec": 15.06,
+    "has_audio": true,
+    "audio_track_trace": {
+      "input_audio_path": "/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_final30_voice_gold_product_ball_rerun/input_audio_voiceclone_product_ball_final15.wav",
+      "result_video_path": "/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_final30_voice_gold_product_ball_rerun/videoretalk_final30_voice_gold_product_ball_15s.mp4",
+      "result_audio_extracted_path": "/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_final30_voice_gold_product_ball_rerun/result_audio_extracted_16k_mono.wav",
+      "videoretalk_task_id": "e72e8957-4064-4eec-8b40-a48eceb2624d",
+      "output_audio_from_input_audio": "confirmed_by_videoretalk_payload_and_model_transcode; result audio is AAC 44.1k stereo in MP4 and extracted to 16k mono for checking",
+      "input_duration_sec": 15.309,
+      "result_extracted_duration_sec": 15.047,
+      "has_audio": true
+    }
+  },
+  "quality": {
+    "lipsync_metrics": {
+      "input_count": 241,
+      "detected_count": 241,
+      "detection_failed_count": 0,
+      "p90_mouth_open_ratio": 0.355425,
+      "max_mouth_open_ratio": 0.486137,
+      "avg_mouth_open_ratio": 0.206096,
+      "mouth_face_ratio_p90": 0.11274,
+      "max_mouth_face_ratio": 0.157139,
+      "fail_frame_count": 17,
+      "fail_frame_percent": 7.054,
+      "longest_fail_streak": 4,
+      "thresholds": {
+        "p90_mouth_open_ratio_max": 0.32,
+        "mouth_face_ratio_p90_max": 0.075,
+        "fail_frame_percent_max": 15.0,
+        "longest_fail_streak_max_exclusive": 5
+      },
+      "threshold_passed": false
+    },
+    "qwen_vl_observations": [
+      {
+        "model": "qwen-vl-max",
+        "status": "connected",
+        "summary": "```json\n{\n  \"visible_scene\": \"室内直播场景，背景为浅色窗帘，右侧有装饰花瓶和鼓状道具，左侧可见粉色气球。\",\n  \"anchor_action\": \"主播坐在椅子上，双手不断做出手势动作，包括合十、指向头部、比划数字等，表情丰富，口型与语言同步，似乎在讲解或引导观众。\",\n  \"product_or_prop\": \"无明显展示商品，但背景中有装饰性花瓶（橙色果实）、鼓状道具和粉色气球，可能用于营造氛围。\",\n  \"live_ui_visible\": \"未见直播界面元素（如弹幕、点赞按钮、礼物图标等）。\",\n  \"comment_area_visible\": \"未见评论区或互动区域。\",\n  \"lip_sync_risk_observation\": \"主播口型与语音基本匹配，无明显唇形错位或延迟现象，同步性良好。\",\n  \"blink_or_expression_observation\": \"主播表情自然，频繁眨眼，面部表情生动，符合正常交流状态，无异常僵硬或夸张表现。\",\n  \"human_like_score_note\": \"主播行为自然，肢体语言丰富，表情真实，整体呈现高度拟人化特征，符合真人直播标准。\",\n  \"next_stage_recommendation\": \"建议继续观察后续内容是否涉及产品展示或互动环节，以判断是否进入销售或推广阶段。\"\n}\n```"
+      },
+      {
+        "model": "qwen-vl-plus",
+        "status": "connected",
+        "summary": "```json\n{\n  \"visible_scene\": \"室内环境，背景为浅色窗帘，右侧有一个装饰有橙色花朵的花瓶，左侧可见部分粉色瑜伽球。\",\n  \"anchor_action\": \"一位穿着灰色无袖上衣和粉色宽松裤子的女性坐在椅子上，面带微笑，双手在胸前做着各种手势，包括合掌、轻拍大腿、比划数字等，表情生动，似乎在进行讲解或演示。\",\n  \"product_or_prop\": \"右侧的花瓶内插有橙色花朵，左侧可见一个粉色瑜伽球。\",\n  \"live_ui_visible\": \"未观察到明显的直播UI元素，如点赞数、礼物打赏界面等。\",\n  \"comment_area_visible\": \"未观察到评论区。\",\n  \"lip_sync_risk_observation\": \"口型与声音同步，无明显不同步现象。\",\n  \"blink_or_expression_observation\": \"女性眨眼自然，面部表情丰富，包括微笑、张嘴说话时的表情变化，整体显得自然且富有感染力。\",\n  \"human_like_score_note\": \"表现较为自然，动作流畅，表情生动，符合真人主播的特征。\",\n  \"next_stage_recommendation\": \"建议在接下来的画面中可以展示具体的产品或进行更详细的动作演示，以增强观众的参与感和理解度。\"\n}\n```"
+      }
+    ],
+    "technical_video_passed": true,
+    "lipsync_metric_passed": false,
+    "quality_status_note": "video generated and playable with audio; mouth metric thresholds not fully passed, so do not claim quality fully passed without human review."
+  },
+  "repository_policy": {
+    "media_committed": "no",
+    "secret_printed": "no",
+    "github_allowed_extensions": [
+      ".md",
+      ".json",
+      ".csv"
+    ]
+  }
+}
