@@ -1,0 +1,241 @@
+{
+  "status": "generated_but_mouth_open_failed_threshold",
+  "created_at": "2026-06-26T19:34:50",
+  "workspace": "/Volumes/WD_BLACK/澜心社直播",
+  "remote": "https://github.com/fthytwerwt-sudo/lanxinshe-.git",
+  "branch": "main",
+  "front_video_path": "/Volumes/WD_BLACK/澜心社直播/outputs/front_15s_product_ball_mouth_control/front_15s_product_ball_mouth_control.mp4",
+  "source_copy": "品质真是不一样，姐妹给你们看一下，这是便宜的小球，我给你们也买回来了，除了便宜一无是处，软软塌塌的，是塑料材质，承重标 200 斤实际只有 180 斤。我们家这个三层加厚、防爆防压，承重能力 400 斤，能用三年，我还给你准备一年质量保险，一年内球有任何问题我都给你解决。材料用的是 PVC 进口母婴级材质，没有异味，用着放心。",
+  "embedding_used": "no",
+  "rerank_used": "no",
+  "media_committed": "no",
+  "env_status": {
+    ".env": "present",
+    "DASHSCOPE_API_KEY": "present",
+    "ALIBABA_CLOUD_ACCESS_KEY_ID": "present",
+    "ALIBABA_CLOUD_ACCESS_KEY_SECRET": "present",
+    "ALIBABA_OSS_ENDPOINT": "present",
+    "ALIBABA_OSS_BUCKET": "present",
+    "ALIBABA_OSS_OBJECT_PREFIX": "present",
+    "ALIBABA_OSS_SIGNED_URL_EXPIRES": "present"
+  },
+  "reference_frame": {
+    "source_video": "参考/完整直播录屏/今年直播素材/C5824.MP4",
+    "previous_reference_frame": "outputs/two_15s_avatar_samples_front_side/input_front_reference_frame.jpg",
+    "selected_reference_frame": "/Volumes/WD_BLACK/澜心社直播/outputs/front_15s_product_ball_mouth_control/input_front_reference_frame.jpg",
+    "selected_candidate_frame": "/Volumes/WD_BLACK/澜心社直播/outputs/front_15s_product_ball_mouth_control/reference_frame_candidates/candidate_012.jpg",
+    "reference_frame_time": "00:01:05.500",
+    "reference_frame_metrics": {
+      "detected": true,
+      "error": "",
+      "face_height": 219.3677043914795,
+      "face_width": 219.36770975589752,
+      "frame_index": 11,
+      "frame_path": "/Volumes/WD_BLACK/澜心社直播/outputs/front_15s_product_ball_mouth_control/reference_frame_candidates/candidate_012.jpg",
+      "mouth_face_ratio": 0.010045289993286133,
+      "mouth_open_height": 2.2036122057738794,
+      "mouth_open_ratio": 0.035175878536793964,
+      "mouth_width": 62.64554852464883
+    },
+    "background_source": "outputs/two_15s_avatar_samples_front_side/01_front_15s_sample.mp4",
+    "reference_selection_reason": "上一轮参考帧露齿风险较高，本轮从同一 opening 段重新选择闭嘴/微闭参考帧。"
+  },
+  "tts": {
+    "source_copy": "品质真是不一样，姐妹给你们看一下，这是便宜的小球，我给你们也买回来了，除了便宜一无是处，软软塌塌的，是塑料材质，承重标 200 斤实际只有 180 斤。我们家这个三层加厚、防爆防压，承重能力 400 斤，能用三年，我还给你准备一年质量保险，一年内球有任何问题我都给你解决。材料用的是 PVC 进口母婴级材质，没有异味，用着放心。",
+    "short_spoken_copy": "品质真是不一样。便宜小球软塌塌，塑料材质。我家三层加厚、防爆防压，承重400斤，母婴级PVC，没有异味，用着更放心。",
+    "cut_reason": "保留了关键信息，如价格低廉但质量差、三层加厚、防爆防压、承重能力强、材质安全等，去掉了不必要的细节和承诺。",
+    "tts_model": "cosyvoice-v3-flash",
+    "tts_voice": "longyingxiao_v3",
+    "speech_rate": 0.88,
+    "retry_mode": "yes",
+    "tts_volume": 24,
+    "pitch_rate": 0.95,
+    "raw_tts_duration": 14.823125,
+    "normalized_tts_duration": 14.823125,
+    "audio_path": "/Volumes/WD_BLACK/澜心社直播/outputs/front_15s_product_ball_mouth_control/input_front_product_audio.wav",
+    "normalized_audio_path": "/Volumes/WD_BLACK/澜心社直播/outputs/front_15s_product_ball_mouth_control/input_front_product_audio_normalized.wav",
+    "normalization": "volume=-8dB + light compressor",
+    "attempts": [
+      {
+        "copy": "品质真是不一样。便宜小球软塌塌，塑料材质。我家三层加厚、防爆防压，承重400斤，母婴级PVC，没有异味，用着更放心。",
+        "speech_rate": 0.88,
+        "duration": 14.823125,
+        "status": "created"
+      }
+    ]
+  },
+  "wan": {
+    "wan_task_id": "b6dfe981-2b12-4e8e-b492-9603dcf8802b",
+    "wan_status": "SUCCEEDED",
+    "requested_resolution": "720P",
+    "resolution_fallback": "no",
+    "image_url_redacted": "https://zhibo11122.oss-cn-beijing.aliyuncs.com/lanxin-live%2Fhappyhorse%2Ffront_15s_product_ball_mouth_control%2F20260626_193017%2Finput_front_reference_frame.jpg?[REDACTED_QUERY]",
+    "audio_url_redacted": "https://zhibo11122.oss-cn-beijing.aliyuncs.com/lanxin-live%2Fhappyhorse%2Ffront_15s_product_ball_mouth_control%2F20260626_193018%2Finput_front_product_audio_normalized.wav?[REDACTED_QUERY]",
+    "usage": {
+      "duration": 14.63,
+      "size": "720*1280",
+      "fps": 30,
+      "video_count": 1,
+      "SR": 720
+    },
+    "poll_output": {
+      "request_id": "73d93403-5eea-97d0-a76d-27848601c653",
+      "output": {
+        "task_id": "b6dfe981-2b12-4e8e-b492-9603dcf8802b",
+        "task_status": "SUCCEEDED",
+        "submit_time": "2026-06-26 19:30:19.996",
+        "scheduled_time": "2026-06-26 19:30:29.423",
+        "end_time": "2026-06-26 19:34:22.033",
+        "results": {
+          "video_url": "http://dashscope-result-hz.oss-cn-hangzhou.aliyuncs.com/1d/c5/20260626/default/80d024ab808f47bcba51587f6a5c8f53_wologo.mp4?[REDACTED_QUERY]"
+        }
+      },
+      "usage": {
+        "duration": 14.63,
+        "size": "720*1280",
+        "fps": 30,
+        "video_count": 1,
+        "SR": 720
+      }
+    }
+  },
+  "video_probe": {
+    "path": "/Volumes/WD_BLACK/澜心社直播/outputs/front_15s_product_ball_mouth_control/front_15s_product_ball_mouth_control.mp4",
+    "duration": 14.633333,
+    "width": 720,
+    "height": 1280,
+    "resolution": "720x1280",
+    "video_codec": "h264",
+    "has_audio": true,
+    "audio_codec": "aac"
+  },
+  "contact_sheet": "/Volumes/WD_BLACK/澜心社直播/outputs/front_15s_product_ball_mouth_control/generated_contact_sheet.jpg",
+  "mouth_metrics": {
+    "avg_mouth_open_ratio": 0.16750998993695343,
+    "detected_count": 234,
+    "detection_failed_count": 0,
+    "fail_frame_count": 7,
+    "fail_frame_percent": 2.9914529914529915,
+    "input_count": 234,
+    "longest_fail_streak": 4,
+    "max_mouth_face_ratio": 0.15824611485004425,
+    "max_mouth_open_ratio": 0.5365898708061552,
+    "p90_mouth_face_ratio": 0.08985602706670762,
+    "p90_mouth_open_ratio": 0.2891281092255942
+  },
+  "mouth_evaluation": {
+    "detection_rate": 1.0,
+    "landmark_detection_passed": true,
+    "mouth_threshold_passed": false,
+    "status": "generated_but_mouth_open_failed_threshold",
+    "threshold_rule": "p90_mouth_open_ratio <= 0.32, fail_frame_percent <= 15, longest_fail_streak < 5, mouth_face_ratio_p90 <= 0.075"
+  },
+  "reference_frame_observation": "```json\n{\n  \"face_visibility\": \"high\",\n  \"mouth_state\": \"closed\",\n  \"teeth_visibility\": \"none\",\n  \"eye_visibility\": \"high\",\n  \"expression\": \"neutral\",\n  \"occlusion\": \"none\",\n  \"background_consistency\": \"high\",\n  \"reference_frame_suitability\": \"good\",\n  \"mouth_open_risk\": \"low\"\n}\n```",
+  "generated_video_observation": "```json\n{\n  \"analysis\": \"该视频为一段15秒的正面数字人口播视频，主体为一位女性，坐姿端正，背景为浅色窗帘与装饰物（花瓶、橙色果实枝条等），整体画面稳定，无明显晃动或抖动。以下为详细观察分析：\",\n  \"face_stability\": \"面部保持相对稳定，无明显偏移或倾斜，头部位置基本固定，符合正面口播的标准要求。\",\n  \"mouth_opening_amplitude\": \"嘴巴张合幅度适中，符合正常说话节奏，开口程度在自然范围内，未出现过度夸张或闭合过紧的情况。\",\n  \"teeth_visibility\": \"牙齿在说话过程中偶有露出，但未持续暴露，属于自然状态下的语言表达表现。\",\n  \"corner_of_mouth\": \"嘴角动作自然，随语音变化呈现微笑或中性表情，无僵硬或不协调现象。\",\n  \"eye_movement\": \"眼神直视镜头，专注且稳定，未出现频繁游移或偏离焦点的情况。\",\n  \"blinking\": \"眨眼频率正常，约每3-4秒一次，符合人类自然生理节奏，无异常快速或长时间闭眼。\",\n  \"slight_nodding\": \"存在轻微点头动作，频率较低，通常伴随语义强调，动作幅度小，不影响整体稳定性。\",\n  \"head_and_shoulder_movement\": \"头肩动作控制良好，仅在说话时有极微小的上下或左右调整，未出现大幅度晃动或身体前倾后仰。\",\n  \"hand_gesture_obstruction\": \"双手交叠置于大腿上，偶尔有轻微手势动作（如手指轻动），但未遮挡面部或关键区域，不影响视觉传达。\",\n  \"voice_rhythm\": \"声音节奏平稳流畅，语速适中，与唇形同步性较高，未发现明显口型与语音不同步的现象。\",\n  \"overall_evaluation\": \"整体表现自然、专业，符合高质量数字人视频标准。模型辅助观察结果仅供参考，非人工审核通过。\"\n}\n```",
+  "qwen_results": [
+    {
+      "label": "reference_frame",
+      "model": "qwen-vl-max",
+      "status": "connected",
+      "latency_ms": 2754.2,
+      "request_id": "c5c21da0-bba1-985e-83f8-5cd2d53208a4",
+      "summary": "```json\n{\n  \"face_visibility\": \"high\",\n  \"mouth_state\": \"closed\",\n  \"teeth_visibility\": \"none\",\n  \"eye_visibility\": \"high\",\n  \"expression\": \"neutral\",\n  \"occlusion\": \"none\",\n  \"background_consistency\": \"high\",\n  \"reference_frame_suitability\": \"good\",\n  \"mouth_open_risk\": \"low\"\n}\n```",
+      "usage": {
+        "prompt_tokens": 1298,
+        "completion_tokens": 85,
+        "total_tokens": 1383,
+        "completion_tokens_details": {
+          "text_tokens": 85
+        },
+        "prompt_tokens_details": {
+          "image_tokens": 1224,
+          "text_tokens": 74,
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "label": "reference_frame_recheck",
+      "model": "qwen-vl-plus",
+      "status": "connected",
+      "latency_ms": 1698.4,
+      "request_id": "2215c904-67ed-9175-9398-6a37d2d0bde6",
+      "summary": "```json\n{\n  \"face_visibility\": \"清晰\",\n  \"mouth_state\": \"微张\",\n  \"teeth_visibility\": \"部分可见\",\n  \"eye_visibility\": \"清晰\",\n  \"expression\": \"平静\",\n  \"occlusion\": \"无\",\n  \"background_consistency\": \"一致\",\n  \"reference_frame_suitability\": \"适合\",\n  \"mouth_open_risk\": \"低\"\n}\n```",
+      "usage": {
+        "prompt_tokens": 1298,
+        "completion_tokens": 87,
+        "total_tokens": 1385,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "text_tokens": 87
+        }
+      }
+    },
+    {
+      "label": "generated_video",
+      "model": "qwen-vl-max",
+      "status": "connected",
+      "latency_ms": 13637.5,
+      "request_id": "04fd7175-c1fe-9359-a11d-2128f512a57c",
+      "summary": "```json\n{\n  \"analysis\": \"该视频为一段15秒的正面数字人口播视频，主体为一位女性，坐姿端正，背景为浅色窗帘与装饰物（花瓶、橙色果实枝条等），整体画面稳定，无明显晃动或抖动。以下为详细观察分析：\",\n  \"face_stability\": \"面部保持相对稳定，无明显偏移或倾斜，头部位置基本固定，符合正面口播的标准要求。\",\n  \"mouth_opening_amplitude\": \"嘴巴张合幅度适中，符合正常说话节奏，开口程度在自然范围内，未出现过度夸张或闭合过紧的情况。\",\n  \"teeth_visibility\": \"牙齿在说话过程中偶有露出，但未持续暴露，属于自然状态下的语言表达表现。\",\n  \"corner_of_mouth\": \"嘴角动作自然，随语音变化呈现微笑或中性表情，无僵硬或不协调现象。\",\n  \"eye_movement\": \"眼神直视镜头，专注且稳定，未出现频繁游移或偏离焦点的情况。\",\n  \"blinking\": \"眨眼频率正常，约每3-4秒一次，符合人类自然生理节奏，无异常快速或长时间闭眼。\",\n  \"slight_nodding\": \"存在轻微点头动作，频率较低，通常伴随语义强调，动作幅度小，不影响整体稳定性。\",\n  \"head_and_shoulder_movement\": \"头肩动作控制良好，仅在说话时有极微小的上下或左右调整，未出现大幅度晃动或身体前倾后仰。\",\n  \"hand_gesture_obstruction\": \"双手交叠置于大腿上，偶尔有轻微手势动作（如手指轻动），但未遮挡面部或关键区域，不影响视觉传达。\",\n  \"voice_rhythm\": \"声音节奏平稳流畅，语速适中，与唇形同步性较高，未发现明显口型与语音不同步的现象。\",\n  \"overall_evaluation\": \"整体表现自然、专业，符合高质量数字人视频标准。模型辅助观察结果仅供参考，非人工审核通过。\"\n}\n```",
+      "usage": {
+        "prompt_tokens": 8990,
+        "completion_tokens": 435,
+        "total_tokens": 9425,
+        "completion_tokens_details": {
+          "text_tokens": 435
+        },
+        "prompt_tokens_details": {
+          "video_tokens": 8912,
+          "text_tokens": 78,
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "label": "report_field_normalization",
+      "model": "qwen-plus",
+      "status": "connected",
+      "latency_ms": 845.8,
+      "request_id": "245beccd-7b48-9e71-b33a-94f828f7e6d5",
+      "summary": "{\"fields_complete\": true}",
+      "usage": {
+        "total_tokens": 231,
+        "completion_tokens": 6,
+        "prompt_tokens": 225,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "label": "copy_compression",
+      "model": "qwen-max",
+      "status": "connected",
+      "latency_ms": 9782.8,
+      "request_id": "438e31b2-df4c-965f-88b8-ef102cdb87be",
+      "summary": "```json\n{\n  \"source_copy\": \"品质真是不一样，姐妹给你们看一下，这是便宜的小球，我给你们也买回来了，除了便宜一无是处，软软塌塌的，是塑料材质，承重标 200 斤实际只有 180 斤。我们家这个三层加厚、防爆防压，承重能力 400 斤，能用三年，我还给你准备一年质量保险，一年内球有任何问题我都给你解决。材料用的是 PVC 进口母婴级材质，没有异味，用着放心。\",\n  \"short_spoken_copy\": \"便宜小球软塌塌，塑料材质不耐用。我们家三层加厚，防爆防压，承重400斤，母婴级PVC，无异味，放心使用。\",\n  \"cut_reason\": \"保留了关键信息，如价格低廉但质量差、三层加厚、防爆防压、承重能力强、材质安全等，去掉了不必要的细节和承诺。\",\n  \"estimated_tts_duration\": \"15秒\"\n}\n```",
+      "usage": {
+        "prompt_tokens": 247,
+        "completion_tokens": 229,
+        "total_tokens": 476,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    }
+  ],
+  "validation_boundary": "technical_and_landmark_validation_only_not_human_review_or_business_acceptance",
+  "github_report_files": [
+    "/Volumes/WD_BLACK/澜心社直播/项目资料_docs/数字人直播项目事实_digital_human_live_project/正面15秒小球口播样片_front_15s_product_ball_sample/00_执行报告_execution_report.md",
+    "/Volumes/WD_BLACK/澜心社直播/项目资料_docs/数字人直播项目事实_digital_human_live_project/正面15秒小球口播样片_front_15s_product_ball_sample/01_文案压缩与TTS报告_copy_tts_report.md",
+    "/Volumes/WD_BLACK/澜心社直播/项目资料_docs/数字人直播项目事实_digital_human_live_project/正面15秒小球口播样片_front_15s_product_ball_sample/02_参考帧检查报告_reference_frame_report.md",
+    "/Volumes/WD_BLACK/澜心社直播/项目资料_docs/数字人直播项目事实_digital_human_live_project/正面15秒小球口播样片_front_15s_product_ball_sample/03_Wan生成报告_wan_generation_report.md",
+    "/Volumes/WD_BLACK/澜心社直播/项目资料_docs/数字人直播项目事实_digital_human_live_project/正面15秒小球口播样片_front_15s_product_ball_sample/04_口型张嘴幅度检测报告_mouth_open_report.md",
+    "/Volumes/WD_BLACK/澜心社直播/项目资料_docs/数字人直播项目事实_digital_human_live_project/正面15秒小球口播样片_front_15s_product_ball_sample/05_下一轮微调建议_next_tuning_recommendations.md",
+    "/Volumes/WD_BLACK/澜心社直播/项目资料_docs/数字人直播项目事实_digital_human_live_project/正面15秒小球口播样片_front_15s_product_ball_sample/data/generation_manifest.json",
+    "/Volumes/WD_BLACK/澜心社直播/项目资料_docs/数字人直播项目事实_digital_human_live_project/正面15秒小球口播样片_front_15s_product_ball_sample/data/mouth_open_metrics.json"
+  ]
+}
