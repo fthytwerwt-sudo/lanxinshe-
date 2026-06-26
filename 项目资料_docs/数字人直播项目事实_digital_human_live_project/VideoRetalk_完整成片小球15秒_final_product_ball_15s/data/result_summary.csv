@@ -1,0 +1,17 @@
+field,value
+status,completed_final_video_created_voice_not_target_exact_lipsync_metric_risk
+result_video_path,/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_final_product_ball_15s/videoretalk_final_product_ball_15s.mp4
+result_duration_sec,14.2
+has_audio,yes
+input_audio_source,fallback_generated_tts
+tts_model,cosyvoice-v3-flash
+tts_voice,longanxuan_v3
+voice_match_level,low_not_user_voice
+videoretalk_task_id,ffe21ac4-a25a-4436-8397-830017a724d1
+videoretalk_status,SUCCEEDED
+mouth_open_ratio_p90,0.3544261559641013
+mouth_face_ratio_p90,0.11810598373413086
+fail_frame_percent,5.726872246696035
+longest_fail_streak,5
+postprocess_used,no
+media_committed,no

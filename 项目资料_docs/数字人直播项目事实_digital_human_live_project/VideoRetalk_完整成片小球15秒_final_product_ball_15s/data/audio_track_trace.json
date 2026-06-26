@@ -1,0 +1,15 @@
+{
+  "input_audio_path": "outputs/videoretalk_final_product_ball_15s/input_audio_for_videoretalk.wav",
+  "result_video_path": "outputs/videoretalk_final_product_ball_15s/videoretalk_final_product_ball_15s.mp4",
+  "result_audio_extracted_path": "outputs/videoretalk_final_product_ball_15s/result_audio_extracted_16k_mono.wav",
+  "input_duration_sec": 14.210625,
+  "result_audio_duration_sec": 14.187375,
+  "input_sample_rate": 16000,
+  "result_compare_sample_rate": 16000,
+  "input_rms": 936,
+  "result_rms": 661,
+  "coarse_zero_lag_correlation": 0.967707231255033,
+  "output_audio_from_input_audio": "confirmed_by_videoretalk_payload_and_technical_transcode; waveform correlation is approximate because output audio is AAC transcoded/stereo 44.1k in result mp4",
+  "byte_identical": false,
+  "reason_not_byte_identical": "VideoRetalk output muxed audio as AAC stereo 44.1k, while input was WAV PCM mono 16k."
+}

@@ -1,0 +1,18 @@
+{
+  "avg_mouth_open_ratio": 0.218123602836659,
+  "detected_count": 227,
+  "detection_failed_count": 0,
+  "fail_frame_count": 13,
+  "fail_frame_percent": 5.726872246696035,
+  "input_count": 227,
+  "longest_fail_streak": 5,
+  "max_mouth_face_ratio": 0.16612496972084045,
+  "max_mouth_open_ratio": 0.47702021543079826,
+  "p90_mouth_face_ratio": 0.11810598373413086,
+  "p90_mouth_open_ratio": 0.3544261559641013,
+  "detection_rate": 1.0,
+  "landmark_detection_passed": true,
+  "threshold_rule": "p90_mouth_open_ratio <= 0.32, mouth_face_ratio_p90 <= 0.075, fail_frame_percent <= 15, longest_fail_streak < 5",
+  "mouth_threshold_passed": false,
+  "status": "generated_but_lipsync_metric_risk"
+}

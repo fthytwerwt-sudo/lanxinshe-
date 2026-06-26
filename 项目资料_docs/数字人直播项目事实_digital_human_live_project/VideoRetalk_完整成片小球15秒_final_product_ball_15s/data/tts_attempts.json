@@ -1,0 +1,239 @@
+{
+  "ok": true,
+  "source_copy": "不一样，姐妹给你们看一下，这是便宜的小球，我给你们也买回来了，除了便宜一无是处，软软塌塌的，是塑料材质，承重标 200 斤实际只有 180 斤。我们家这个三层加厚、防爆防压，承重能力 400 斤，能用三年，我还给你准备一年质量保险，一年内球有任何问题我都给你解决。材料用的是 PVC 进口母婴级材质，没有异味，用着放心。",
+  "spoken_copy": "品质真是不一样。姐妹们看这个便宜小球，软塌塌的，塑料感很重。我们家三层加厚、防爆防压，承重 400 斤，母婴级 PVC，没有异味，用着放心。",
+  "input_audio_source": "fallback_generated_tts",
+  "audio_source_level": "C",
+  "voice_match_level": "low_not_user_voice",
+  "tts_model": "cosyvoice-v3-flash",
+  "tts_voice": "longanxuan_v3",
+  "tts_settings": {
+    "speech_rate": 0.65,
+    "pitch_rate": 0.98,
+    "volume": 22
+  },
+  "selected_attempt": {
+    "label": "inspection_retry_no_weight_r065",
+    "copy": "品质真是不一样。姐妹们看这个便宜小球，软塌塌的，塑料感很重。我们家三层加厚、防爆防压，承重 400 斤，母婴级 PVC，没有异味，用着放心。",
+    "speech_rate": 0.65,
+    "pitch_rate": 0.98,
+    "volume": 22,
+    "voice": "longanxuan_v3",
+    "retry_reason": "first_videoretalk_failed_DataInspectionFailed_remove_weight_claim",
+    "path": "outputs/videoretalk_final_product_ball_15s/tts_attempt_longanxuan_v3_inspection_retry_no_weight_r065.wav",
+    "duration_sec": 14.210563,
+    "status": "created",
+    "error": ""
+  },
+  "input_audio_path": "outputs/videoretalk_final_product_ball_15s/input_audio_for_videoretalk.wav",
+  "input_audio_duration_sec": 14.210625,
+  "audio_preprocessing": "ffmpeg volume=-3dB, acompressor threshold=-18dB ratio=1.6, mono 16kHz pcm_s16le wav",
+  "excluded_previous_audio": "outputs/videoretalk_15s_product_ball_lipsync/input_product_ball_audio.wav and longyingxiao_v3",
+  "attempts": [
+    {
+      "voice": "longanxuan_v3",
+      "copy_index": 1,
+      "path": "outputs/videoretalk_final_product_ball_15s/tts_attempt_longanxuan_v3_01.wav",
+      "duration_sec": 10.631813,
+      "status": "created",
+      "error": "",
+      "copy": "品质真是不一样。便宜小球软塌塌，塑料感重。我们家三层加厚、防爆防压，承重 400 斤，母婴级 PVC，没有异味，用着放心。"
+    },
+    {
+      "voice": "longanxuan_v3",
+      "copy_index": 2,
+      "path": "outputs/videoretalk_final_product_ball_15s/tts_attempt_longanxuan_v3_02.wav",
+      "duration_sec": 12.146938,
+      "status": "created",
+      "error": "",
+      "copy": "品质真是不一样。便宜小球软塌塌，塑料感重。我们家三层加厚、防爆防压，承重 400 斤，母婴级 PVC，用着放心。"
+    },
+    {
+      "voice": "longanxuan_v3",
+      "copy_index": 3,
+      "path": "outputs/videoretalk_final_product_ball_15s/tts_attempt_longanxuan_v3_03.wav",
+      "duration_sec": 9.586938,
+      "status": "created",
+      "error": "",
+      "copy": "品质真是不一样。便宜小球软塌塌，塑料感重。我们家三层加厚、防爆防压，承重 400 斤，用着更放心。"
+    },
+    {
+      "voice": "longanran_v3",
+      "copy_index": 1,
+      "path": "outputs/videoretalk_final_product_ball_15s/tts_attempt_longanran_v3_01.wav",
+      "duration_sec": 11.937938,
+      "status": "created",
+      "error": "",
+      "copy": "品质真是不一样。便宜小球软塌塌，塑料感重。我们家三层加厚、防爆防压，承重 400 斤，母婴级 PVC，没有异味，用着放心。"
+    },
+    {
+      "voice": "longanran_v3",
+      "copy_index": 2,
+      "path": "outputs/videoretalk_final_product_ball_15s/tts_attempt_longanran_v3_02.wav",
+      "duration_sec": 10.631813,
+      "status": "created",
+      "error": "",
+      "copy": "品质真是不一样。便宜小球软塌塌，塑料感重。我们家三层加厚、防爆防压，承重 400 斤，母婴级 PVC，用着放心。"
+    },
+    {
+      "voice": "longanran_v3",
+      "copy_index": 3,
+      "path": "outputs/videoretalk_final_product_ball_15s/tts_attempt_longanran_v3_03.wav",
+      "duration_sec": 8.829375,
+      "status": "created",
+      "error": "",
+      "copy": "品质真是不一样。便宜小球软塌塌，塑料感重。我们家三层加厚、防爆防压，承重 400 斤，用着更放心。"
+    },
+    {
+      "voice": "longanhuan_v3",
+      "copy_index": 1,
+      "path": "outputs/videoretalk_final_product_ball_15s/tts_attempt_longanhuan_v3_01.wav",
+      "duration_sec": 11.284875,
+      "status": "created",
+      "error": "",
+      "copy": "品质真是不一样。便宜小球软塌塌，塑料感重。我们家三层加厚、防爆防压，承重 400 斤，母婴级 PVC，没有异味，用着放心。"
+    },
+    {
+      "voice": "longanhuan_v3",
+      "copy_index": 2,
+      "path": "outputs/videoretalk_final_product_ball_15s/tts_attempt_longanhuan_v3_02.wav",
+      "duration_sec": 10.553438,
+      "status": "created",
+      "error": "",
+      "copy": "品质真是不一样。便宜小球软塌塌，塑料感重。我们家三层加厚、防爆防压，承重 400 斤，母婴级 PVC，用着放心。"
+    },
+    {
+      "voice": "longanhuan_v3",
+      "copy_index": 3,
+      "path": "outputs/videoretalk_final_product_ball_15s/tts_attempt_longanhuan_v3_03.wav",
+      "duration_sec": 9.377938,
+      "status": "created",
+      "error": "",
+      "copy": "品质真是不一样。便宜小球软塌塌，塑料感重。我们家三层加厚、防爆防压，承重 400 斤，用着更放心。"
+    },
+    {
+      "label": "extended_r075",
+      "copy": "品质真是不一样。姐妹们看这个便宜小球，软塌塌的，塑料感很重。我们家三层加厚、防爆防压，承重 400 斤，母婴级 PVC，没有异味，用着放心。",
+      "speech_rate": 0.75,
+      "pitch_rate": 0.98,
+      "volume": 22,
+      "voice": "longanxuan_v3",
+      "path": "outputs/videoretalk_final_product_ball_15s/tts_attempt_longanxuan_v3_extended_r075.wav",
+      "duration_sec": 13.244063,
+      "status": "created",
+      "error": ""
+    },
+    {
+      "label": "extended_r070",
+      "copy": "品质真是不一样。姐妹们看这个便宜小球，软塌塌的，塑料感很重。我们家三层加厚、防爆防压，承重 400 斤，母婴级 PVC，没有异味，用着放心。",
+      "speech_rate": 0.7,
+      "pitch_rate": 0.98,
+      "volume": 22,
+      "voice": "longanxuan_v3",
+      "path": "outputs/videoretalk_final_product_ball_15s/tts_attempt_longanxuan_v3_extended_r070.wav",
+      "duration_sec": 13.71425,
+      "status": "created",
+      "error": ""
+    },
+    {
+      "label": "compact_r065",
+      "copy": "品质真是不一样。便宜小球软塌塌，塑料感重。我们家三层加厚、防爆防压，承重 400 斤，母婴级 PVC，没有异味，用着放心。",
+      "speech_rate": 0.65,
+      "pitch_rate": 0.98,
+      "volume": 22,
+      "voice": "longanxuan_v3",
+      "path": "outputs/videoretalk_final_product_ball_15s/tts_attempt_longanxuan_v3_compact_r065.wav",
+      "duration_sec": 12.564875,
+      "status": "created",
+      "error": ""
+    },
+    {
+      "label": "extended_with_weight_r070",
+      "copy": "品质真是不一样。姐妹们看这个便宜小球，软塌塌的，塑料感很重，承重标 200 斤实际偏弱。我们家三层加厚、防爆防压，承重 400 斤，母婴级 PVC，没有异味，用着放心。",
+      "speech_rate": 0.7,
+      "pitch_rate": 0.98,
+      "volume": 22,
+      "voice": "longanxuan_v3",
+      "path": "outputs/videoretalk_final_product_ball_15s/tts_attempt_longanxuan_v3_extended_with_weight_r070.wav",
+      "duration_sec": 17.057938,
+      "status": "created",
+      "error": ""
+    },
+    {
+      "label": "extended_with_weight_r082",
+      "copy": "品质真是不一样。姐妹们看这个便宜小球，软塌塌的，塑料感很重，承重标 200 斤实际偏弱。我们家三层加厚、防爆防压，承重 400 斤，母婴级 PVC，没有异味，用着放心。",
+      "speech_rate": 0.82,
+      "pitch_rate": 0.98,
+      "volume": 22,
+      "voice": "longanxuan_v3",
+      "path": "outputs/videoretalk_final_product_ball_15s/tts_attempt_longanxuan_v3_extended_with_weight_r082.wav",
+      "duration_sec": 15.725688,
+      "status": "created",
+      "error": ""
+    },
+    {
+      "label": "extended_with_weight_r087",
+      "copy": "品质真是不一样。姐妹们看这个便宜小球，软塌塌的，塑料感很重，承重标 200 斤实际偏弱。我们家三层加厚、防爆防压，承重 400 斤，母婴级 PVC，没有异味，用着放心。",
+      "speech_rate": 0.87,
+      "pitch_rate": 0.98,
+      "volume": 22,
+      "voice": "longanxuan_v3",
+      "path": "outputs/videoretalk_final_product_ball_15s/tts_attempt_longanxuan_v3_extended_with_weight_r087.wav",
+      "duration_sec": 15.229375,
+      "status": "created",
+      "error": ""
+    },
+    {
+      "label": "inspection_retry_no_weight_r065",
+      "copy": "品质真是不一样。姐妹们看这个便宜小球，软塌塌的，塑料感很重。我们家三层加厚、防爆防压，承重 400 斤，母婴级 PVC，没有异味，用着放心。",
+      "speech_rate": 0.65,
+      "pitch_rate": 0.98,
+      "volume": 22,
+      "voice": "longanxuan_v3",
+      "retry_reason": "first_videoretalk_failed_DataInspectionFailed_remove_weight_claim",
+      "path": "outputs/videoretalk_final_product_ball_15s/tts_attempt_longanxuan_v3_inspection_retry_no_weight_r065.wav",
+      "duration_sec": 14.210563,
+      "status": "created",
+      "error": ""
+    }
+  ],
+  "new_attempts": [
+    {
+      "label": "extended_r075",
+      "copy": "品质真是不一样。姐妹们看这个便宜小球，软塌塌的，塑料感很重。我们家三层加厚、防爆防压，承重 400 斤，母婴级 PVC，没有异味，用着放心。",
+      "speech_rate": 0.75,
+      "pitch_rate": 0.98,
+      "volume": 22,
+      "voice": "longanxuan_v3",
+      "path": "outputs/videoretalk_final_product_ball_15s/tts_attempt_longanxuan_v3_extended_r075.wav",
+      "duration_sec": 13.244063,
+      "status": "created",
+      "error": ""
+    },
+    {
+      "label": "extended_r070",
+      "copy": "品质真是不一样。姐妹们看这个便宜小球，软塌塌的，塑料感很重。我们家三层加厚、防爆防压，承重 400 斤，母婴级 PVC，没有异味，用着放心。",
+      "speech_rate": 0.7,
+      "pitch_rate": 0.98,
+      "volume": 22,
+      "voice": "longanxuan_v3",
+      "path": "outputs/videoretalk_final_product_ball_15s/tts_attempt_longanxuan_v3_extended_r070.wav",
+      "duration_sec": 13.71425,
+      "status": "created",
+      "error": ""
+    },
+    {
+      "label": "compact_r065",
+      "copy": "品质真是不一样。便宜小球软塌塌，塑料感重。我们家三层加厚、防爆防压，承重 400 斤，母婴级 PVC，没有异味，用着放心。",
+      "speech_rate": 0.65,
+      "pitch_rate": 0.98,
+      "volume": 22,
+      "voice": "longanxuan_v3",
+      "path": "outputs/videoretalk_final_product_ball_15s/tts_attempt_longanxuan_v3_compact_r065.wav",
+      "duration_sec": 12.564875,
+      "status": "created",
+      "error": ""
+    }
+  ],
+  "videoretalk_retry_audio_reason": "first submission failed DataInspectionFailed; retry audio removes weight-comparison sentence and keeps same non-longying fallback voice"
+}
