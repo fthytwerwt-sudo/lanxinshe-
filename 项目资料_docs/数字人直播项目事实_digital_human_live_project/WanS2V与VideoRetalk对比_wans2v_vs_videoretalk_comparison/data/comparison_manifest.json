@@ -1,0 +1,126 @@
+{
+  "status": "completed_report_written_pending_git_closure_at_file_creation_time",
+  "created_date": "2026-06-27",
+  "workspace": "/Volumes/WD_BLACK/澜心社直播",
+  "branch": "main",
+  "remote": "https://github.com/fthytwerwt-sudo/lanxinshe-.git",
+  "task_type": "read_only_comparison_audit + route_planning + AGENTS_rule_update",
+  "read_files": [
+    "AGENTS.md",
+    "GPT项目资料同步包_gpt_project_mechanism_sync/00_GPT_Project上传说明_readme.md",
+    "GPT项目资料同步包_gpt_project_mechanism_sync/上传清单_manifest.md",
+    "GPT项目资料同步包_gpt_project_mechanism_sync/00_协作协议_collaboration_protocol.md",
+    "GPT项目资料同步包_gpt_project_mechanism_sync/01_三层架构与事实源边界_three_layer_source_boundary.md",
+    "GPT项目资料同步包_gpt_project_mechanism_sync/02_P0-P1-P2锚点与抗漂移机制_anchor_priority_anti_drift.md",
+    "GPT项目资料同步包_gpt_project_mechanism_sync/03_GitHub事实源读取机制_github_fact_source_protocol.md",
+    "GPT项目资料同步包_gpt_project_mechanism_sync/04_Codex执行落库机制_codex_execution_to_repo_protocol.md",
+    "GPT项目资料同步包_gpt_project_mechanism_sync/05_外部资料桥接与保真提取机制_external_material_bridge_protocol.md",
+    "GPT项目资料同步包_gpt_project_mechanism_sync/06_路线重判与失败后改线机制_goal_revision_replanning.md",
+    "GPT项目资料同步包_gpt_project_mechanism_sync/07_输出硬规则与中文语义对齐_output_hard_rules.md",
+    "GPT项目资料同步包_gpt_project_mechanism_sync/08_Codex工作区与远端仓库硬边界_codex_workspace_remote_boundary.md",
+    "GPT项目资料同步包_gpt_project_mechanism_sync/20_GPT与Codex自动补全及质量保障机制_gpt_codex_completion_quality_guard.md",
+    "GPT项目资料同步包_gpt_project_mechanism_sync/21_方向型输入到可执行机制补全协议_direction_to_execution_completion_protocol.md",
+    "GPT项目资料同步包_gpt_project_mechanism_sync/22_真实意图澄清闸门机制_true_intent_clarification_gate.md",
+    "GPT项目资料同步包_gpt_project_mechanism_sync/23_六层需求确认与实现设计闸门机制_six_layer_requirement_implementation_gate.md",
+    "GPT项目资料同步包_gpt_project_mechanism_sync/24_Codex长期执行单模板_codex_task_template.md",
+    "GPT项目资料同步包_gpt_project_mechanism_sync/25_AGENTS机制迁移说明_agents_mechanism_migration_note.md",
+    "项目资料_docs/数字人直播项目事实_digital_human_live_project/VideoRetalk_A声音金标准小球15秒重跑_videoretalk_final30_voice_gold_product_ball/00_执行报告_execution_report.md",
+    "项目资料_docs/数字人直播项目事实_digital_human_live_project/VideoRetalk_A声音金标准小球15秒重跑_videoretalk_final30_voice_gold_product_ball/01_A声音金标准与ASR报告_voice_gold_asr_report.md",
+    "项目资料_docs/数字人直播项目事实_digital_human_live_project/VideoRetalk_A声音金标准小球15秒重跑_videoretalk_final30_voice_gold_product_ball/02_声音克隆与新音频报告_voice_clone_audio_report.md",
+    "项目资料_docs/数字人直播项目事实_digital_human_live_project/VideoRetalk_A声音金标准小球15秒重跑_videoretalk_final30_voice_gold_product_ball/03_VideoRetalk生成报告_videoretalk_generation_report.md",
+    "项目资料_docs/数字人直播项目事实_digital_human_live_project/VideoRetalk_A声音金标准小球15秒重跑_videoretalk_final30_voice_gold_product_ball/04_成片质量检测_report.md",
+    "项目资料_docs/数字人直播项目事实_digital_human_live_project/VideoRetalk_A声音金标准小球15秒重跑_videoretalk_final30_voice_gold_product_ball/data/result_summary.csv",
+    "项目资料_docs/数字人直播项目事实_digital_human_live_project/VideoRetalk_A声音金标准小球15秒重跑_videoretalk_final30_voice_gold_product_ball/data/lipsync_metrics.json",
+    "项目资料_docs/数字人直播项目事实_digital_human_live_project/VideoRetalk_A声音金标准小球15秒重跑_videoretalk_final30_voice_gold_product_ball/data/result_video_metadata_summary.json",
+    "项目资料_docs/数字人直播项目事实_digital_human_live_project/正面15秒小球口播样片_front_15s_product_ball_sample/00_执行报告_execution_report.md",
+    "项目资料_docs/数字人直播项目事实_digital_human_live_project/正面15秒小球口播样片_front_15s_product_ball_sample/01_文案压缩与TTS报告_copy_tts_report.md",
+    "项目资料_docs/数字人直播项目事实_digital_human_live_project/正面15秒小球口播样片_front_15s_product_ball_sample/02_参考帧检查报告_reference_frame_report.md",
+    "项目资料_docs/数字人直播项目事实_digital_human_live_project/正面15秒小球口播样片_front_15s_product_ball_sample/03_Wan生成报告_wan_generation_report.md",
+    "项目资料_docs/数字人直播项目事实_digital_human_live_project/正面15秒小球口播样片_front_15s_product_ball_sample/04_口型张嘴幅度检测报告_mouth_open_report.md",
+    "项目资料_docs/数字人直播项目事实_digital_human_live_project/正面15秒小球口播样片_front_15s_product_ball_sample/05_下一轮微调建议_next_tuning_recommendations.md",
+    "项目资料_docs/数字人直播项目事实_digital_human_live_project/正面15秒小球口播样片_front_15s_product_ball_sample/06_本地后处理说明_postprocess_report.md",
+    "项目资料_docs/数字人直播项目事实_digital_human_live_project/正面15秒小球口播样片_front_15s_product_ball_sample/data/generation_manifest.json",
+    "项目资料_docs/数字人直播项目事实_digital_human_live_project/正面15秒小球口播样片_front_15s_product_ball_sample/data/mouth_open_metrics.json",
+    "codex_reports/阿里大模型连接总探针_aliyun_model_connection_probe_report.md"
+  ],
+  "git_commits_checked": [
+    {
+      "commit": "a71e223c99673369d8b613ea83811af0601c9b63",
+      "summary": "Wan configured_only; actual generation skipped by cost guard because ALLOW_WAN_GENERATION_PROBE was not true"
+    },
+    {
+      "commit": "835205b1edc77616d906ab4537ceeefa074c1b1e",
+      "summary": "Wan 720P front 15s product ball sample recorded; raw mouth_face_ratio_p90 threshold miss"
+    },
+    {
+      "commit": "f9a55fd995a876e8b9c3b88d0f97ab4b27ac2e58",
+      "summary": "Local mouth-region postprocess recorded as threshold-passed; not Wan native capability"
+    }
+  ],
+  "artifacts_compared": {
+    "wan_raw_model_output": {
+      "path": "/Volumes/WD_BLACK/澜心社直播/outputs/front_15s_product_ball_mouth_control/front_15s_product_ball_mouth_control_attempt2_raw_failed_threshold.mp4",
+      "media_exists": true,
+      "technical_probe_status": "passed",
+      "local_postprocess_used": false
+    },
+    "wan_local_postprocessed_output": {
+      "path": "/Volumes/WD_BLACK/澜心社直播/outputs/front_15s_product_ball_mouth_control/front_15s_product_ball_mouth_control.mp4",
+      "media_exists": true,
+      "technical_probe_status": "passed",
+      "local_postprocess_used": true
+    },
+    "videoretalk_model_output": {
+      "path": "/Volumes/WD_BLACK/澜心社直播/outputs/videoretalk_final30_voice_gold_product_ball_rerun/videoretalk_final30_voice_gold_product_ball_15s.mp4",
+      "media_exists": true,
+      "technical_probe_status": "passed",
+      "local_postprocess_used": false
+    }
+  },
+  "commands": [
+    "pwd",
+    "git rev-parse --show-toplevel",
+    "git branch --show-current",
+    "git remote -v",
+    "git status --short --branch",
+    "git pull --ff-only",
+    "git show --name-only --oneline a71e223c99673369d8b613ea83811af0601c9b63",
+    "git show --name-only --oneline 835205b1edc77616d906ab4537ceeefa074c1b1e",
+    "git show --name-only --oneline f9a55fd995a876e8b9c3b88d0f97ab4b27ac2e58",
+    "git grep -n Wan -- 项目资料_docs codex_reports scripts config AGENTS.md",
+    "git grep -n mouth_face_ratio -- 项目资料_docs codex_reports scripts config AGENTS.md",
+    "/Users/fan/.codex/skills/video-metadata-probe/scripts/probe_video.sh <existing media path>"
+  ],
+  "local_tools_used": [
+    {
+      "tool": "ffprobe/ffmpeg via video-metadata-probe skill",
+      "purpose": "audit_or_input_preparation_not_fallback",
+      "changed_final_media": false
+    },
+    {
+      "tool": "python3 json/csv parsing",
+      "purpose": "read_only_report_data_extraction",
+      "changed_final_media": false
+    }
+  ],
+  "generated_media": false,
+  "submitted_media": false,
+  "local_fallback_used_this_round": false,
+  "secret_or_signed_url_policy": {
+    "signed_url_written": false,
+    "api_key_written": false,
+    "secret_written": false,
+    "notes": "Reports only reference local paths and redacted prior report status; no full signed URLs are written in this comparison package."
+  },
+  "gaps": [
+    "用户人审待验证",
+    "供应商验收待验证",
+    "Wan-S2V 不依赖本地后处理的口型压幅效果待下一轮模型侧/输入侧 probe 验证",
+    "30 秒 / 60 秒扩展稳定性待验证"
+  ],
+  "blocked_items": [],
+  "git_closure": {
+    "status_at_file_creation": "待验证",
+    "note": "This manifest is written before staging/commit/push. Final live git evidence is reported by Codex after remote HEAD readback."
+  }
+}
