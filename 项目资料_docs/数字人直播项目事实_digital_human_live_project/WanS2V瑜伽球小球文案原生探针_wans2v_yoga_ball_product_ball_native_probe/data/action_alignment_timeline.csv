@@ -1,0 +1,6 @@
+time_range,copy_segment,expected_action,reference_observation,generated_observation,status
+00:00-00:03,品质真是不一样，姐妹们看这个便宜小球...,主播面向镜头，瑜伽球可见，最好有指向/展示动作,C5835下参考视频全段粉色瑜伽球可见，主播坐姿讲解，手部围绕球和胸前做说明手势,A/B/C均为visual_only观察：球可见；A动作评分5，B/C动作评分4,visual_only_partial_alignment_pending_human_review
+00:03-00:06,软塌塌的塑料感很重,最好有按压、拍球、手部比划软塌塌/对比动作,参考中有托球、双手比划、向镜头解释，未见强形变按压,生成候选以讲解手势为主，未稳定出现明确按压变形；标部分成立,visual_only_partial_alignment_pending_human_review
+00:06-00:09,我们家三层加厚防爆防压，承重四百斤,最好有强调、拍球、支撑感、比划厚度/强度,参考中有手势强调和球在腿前稳定展示,生成候选可见手势强调和球稳定；承重/厚度动作只能算讲解型匹配,visual_only_partial_alignment_pending_human_review
+00:09-00:12,母婴级PVC没有异味,信任感、解释感、手势平稳，不要夸张大张嘴,参考中主播正脸解释，动作平稳,A/B/C视觉稳定；但口型硬指标未过，不能标完成,visual_only_partial_alignment_pending_human_review
+00:12-00:15,一年质量保险，用着更放心,微笑、点头、放心/保证类手势，收束自然,参考中有正脸收束和小幅手势,生成候选收束自然度待用户人审；Qwen-VL仅作视觉辅助,visual_only_partial_alignment_pending_human_review
