@@ -1,0 +1,243 @@
+{
+  "status": "completed_happyhorse_large_motion_probe_pending_human_review",
+  "created_at": "2026-06-29",
+  "provider": "alibaba_dashscope",
+  "model": "happyhorse-1.0-video-edit",
+  "local_i2v_entry_found_but_not_used_for_motion_probe": [
+    "docs/happyhorse_i2v_connection.md",
+    "scripts/check_happyhorse_i2v_connection.py"
+  ],
+  "official_docs_used": [
+    "https://help.aliyun.com/zh/model-studio/happyhorse-image-to-video-api-reference",
+    "https://help.aliyun.com/zh/model-studio/happyhorse-video-edit-api-reference"
+  ],
+  "route_used": "happyhorse_video_edit_with_video_input_and_first_frame_reference",
+  "input_reference_type": "video_and_reference_image",
+  "motion_reference_used": true,
+  "expression_reference_used": true,
+  "audio_reference_used": "source_audio_embedded_in_input_video",
+  "main_paid_task_count": 3,
+  "rescue_retry_count": 1,
+  "paid_task_count_total": 4,
+  "local_fallback_used": false,
+  "media_committed": false,
+  "selected_final_candidates": [
+    "candidate_01_from_source_01",
+    "candidate_02_from_source_02",
+    "candidate_03_from_source_03_rescue"
+  ],
+  "all_generation_records": [
+    {
+      "source_id": "source_01",
+      "candidate_id": "candidate_01_from_source_01",
+      "model": "happyhorse-1.0-video-edit",
+      "task_id": "552f7c34-d0ed-49b6-9f1a-2af87fbc8e0a",
+      "task_status": "SUCCEEDED",
+      "route_used": "happyhorse_1_0_video_edit_with_video_input_and_first_frame_reference",
+      "selected_segment": "50.0-65.0s",
+      "input_reference_type": "video_and_reference_image",
+      "motion_reference_used": true,
+      "expression_reference_used": true,
+      "audio_reference_used": "source_audio_embedded_in_input_video",
+      "input_clip_path": "/Volumes/WD_BLACK/澜心社直播/outputs/happyhorse_large_motion_reconstruction_probe/input_clips/source_01_selected_50_65s_input.mp4",
+      "reference_image_path": "/Volumes/WD_BLACK/澜心社直播/outputs/happyhorse_large_motion_reconstruction_probe/input_frames/source_01_reference_first_frame.jpg",
+      "input_video_object_key": "lanxin-live/happyhorse/happyhorse_large_motion_reconstruction_probe/20260629_185704/candidate_01_from_source_01/input_motion_reference.mp4",
+      "reference_image_object_key": "lanxin-live/happyhorse/happyhorse_large_motion_reconstruction_probe/20260629_185704/candidate_01_from_source_01/reference_first_frame.jpg",
+      "input_video_signed_url_redacted": "https://zhibo11122.oss-cn-beijing.aliyuncs.com/lanxin-live%2Fhappyhorse%2Fhappyhorse_large_motion_reconstruction_probe%2F20260629_185704%2Fcandidate_01_from_source_01%2Finput_motion_reference.mp4?[REDACTED_QUERY]",
+      "reference_image_signed_url_redacted": "https://zhibo11122.oss-cn-beijing.aliyuncs.com/lanxin-live%2Fhappyhorse%2Fhappyhorse_large_motion_reconstruction_probe%2F20260629_185704%2Fcandidate_01_from_source_01%2Freference_first_frame.jpg?[REDACTED_QUERY]",
+      "output_path": "/Volumes/WD_BLACK/澜心社直播/outputs/happyhorse_large_motion_reconstruction_probe/candidates/candidate_01_from_source_01_happyhorse_video_edit_native.mp4",
+      "output_video_url_redacted": "https://dashscope-a717.oss-accelerate.aliyuncs.com/1d/1f/20260629/e8f82ed6/81950937-ryvbw2y3_a776e1043e08_merged.mp4?[REDACTED_QUERY]",
+      "usage": {
+        "duration": 30.0,
+        "input_video_duration": 15,
+        "output_video_duration": 15,
+        "video_count": 1,
+        "SR": 720
+      },
+      "output_probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "avg_frame_rate": "24/1"
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "channels": 2,
+            "avg_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "15.018000",
+          "size": "11762570"
+        }
+      },
+      "local_fallback_used": false
+    },
+    {
+      "source_id": "source_02",
+      "candidate_id": "candidate_02_from_source_02",
+      "model": "happyhorse-1.0-video-edit",
+      "task_id": "4231a2d2-8b9e-4f27-ad5b-52163b64ba84",
+      "task_status": "SUCCEEDED",
+      "route_used": "happyhorse_1_0_video_edit_with_video_input_and_first_frame_reference",
+      "selected_segment": "28.0-43.0s",
+      "input_reference_type": "video_and_reference_image",
+      "motion_reference_used": true,
+      "expression_reference_used": true,
+      "audio_reference_used": "source_audio_embedded_in_input_video",
+      "input_clip_path": "/Volumes/WD_BLACK/澜心社直播/outputs/happyhorse_large_motion_reconstruction_probe/input_clips/source_02_selected_28_43s_input.mp4",
+      "reference_image_path": "/Volumes/WD_BLACK/澜心社直播/outputs/happyhorse_large_motion_reconstruction_probe/input_frames/source_02_reference_first_frame.jpg",
+      "input_video_object_key": "lanxin-live/happyhorse/happyhorse_large_motion_reconstruction_probe/20260629_185704/candidate_02_from_source_02/input_motion_reference.mp4",
+      "reference_image_object_key": "lanxin-live/happyhorse/happyhorse_large_motion_reconstruction_probe/20260629_185704/candidate_02_from_source_02/reference_first_frame.jpg",
+      "input_video_signed_url_redacted": "https://zhibo11122.oss-cn-beijing.aliyuncs.com/lanxin-live%2Fhappyhorse%2Fhappyhorse_large_motion_reconstruction_probe%2F20260629_185704%2Fcandidate_02_from_source_02%2Finput_motion_reference.mp4?[REDACTED_QUERY]",
+      "reference_image_signed_url_redacted": "https://zhibo11122.oss-cn-beijing.aliyuncs.com/lanxin-live%2Fhappyhorse%2Fhappyhorse_large_motion_reconstruction_probe%2F20260629_185704%2Fcandidate_02_from_source_02%2Freference_first_frame.jpg?[REDACTED_QUERY]",
+      "output_path": "/Volumes/WD_BLACK/澜心社直播/outputs/happyhorse_large_motion_reconstruction_probe/candidates/candidate_02_from_source_02_happyhorse_video_edit_native.mp4",
+      "output_video_url_redacted": "https://dashscope-a717.oss-accelerate.aliyuncs.com/1d/38/20260629/e8f82ed6/41120419-eFcU2kIG_6ad6d87fdd67_merged.mp4?[REDACTED_QUERY]",
+      "usage": {
+        "duration": 30.0,
+        "input_video_duration": 15,
+        "output_video_duration": 15,
+        "video_count": 1,
+        "SR": 720
+      },
+      "output_probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "avg_frame_rate": "24/1"
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "channels": 2,
+            "avg_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "15.018000",
+          "size": "4862331"
+        }
+      },
+      "local_fallback_used": false
+    },
+    {
+      "status": "completed",
+      "rescue_retry": true,
+      "rescue_reason": "prompt_scene_mismatch_in_initial_candidate_03_not_quality_sampling",
+      "source_id": "source_03",
+      "candidate_id": "candidate_03_from_source_03_rescue",
+      "model": "happyhorse-1.0-video-edit",
+      "task_id": "de8b8cd7-5fca-4262-bb62-e215dd86a498",
+      "task_status": "SUCCEEDED",
+      "route_used": "happyhorse_1_0_video_edit_with_video_input_and_first_frame_reference",
+      "selected_segment": "0.0-15.0s",
+      "motion_reference_used": true,
+      "expression_reference_used": true,
+      "audio_reference_used": "source_audio_embedded_in_input_video",
+      "input_video_object_key": "lanxin-live/happyhorse/happyhorse_large_motion_reconstruction_probe/20260629_191419_rescue_source_03/candidate_03_from_source_03_rescue/input_motion_reference.mp4",
+      "reference_image_object_key": "lanxin-live/happyhorse/happyhorse_large_motion_reconstruction_probe/20260629_191419_rescue_source_03/candidate_03_from_source_03_rescue/reference_first_frame.jpg",
+      "input_video_signed_url_redacted": "https://zhibo11122.oss-cn-beijing.aliyuncs.com/lanxin-live%2Fhappyhorse%2Fhappyhorse_large_motion_reconstruction_probe%2F20260629_191419_rescue_source_03%2Fcandidate_03_from_source_03_rescue%2Finput_motion_reference.mp4?[REDACTED_QUERY]",
+      "reference_image_signed_url_redacted": "https://zhibo11122.oss-cn-beijing.aliyuncs.com/lanxin-live%2Fhappyhorse%2Fhappyhorse_large_motion_reconstruction_probe%2F20260629_191419_rescue_source_03%2Fcandidate_03_from_source_03_rescue%2Freference_first_frame.jpg?[REDACTED_QUERY]",
+      "output_path": "/Volumes/WD_BLACK/澜心社直播/outputs/happyhorse_large_motion_reconstruction_probe/candidates/candidate_03_from_source_03_rescue_happyhorse_video_edit_native.mp4",
+      "output_video_url_redacted": "https://dashscope-a717.oss-accelerate.aliyuncs.com/1d/aa/20260629/e8f82ed6/1025433-eTsUkH9Q_4ce579600711_merged.mp4?[REDACTED_QUERY]",
+      "usage": {
+        "duration": 30.0,
+        "input_video_duration": 15,
+        "output_video_duration": 15,
+        "video_count": 1,
+        "SR": 720
+      },
+      "output_probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "avg_frame_rate": "24/1"
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "channels": 2,
+            "avg_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "15.018000",
+          "size": "7516260"
+        }
+      },
+      "local_fallback_used": false
+    }
+  ],
+  "initial_candidate_03_not_selected": {
+    "source_id": "source_03",
+    "candidate_id": "candidate_03_from_source_03",
+    "model": "happyhorse-1.0-video-edit",
+    "task_id": "1d50c8f7-9fff-4a23-8552-a5386a25e939",
+    "task_status": "SUCCEEDED",
+    "route_used": "happyhorse_1_0_video_edit_with_video_input_and_first_frame_reference",
+    "selected_segment": "0.0-15.0s",
+    "input_reference_type": "video_and_reference_image",
+    "motion_reference_used": true,
+    "expression_reference_used": true,
+    "audio_reference_used": "source_audio_embedded_in_input_video",
+    "input_clip_path": "/Volumes/WD_BLACK/澜心社直播/outputs/happyhorse_large_motion_reconstruction_probe/input_clips/source_03_selected_0_15s_input.mp4",
+    "reference_image_path": "/Volumes/WD_BLACK/澜心社直播/outputs/happyhorse_large_motion_reconstruction_probe/input_frames/source_03_reference_first_frame.jpg",
+    "input_video_object_key": "lanxin-live/happyhorse/happyhorse_large_motion_reconstruction_probe/20260629_185704/candidate_03_from_source_03/input_motion_reference.mp4",
+    "reference_image_object_key": "lanxin-live/happyhorse/happyhorse_large_motion_reconstruction_probe/20260629_185704/candidate_03_from_source_03/reference_first_frame.jpg",
+    "input_video_signed_url_redacted": "https://zhibo11122.oss-cn-beijing.aliyuncs.com/lanxin-live%2Fhappyhorse%2Fhappyhorse_large_motion_reconstruction_probe%2F20260629_185704%2Fcandidate_03_from_source_03%2Finput_motion_reference.mp4?[REDACTED_QUERY]",
+    "reference_image_signed_url_redacted": "https://zhibo11122.oss-cn-beijing.aliyuncs.com/lanxin-live%2Fhappyhorse%2Fhappyhorse_large_motion_reconstruction_probe%2F20260629_185704%2Fcandidate_03_from_source_03%2Freference_first_frame.jpg?[REDACTED_QUERY]",
+    "output_path": "/Volumes/WD_BLACK/澜心社直播/outputs/happyhorse_large_motion_reconstruction_probe/candidates/candidate_03_from_source_03_happyhorse_video_edit_native.mp4",
+    "output_video_url_redacted": "https://dashscope-a717.oss-accelerate.aliyuncs.com/1d/de/20260629/e8f82ed6/17358660-34tcRfuP_fc156ba7b492_merged.mp4?[REDACTED_QUERY]",
+    "usage": {
+      "duration": 30.0,
+      "input_video_duration": 15,
+      "output_video_duration": 15,
+      "video_count": 1,
+      "SR": 720
+    },
+    "output_probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 720,
+          "height": 1280,
+          "avg_frame_rate": "24/1"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "channels": 2,
+          "avg_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "15.018000",
+        "size": "5689635"
+      }
+    },
+    "local_fallback_used": false
+  },
+  "runtime_manifest_paths": [
+    "/Volumes/WD_BLACK/澜心社直播/outputs/happyhorse_large_motion_reconstruction_probe/runtime_logs/happyhorse_video_edit_runtime_manifest.json",
+    "/Volumes/WD_BLACK/澜心社直播/outputs/happyhorse_large_motion_reconstruction_probe/runtime_logs/candidate_03_from_source_03_rescue_manifest.json"
+  ]
+}

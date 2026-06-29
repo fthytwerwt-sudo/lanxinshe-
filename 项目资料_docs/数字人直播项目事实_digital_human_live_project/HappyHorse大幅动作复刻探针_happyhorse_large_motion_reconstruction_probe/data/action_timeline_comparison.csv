@@ -1,0 +1,16 @@
+source_id,time_range,source_action_observed,generated_action_observed,source_expression_observed,generated_expression_observed,matched,mismatch_reason,severity
+source_01,0-3s,站姿张口强调，手在腰胯附近,基本保留站姿、张口表情和手位,张口强调/脸部正面,基本保留,true,,low
+source_01,3-6s,身体轻晃，单手手势收放,手势方向和上身节奏接近,认真讲解,接近,true,,low
+source_01,6-9s,右手/左手交替向胸前/下方变化,手部大体跟随，细手指不可硬判,微笑/强调,接近,partial,hand_finger_detail_not_verifiable_from_contact_sheet,medium
+source_01,9-12s,低头/下看，手回到腰胯附近,低头和手位基本保留,专注强调,接近,true,,low
+source_01,12-15s,站姿收尾，笑/说话表情,站姿和笑感接近,笑/开口,接近,true,,low
+source_02,0-3s,桥式躺卧，膝盖弯曲，头侧仰,桥式姿态、腿部角度基本保留,脸部小，侧仰,粗略保留,partial,face_too_small_oblique_for_micro_expression,medium
+source_02,3-6s,手在脸旁/胸前变化,手势大体存在，细节不稳定,讲话口型,待人审,partial,mouth_eye_detail_low_confidence,medium
+source_02,6-9s,桥式姿态保持，手部抬起,姿态保持较好,侧脸讲解,待人审,partial,oblique_face_limits_review,medium
+source_02,9-12s,手势继续，腿部位置稳定,腿部和床面关系保持,侧脸/口型,待人审,partial,fine_hand_and_mouth_detail_low_confidence,medium
+source_02,12-15s,身体姿态稳定收尾,姿态稳定，动作不僵硬,脸部侧仰,待人审,partial,micro_expression_not_reliable,medium
+source_03,0-3s,坐姿分腿，双手向下/外展，小球在身前,纠错版保留坐姿、小球和手部位置,正面说话,基本保留,true,,low
+source_03,3-6s,双手下压/外展，肩部同步,手势方向和肩部节奏接近,口型收放,接近,true,,low
+source_03,6-9s,双手位置变化，身体重心微调,大体跟随，细手指需人审,专注表达,接近,partial,finger_detail_not_hard_verified,low
+source_03,9-12s,手臂外展，口型张开,动作幅度和节奏接近,开口讲解,接近,true,,low
+source_03,12-15s,手势回落/收尾,手势与身体节奏基本保留,严肃/专注,接近,true,,low
