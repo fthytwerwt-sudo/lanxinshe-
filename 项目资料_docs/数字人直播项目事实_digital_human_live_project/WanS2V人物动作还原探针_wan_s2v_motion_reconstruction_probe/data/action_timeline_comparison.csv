@@ -1,0 +1,16 @@
+source_id,time_range,source_action_observed,generated_action_observed,matched,mismatch_reason,severity
+source_01,0-3s,"standing; one hand near hip, other hand begins speech gesture; head and mouth active","standing pose retained; one hand on hip; other arm mostly low; mouth active",partial,"coarse pose retained, fine hand rhythm missing",medium
+source_01,3-6s,"head turns slightly, torso leans, hand gestures near waist/chest","body remains nearly centered; hand movement limited",false,"shoulder/body motion under-reconstructed",high
+source_01,6-9s,"hands alternate downward/upward gestures; expression changes","minimal arm change; mouth movement dominates",false,"hand gesture sequence lost",high
+source_01,9-12s,"two-hand/waist gestures and stronger body emphasis","static talking-head style with small pose variation",false,"action intensity collapsed",high
+source_01,12-15s,"continued hand rhythm and head expression","face/mouth expressive; body/arms largely frozen",partial,"facial motion exists but body action missing",high
+source_02,0-3s,"lying bridge pose; hands raised near face/chest","lying pose retained; hands held similarly",partial,"coarse pose close but no true timing transfer",medium
+source_02,3-6s,"hips stay elevated; fingers/hand gestures change while speaking","pose mostly static; one hand held up",partial,"large posture retained, hand rhythm weak",medium
+source_02,6-9s,"one hand points/raises; head angled upward","hand remains near same position; face small/angled",partial,"hand timing not reconstructed",medium
+source_02,9-12s,"continued bridge posture with small hand and head changes","visual pose stable, little motion change",partial,"source is semi-static but generated motion is even flatter",medium
+source_02,12-15s,"hand still gestures while body holds bridge","candidate remains close to reference frame",partial,"coarse pose only, not motion reference",medium
+source_03,0-3s,"seated straddle on ball; both arms forward/down; mouth open","seated pose retained; hands fixed low, mouth active",partial,"pose retained, hand path missing",medium
+source_03,3-6s,"hands lower/open; shoulders and torso shift","hands stay near knees, small motion only",false,"two-arm gesture not reconstructed",high
+source_03,6-9s,"hands spread and body settles; face changes","candidate posture stable, limited shoulder change",false,"shoulder/hand rhythm missing",high
+source_03,9-12s,"palms/hands open outward; facial expression changes","mouth and eyes change; hands remain similar",partial,"facial motion retained more than body motion",medium
+source_03,12-15s,"hands return downward; head/face continue speech","pose stable; mouth continues",partial,"static pose retained but action sequence absent",medium
