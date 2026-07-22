@@ -1,0 +1,908 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-07-22T00:00:00+08:00",
+  "readiness_at_generation": "NO",
+  "execution_order": [
+    "C55-P0-01",
+    "C55-P0-02",
+    "C55-P0-03",
+    "C55-P0-04",
+    "C55-P0-05",
+    "C55-P0-06",
+    "C55-P0-07",
+    "C55-P0-08",
+    "C55-P1-01",
+    "C55-P1-02",
+    "C55-P2-01",
+    "C55-P2-02",
+    "C55-P2-03",
+    "C55-P2-04"
+  ],
+  "tasks": [
+    {
+      "task_id": "C55-P0-01",
+      "priority": "P0",
+      "goal": "建立至少10条经人工逐字复核、可重复执行的历史评论输入集",
+      "context": "最新直播目录有10个真实录屏，但当前只有视觉抽样，没有评论与口播逐字因果映射，也没有runtime输入格式",
+      "constraints": [
+        "先离线回放，不接真实平台API",
+        "未经人工复核的OCR或视觉近似文字必须标needs_review",
+        "不得复制完整视频到Git",
+        "评论中的个人信息需去标识化"
+      ],
+      "impact_check": [
+        "数据schema与后续orchestrator接口",
+        "客户隐私和录屏访问权限",
+        "Git只纳入小型脱敏fixture"
+      ],
+      "files_to_read": [
+        "_audit_second_payment_readiness/03_直播录屏与评论证据审计.md",
+        "最新直播/",
+        "GPT项目资料同步包_gpt_project_mechanism_sync/05_外部资料桥接与保真提取机制_external_material_bridge_protocol.md"
+      ],
+      "files_to_modify": [],
+      "files_to_create": [
+        "tests/fixtures/reviewed_live_comments.jsonl",
+        "tests/fixtures/reviewed_live_comments.schema.json",
+        "docs/v0_comment_review_sheet.md"
+      ],
+      "execution_steps": [
+        "从审计联系表回到原录屏时间点",
+        "人工逐字复核至少10条评论并分配event_id",
+        "记录source_video、timestamp、comment_text、expected_class、expected_risk、reviewer和reviewed_at",
+        "去标识化后输出JSONL与schema",
+        "添加重复ID、缺字段、未复核样本拒绝测试"
+      ],
+      "tests": [
+        "schema validation passes for all reviewed rows",
+        "duplicate event_id is rejected",
+        "review_status!=approved is excluded from acceptance fixture",
+        "at least three classes and one manual_takeover case exist"
+      ],
+      "done_when": [
+        "至少10条approved评论",
+        "每条可回到原视频和时间戳",
+        "无直接个人标识",
+        "schema和负例测试通过"
+      ],
+      "blocked_if": [
+        "无法获得人工逐字复核",
+        "录屏授权不允许抽取评论",
+        "需要把原视频提交到Git"
+      ],
+      "rollback": "删除本任务新建的小型fixture和review sheet；不触碰原录屏",
+      "output_format": "task_id/status/commands/result/failed_items/files_changed/tests/evidence_paths/human_review_status",
+      "commands": [
+        "find 最新直播 -maxdepth 1 -type f ! -name \"._*\" -print",
+        "python3 scripts/validate_reviewed_comments.py tests/fixtures/reviewed_live_comments.jsonl",
+        "python3 -m unittest tests.test_reviewed_comments -v"
+      ]
+    },
+    {
+      "task_id": "C55-P0-02",
+      "priority": "P0",
+      "goal": "建立经人工确认的最小知识库和六类版本化业务规则",
+      "context": "课程解析资料已导入但整体partial_completed_needs_review；local-only文档有分类、回复、异议、促销、禁限表达和人工接管草案",
+      "constraints": [
+        "只有approved条目可以进入runtime知识库",
+        "没有来源、来源冲突或低置信时转人工",
+        "价格、权益、退款、健康和促销表述必须由客户确认",
+        "不引入新依赖，优先JSON/YAML和现有utils"
+      ],
+      "impact_check": [
+        "知识版本将影响回复和客户验收",
+        "合规规则必须fail-closed",
+        "大体量原始chunks不直接纳入Git运行包"
+      ],
+      "files_to_read": [
+        "项目资料_docs/课程解析资料_course_analysis/",
+        "项目资料_docs/课程解析资料待复核清单_course_analysis_review_queue.md",
+        "local_only_reports/直播前期总控施工图_live_front_planning_blueprint/04_评论规则判断与回复生成策略_comment_rule_judgement_and_reply_strategy.md",
+        "_audit_second_payment_readiness/05_第二阶段验收矩阵.md"
+      ],
+      "files_to_modify": [],
+      "files_to_create": [
+        "content/v0_knowledge/approved_knowledge.jsonl",
+        "content/v0_knowledge/manifest.json",
+        "config/v0_rules/comment_classification.json",
+        "config/v0_rules/reply_policy.json",
+        "config/v0_rules/objection_policy.json",
+        "config/v0_rules/promotion_policy.json",
+        "config/v0_rules/forbidden_expressions.json",
+        "config/v0_rules/manual_takeover.json"
+      ],
+      "execution_steps": [
+        "选出最小业务事实集合",
+        "由业务方逐条确认source_id和有效期",
+        "把六类规则拆为独立版本化文件",
+        "定义优先级、冲突策略和fail-closed默认值",
+        "建立知识与规则schema和fixtures"
+      ],
+      "tests": [
+        "every knowledge item has approved reviewer and source_id",
+        "rule files pass schema validation",
+        "forbidden expression match forces manual_takeover",
+        "unknown or conflicting fact never auto-replies"
+      ],
+      "done_when": [
+        "最小知识库全部approved且可回读来源",
+        "六类规则版本化",
+        "客户敏感事实有书面确认",
+        "正负例测试通过"
+      ],
+      "blocked_if": [
+        "客户未确认价格/权益/退款/健康/促销边界",
+        "只能使用未经复核课程解析结果",
+        "规则冲突无法确定优先级"
+      ],
+      "rollback": "回退本任务独立commit并保留原课程资料不变",
+      "output_format": "task_id/status/rule_version/knowledge_version/review_counts/tests/evidence_paths/blocked_reason",
+      "commands": [
+        "python3 scripts/validate_v0_assets.py",
+        "python3 -m unittest tests.test_v0_assets -v"
+      ]
+    },
+    {
+      "task_id": "C55-P0-03",
+      "priority": "P0",
+      "goal": "实现评论事件、确定性分类/风控、知识调用、人工接管和append-only日志编排",
+      "context": "当前QwenClient是one-shot底座，规则和知识没有runtime引用，缺orchestrator、transaction log和manual takeover状态机",
+      "constraints": [
+        "先fake provider和离线回放",
+        "所有状态变更必须记录event_id",
+        "高风险/未知/第三方错误一律转人工",
+        "日志脱敏且不得记录secret"
+      ],
+      "impact_check": [
+        "新增核心domain接口和事件schema",
+        "需兼容现有QwenClient但不能依赖其固定开场prompt",
+        "日志路径必须与运行产物/Git边界分离"
+      ],
+      "files_to_read": [
+        "src/live_brain/qwen_client.py",
+        "scripts/run_live_demo.py",
+        "tests/",
+        "content/v0_knowledge/",
+        "config/v0_rules/"
+      ],
+      "files_to_modify": [
+        "src/live_brain/",
+        "tests/"
+      ],
+      "files_to_create": [
+        "src/live_brain/models.py",
+        "src/live_brain/comment_replay.py",
+        "src/live_brain/rule_engine.py",
+        "src/live_brain/knowledge_store.py",
+        "src/live_brain/orchestrator.py",
+        "src/live_brain/audit_log.py",
+        "tests/test_v0_orchestrator.py"
+      ],
+      "execution_steps": [
+        "定义CommentEvent、Decision、KnowledgeCitation、TakeoverEvent和BroadcastReceipt",
+        "实现JSONL replay adapter",
+        "实现确定性规则优先级和manual takeover状态机",
+        "实现最小知识readback与source citation",
+        "实现append-only脱敏日志",
+        "用fake generator和fake broadcaster完成离线集成"
+      ],
+      "tests": [
+        "safe knowledge comment reaches generated state",
+        "high risk comment reaches manual_takeover without generator call",
+        "unknown fact reaches manual_takeover",
+        "provider timeout is logged and handed over",
+        "three event_ids never cross-contaminate",
+        "logs contain no configured secret values"
+      ],
+      "done_when": [
+        "三类评论离线闭环通过",
+        "状态机和日志schema稳定",
+        "高风险与故障fail-closed",
+        "unit/integration tests全通过"
+      ],
+      "blocked_if": [
+        "C55-P0-01或02未完成",
+        "必须改变未经授权的本地ignored代码归属",
+        "无法保证日志脱敏"
+      ],
+      "rollback": "回退独立实现commit；fixture和原资料保持不变",
+      "output_format": "task_id/status/state_coverage/commands/tests/log_samples/files_changed/commit/push/remote_head",
+      "commands": [
+        "PYTHONDONTWRITEBYTECODE=1 python3 -B scripts/run_v0_controlled_demo.py --offline --input tests/fixtures/reviewed_live_comments.jsonl",
+        "PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest tests.test_v0_orchestrator -v"
+      ]
+    },
+    {
+      "task_id": "C55-P0-04",
+      "priority": "P0",
+      "goal": "把Qwen动态回复接入受约束V0编排并证明不同评论产生可追溯的不同回复",
+      "context": "当前Qwen代码只证明one-shot chat，探针使用固定TEXT_TEST_INPUT，未组合评论、知识和规则结果",
+      "constraints": [
+        "先mock/dry-run，真实付费调用需批准和成本上限",
+        "输出必须schema化并带knowledge source_id",
+        "超时、HTTP错误、结构错误和无来源必须转人工",
+        "不得用固定回复串演冒充动态生成"
+      ],
+      "impact_check": [
+        "模型prompt和schema变更影响回复行为",
+        "外部调用可能产生费用",
+        "需记录model/version/latency但不记录secret"
+      ],
+      "files_to_read": [
+        "src/live_brain/qwen_client.py",
+        "config/qwen_config.py",
+        "scripts/probe_alibaba_model_connections.py",
+        "src/live_brain/orchestrator.py"
+      ],
+      "files_to_modify": [
+        "src/live_brain/qwen_client.py",
+        "src/live_brain/orchestrator.py",
+        "tests/"
+      ],
+      "files_to_create": [
+        "src/live_brain/reply_generator.py",
+        "tests/test_reply_generator.py"
+      ],
+      "execution_steps": [
+        "定义严格回复schema",
+        "把评论、分类、approved citations和规则版本组合为输入",
+        "实现timeout和错误到manual_takeover映射",
+        "用mock覆盖结构和失败路径",
+        "批准后只用三条脱敏评论执行最小真实探针并保留redacted证据"
+      ],
+      "tests": [
+        "different comments produce distinct structured replies",
+        "same approved fixture remains structurally repeatable",
+        "missing citation is rejected",
+        "timeout/http/schema error triggers manual_takeover",
+        "paid call count and cost ceiling are enforced"
+      ],
+      "done_when": [
+        "三条不同评论的结构化动态回复可重复",
+        "每条有source_id或明确规则来源",
+        "所有失败路径转人工并有日志"
+      ],
+      "blocked_if": [
+        "paid API未批准",
+        "缺可用Qwen账号/配额",
+        "模型输出无法稳定满足schema"
+      ],
+      "rollback": "关闭Qwen provider feature flag并回退独立commit，保留fake provider",
+      "output_format": "task_id/status/provider/call_count/cost_estimate/tests/redacted_evidence/files_changed/blocked_reason",
+      "commands": [
+        "PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest tests.test_reply_generator -v",
+        "python3 scripts/run_v0_controlled_demo.py --offline --provider qwen-mock"
+      ]
+    },
+    {
+      "task_id": "C55-P0-05",
+      "priority": "P0",
+      "goal": "建立真正的Alibaba 3D数字人动态播报适配器和可审计回执",
+      "context": "现有Wan/VideoRetalk是离线视频生成或口型替换，仓库未找到3D session/avatar/app-id或动态speech adapter",
+      "constraints": [
+        "只依据阿里官方文档和当前账号能力",
+        "真实调用前必须确认API、账号、配额、费用和授权",
+        "不得把离线视频冒充实时3D播报",
+        "必须保留fake adapter用于无费用测试"
+      ],
+      "impact_check": [
+        "第三方账号和费用",
+        "播报延迟与session生命周期",
+        "secret管理和日志脱敏",
+        "失败时人工接管"
+      ],
+      "files_to_read": [
+        "config/alibaba_model_registry.py",
+        "codex_reports/阿里大模型连接总探针_aliyun_model_connection_probe_report.md",
+        "src/live_brain/models.py",
+        "src/live_brain/orchestrator.py"
+      ],
+      "files_to_modify": [
+        "src/live_brain/orchestrator.py",
+        "config/.env.example",
+        "tests/"
+      ],
+      "files_to_create": [
+        "src/live_brain/broadcasters/base.py",
+        "src/live_brain/broadcasters/fake.py",
+        "src/live_brain/broadcasters/alibaba_3d.py",
+        "tests/test_broadcast_adapters.py",
+        "docs/alibaba_3d_capability_and_cost_gate.md"
+      ],
+      "execution_steps": [
+        "核对官方API和账号可用能力",
+        "定义BroadcastRequest和BroadcastReceipt",
+        "实现fake adapter并覆盖成功/失败/超时",
+        "实现Alibaba 3D adapter的dry-run和secret guard",
+        "批准后执行一条最小真实播报并保存redacted receipt",
+        "把失败映射到manual_takeover"
+      ],
+      "tests": [
+        "fake adapter returns deterministic receipt",
+        "missing credentials fail before network call",
+        "timeout/error triggers manual_takeover",
+        "real provider receipt contains provider request id when approved",
+        "logs contain no secret values"
+      ],
+      "done_when": [
+        "官方能力与账号状态有证据",
+        "fake和真实adapter接口一致",
+        "至少一条经批准真实播报有回执",
+        "失败降级和日志通过"
+      ],
+      "blocked_if": [
+        "官方API不存在或账号未开通",
+        "费用/配额未批准",
+        "客户未提供数字人ID或授权",
+        "只能使用Wan/VideoRetalk离线结果替代"
+      ],
+      "rollback": "关闭real provider feature flag、删除本任务adapter commit，不影响fake闭环",
+      "output_format": "task_id/status/official_capability/account_status/cost_gate/receipt/tests/files_changed/blocked_reason",
+      "commands": [
+        "python3 -m unittest tests.test_broadcast_adapters -v",
+        "python3 scripts/run_v0_controlled_demo.py --offline --broadcaster fake",
+        "经费用批准后才运行真实Alibaba 3D最小调用命令"
+      ]
+    },
+    {
+      "task_id": "C55-P0-06",
+      "priority": "P0",
+      "goal": "完成三条不同评论的端到端可重复演示、故障降级和证据归档",
+      "context": "第二阶段最低闭环需要证明非固定模板、不同评论动态进入知识/规则/风险/播报链路并留下日志",
+      "constraints": [
+        "至少知识咨询、促销/异议、高风险三类",
+        "连续运行两次",
+        "高风险必须manual_takeover",
+        "真实provider失败不能用预录视频替代"
+      ],
+      "impact_check": [
+        "会产生本地运行日志和可能的第三方费用",
+        "客户演示数据需要脱敏",
+        "失败证据必须保留"
+      ],
+      "files_to_read": [
+        "tests/fixtures/reviewed_live_comments.jsonl",
+        "src/live_brain/orchestrator.py",
+        "src/live_brain/broadcasters/alibaba_3d.py",
+        "_audit_second_payment_readiness/10_客户演示与第二阶段收款包.md"
+      ],
+      "files_to_modify": [
+        "scripts/run_live_demo.py",
+        "tests/"
+      ],
+      "files_to_create": [
+        "scripts/run_v0_controlled_demo.py",
+        "tests/test_v0_demo_e2e.py",
+        "docs/v0_demo_sop.md"
+      ],
+      "execution_steps": [
+        "实现显式fake/real provider参数和默认无费用模式",
+        "连续回放三类approved评论",
+        "再次运行并核对event_id、状态、引用和回执",
+        "注入Qwen、检索和播报故障验证转人工",
+        "生成脱敏manifest和演示SOP"
+      ],
+      "tests": [
+        "three comments complete expected distinct paths",
+        "two consecutive runs have no event loss or state leakage",
+        "fault injection always produces logged manual_takeover",
+        "demo defaults to zero-cost fake mode",
+        "real mode refuses to start without explicit approval flag"
+      ],
+      "done_when": [
+        "三评论连续两次通过",
+        "知识、规则、动态回复、接管/播报全日志可回读",
+        "故障降级已演练",
+        "SOP可由另一名执行者复现"
+      ],
+      "blocked_if": [
+        "前置任务未完成",
+        "真实provider受阻且客户不接受书面替代",
+        "日志无法证明非固定模板"
+      ],
+      "rollback": "停止demo进程、删除运行产物，回退独立脚本commit；不修改源录屏",
+      "output_format": "task_id/status/run_ids/comments/results/fault_injection/log_manifest/tests/blocked_reason",
+      "commands": [
+        "python3 scripts/run_v0_controlled_demo.py --offline --repeat 2",
+        "python3 -m unittest tests.test_v0_demo_e2e -v",
+        "经费用批准后使用--provider real --broadcaster alibaba-3d"
+      ]
+    },
+    {
+      "task_id": "C55-P0-07",
+      "priority": "P0",
+      "goal": "收敛讲解/回复/促销三类30秒样片及声音、视觉、知识和规则证据包",
+      "context": "当前样片分散，部分为15秒或未明确分类，部分历史样片使用local fallback；客户画面认可没有和canonical文件一一映射",
+      "constraints": [
+        "一类一份canonical文件",
+        "不重新编码或本地修最终模型视频",
+        "严格标model_native_output与local_fallback_used",
+        "技术可解码、人审、客户确认分别记录"
+      ],
+      "impact_check": [
+        "大媒体不提交Git，只提交manifest和可访问路径",
+        "现有tracked删除PDF不得擅自恢复或覆盖",
+        "样片版本选择需要客户/业务判断"
+      ],
+      "files_to_read": [
+        "outputs/",
+        "项目资料_docs/数字人直播项目事实_digital_human_live_project/",
+        "客户交付文档/客户沟通版_数字人直播系统交付边界费用验收说明_client_scope_fee_acceptance.md",
+        "_audit_second_payment_readiness/05_第二阶段验收矩阵.md"
+      ],
+      "files_to_modify": [],
+      "files_to_create": [
+        "客户交付文档/第二阶段交付包_stage2_delivery_pack/manifest.json",
+        "客户交付文档/第二阶段交付包_stage2_delivery_pack/README.md",
+        "客户交付文档/第二阶段交付包_stage2_delivery_pack/验收清单_stage2_acceptance_checklist.md"
+      ],
+      "execution_steps": [
+        "枚举候选样片和生成报告",
+        "由业务方选择讲解/回复/促销canonical文件",
+        "核对时长、音视频流和来源manifest",
+        "标注声音/视觉版本与fallback状态",
+        "关联知识/规则版本和V0演示证据",
+        "生成客户可读清单"
+      ],
+      "tests": [
+        "three categories map to three explicit files",
+        "each file decodes and has required audio/video streams",
+        "every file has provenance and fallback flag",
+        "manifest paths resolve locally or to authorized delivery location",
+        "human review fields are complete"
+      ],
+      "done_when": [
+        "三类样片身份唯一且证据完整",
+        "声音/视觉/知识/规则/V0日志均有版本",
+        "客户验收清单无空白技术字段"
+      ],
+      "blocked_if": [
+        "没有满足约30秒的独立样片",
+        "无法区分model native与local fallback",
+        "客户未选定声音或视觉版本",
+        "需要修改原媒体才能通过"
+      ],
+      "rollback": "删除本任务新建的manifest和说明；不删除或移动原媒体",
+      "output_format": "task_id/status/canonical_assets/provenance/qc/human_review/files_created/blocked_reason",
+      "commands": [
+        "find outputs 项目资料_docs -type f ! -name \"._*\" -print",
+        "ffprobe只读核验三个canonical媒体",
+        "python3 scripts/validate_stage2_delivery_manifest.py"
+      ]
+    },
+    {
+      "task_id": "C55-P0-08",
+      "priority": "P0",
+      "goal": "完成内部彩排、客户受控演示、阶段二书面确认和付款触发证据归档",
+      "context": "当前没有已签署合同或阶段二书面验收，口头/demo画面认可不能替代正式确认",
+      "constraints": [
+        "先核对已生效合同或双方签署的阶段成果确认书",
+        "不把阶段三/四能力作为本次验收前置",
+        "演示失败必须如实记录并重排",
+        "未经客户书面确认不得把状态改为YES"
+      ],
+      "impact_check": [
+        "涉及客户沟通、合同、验收和收款",
+        "需要业务/法务确认，不属于纯技术决定",
+        "归档材料可能含个人和商业信息"
+      ],
+      "files_to_read": [
+        "_audit_second_payment_readiness/07_第二次收款就绪度判断.md",
+        "_audit_second_payment_readiness/10_客户演示与第二阶段收款包.md",
+        "客户交付文档/第二阶段交付包_stage2_delivery_pack/",
+        "contracts/数字人直播系统与AI剪辑工作流项目合作协议_正式边界版_contract_boundary_v1.md"
+      ],
+      "files_to_modify": [
+        "客户交付文档/第二阶段交付包_stage2_delivery_pack/验收清单_stage2_acceptance_checklist.md"
+      ],
+      "files_to_create": [
+        "客户交付文档/第二阶段交付包_stage2_delivery_pack/内部彩排记录.md",
+        "客户交付文档/第二阶段交付包_stage2_delivery_pack/客户演示记录.md",
+        "客户交付文档/第二阶段交付包_stage2_delivery_pack/阶段二书面确认索引.md"
+      ],
+      "execution_steps": [
+        "核对双方生效合同和付款触发条款",
+        "按SOP完成内部彩排并关闭Critical缺陷",
+        "与客户预约受控演示",
+        "逐项展示并记录客户意见",
+        "取得签字/盖章、授权邮件或明确聊天确认",
+        "回读证据后更新阶段状态和付款状态"
+      ],
+      "tests": [
+        "internal rehearsal has no open Critical defects",
+        "all acceptance checklist rows have status and evidence",
+        "written confirmation is readable and attributable",
+        "stage3 and stage4 items remain explicitly out of scope",
+        "payment trigger matches the effective contract"
+      ],
+      "done_when": [
+        "生效合同/变更确认可回读",
+        "客户逐项书面确认第二阶段",
+        "付款金额和到期日有合同依据",
+        "Git/授权交付位置留存脱敏证据"
+      ],
+      "blocked_if": [
+        "没有双方生效合同或变更确认",
+        "客户对关键项提出未关闭异议",
+        "演示失败或证据不完整",
+        "付款触发条款与现有口径冲突"
+      ],
+      "rollback": "不得删除客户沟通证据；如验收未通过，将状态回退为pending_user_review并保留缺陷记录",
+      "output_format": "task_id/status/effective_contract/acceptance_result/open_issues/payment_trigger/evidence_paths/customer_confirmation_status",
+      "commands": [
+        "python3 scripts/run_v0_controlled_demo.py --offline --repeat 2",
+        "python3 scripts/validate_stage2_delivery_manifest.py",
+        "git diff --check并仅精确stage已授权交付路径"
+      ]
+    },
+    {
+      "task_id": "C55-P1-01",
+      "priority": "P1",
+      "goal": "建立客户友好型本地演示台并用30至50条脱敏评论做回归",
+      "context": "P0 CLI可证明闭环，但客户需要直观看到评论、分类、来源、回复、风险、接管和播报回执",
+      "constraints": [
+        "不复制pipeline业务逻辑",
+        "不引入新依赖",
+        "不接真实平台",
+        "UI不能替代底层验收"
+      ],
+      "impact_check": [
+        "新增只读view/console",
+        "回归集隐私",
+        "显示与日志一致性"
+      ],
+      "files_to_read": [
+        "src/live_brain/orchestrator.py",
+        "docs/v0_demo_sop.md",
+        "tests/fixtures/reviewed_live_comments.jsonl"
+      ],
+      "files_to_modify": [
+        "scripts/run_live_brain_v0.py",
+        "docs/v0_demo_sop.md"
+      ],
+      "files_to_create": [
+        "src/live_brain/demo_view.py",
+        "scripts/run_live_brain_v0_demo_console.py",
+        "tests/test_live_brain_demo_view.py",
+        "tests/test_live_brain_replay_regression.py"
+      ],
+      "execution_steps": [
+        "消费稳定pipeline输出",
+        "显示关键状态与回执",
+        "扩展30至50条回放",
+        "验证UI和audit log一致"
+      ],
+      "commands": [
+        "PYTHONDONTWRITEBYTECODE=1 python3 -B scripts/run_live_brain_v0_demo_console.py --offline",
+        "python3 -m unittest tests.test_live_brain_demo_view tests.test_live_brain_replay_regression -v"
+      ],
+      "tests": [
+        "30至50条回放无状态串线",
+        "UI值与日志一致",
+        "高风险显著标识",
+        "无外部调用"
+      ],
+      "done_when": [
+        "非技术人员能理解闭环",
+        "脱敏导出可回读",
+        "P0 CLI仍可独立运行"
+      ],
+      "blocked_if": [
+        "P0 pipeline或schema不稳定",
+        "需要新依赖但未批准"
+      ],
+      "rollback": "git revert独立commit；CLI保持可用",
+      "output_format": "task_id/status/commands/result/failed_items/files_changed/tests/evidence_paths/commit/push/remote_head/blocked_reason/next_step"
+    },
+    {
+      "task_id": "C55-P1-02",
+      "priority": "P1",
+      "goal": "同步项目事实并通过授权目录内的clean-clone复现验证",
+      "context": "当前项目事实入口仍写旧workspace，本地核心代码ignored，GitHub main缺依赖/tests/CI",
+      "constraints": [
+        "只有P0通过后更新完成状态",
+        "客户未签字不得写业务验收完成",
+        "临时clone只能在授权workspace",
+        "不得提交secret或媒体"
+      ],
+      "impact_check": [
+        "README和项目事实入口",
+        "依赖清单/tests/CI",
+        "用户现有脏工作树",
+        "临时clone磁盘空间"
+      ],
+      "files_to_read": [
+        "README.md",
+        "项目资料_docs/数字人直播项目事实_digital_human_live_project/",
+        "AGENTS.md",
+        ".git/info/exclude"
+      ],
+      "files_to_modify": [
+        "README.md",
+        "项目资料_docs/数字人直播项目事实_digital_human_live_project/00_项目总说明_project_brief.md",
+        "项目资料_docs/数字人直播项目事实_digital_human_live_project/01_执行合同与验收_execution_contract.md",
+        "项目资料_docs/数字人直播项目事实_digital_human_live_project/02_当前任务_current_task.md",
+        "项目资料_docs/数字人直播项目事实_digital_human_live_project/03_Codex执行桥接_codex_execution_bridge.md",
+        "项目资料_docs/数字人直播项目事实_digital_human_live_project/04_检查标准_checklist.md"
+      ],
+      "files_to_create": [
+        "codex_reports/AI直播大脑V0_clean_clone验证_v0_clean_clone_validation.md"
+      ],
+      "execution_steps": [
+        "更新事实但保持技术/人审/客户/业务状态分层",
+        "核对所有运行依赖tracked",
+        "在授权临时目录clone/install/test/smoke",
+        "安全核验后清理临时目录",
+        "remote HEAD readback"
+      ],
+      "commands": [
+        "git ls-tree -r HEAD --name-only",
+        "mktemp -d \"/Volumes/WD_BLACK/澜心社直播/.tmp-clean-clone.XXXXXX\"",
+        "在临时clone执行install/test/offline smoke",
+        "git rev-parse HEAD并gh api回读remote main"
+      ],
+      "tests": [
+        "clean clone安装成功",
+        "offline V0运行成功",
+        "全量tests通过",
+        "无env/secret/media进入Git"
+      ],
+      "done_when": [
+        "GitHub main可复现P0",
+        "事实文档与实际状态一致",
+        "local HEAD等于remote HEAD"
+      ],
+      "blocked_if": [
+        "用户变更与本任务重叠",
+        "依赖缺失或tests失败",
+        "需要越权处理脏工作树"
+      ],
+      "rollback": "git revert独立commit；只在核验精确临时路径后清理临时clone",
+      "output_format": "task_id/status/commands/result/failed_items/files_changed/tests/evidence_paths/commit/push/remote_head/blocked_reason/next_step"
+    },
+    {
+      "task_id": "C55-P2-01",
+      "priority": "P2",
+      "goal": "第三阶段接入正式授权的实时评论并完成20至30分钟受控试播",
+      "context": "阶段三才包含真实平台评论、20至30分钟试播、评论/回复/接管日志和切片MVP",
+      "constraints": [
+        "只用官方API、授权后台或webhook",
+        "不绕过平台限制",
+        "Computer Use不作为核心链路",
+        "阶段二未关闭前不实施"
+      ],
+      "impact_check": [
+        "平台账号和规则",
+        "隐私与数据留存",
+        "OBS/RTMP",
+        "断线重连/限流",
+        "外部费用和人工值守"
+      ],
+      "files_to_read": [
+        "有效阶段三合同",
+        "官方平台文档",
+        "src/live_brain/",
+        "docs/v0_demo_sop.md"
+      ],
+      "files_to_modify": [
+        "src/live_brain/orchestrator.py"
+      ],
+      "files_to_create": [
+        "src/live_brain/platform/douyin_adapter.py",
+        "scripts/run_stage3_trial.py",
+        "tests/test_douyin_adapter.py",
+        "tests/test_stage3_trial.py",
+        "codex_reports/阶段三试播报告_stage3_trial_report.md"
+      ],
+      "execution_steps": [
+        "授权审计",
+        "官方sandbox/dry-run",
+        "接入评论流",
+        "故障注入",
+        "书面授权后受控试播",
+        "回看日志与录屏"
+      ],
+      "commands": [
+        "官方SDK sandbox/dry-run命令待文档确认",
+        "python3 -m unittest tests.test_douyin_adapter tests.test_stage3_trial -v",
+        "经书面授权后运行scripts/run_stage3_trial.py"
+      ],
+      "tests": [
+        "断线重连",
+        "重复评论去重",
+        "限流",
+        "隐私脱敏",
+        "人工接管",
+        "日志完整"
+      ],
+      "done_when": [
+        "20至30分钟连续可复盘",
+        "评论/回复/接管/播报日志完整",
+        "客户确认进入下一步"
+      ],
+      "blocked_if": [
+        "阶段二未验收或未付款",
+        "无平台授权",
+        "需要绕过官方限制"
+      ],
+      "rollback": "撤销token/adapter部署并git revert；保留供应商审计记录",
+      "output_format": "task_id/status/commands/result/failed_items/files_changed/tests/evidence_paths/commit/push/remote_head/blocked_reason/next_step"
+    },
+    {
+      "task_id": "C55-P2-02",
+      "priority": "P2",
+      "goal": "第三阶段把试播素材进入独立短视频切片MVP",
+      "context": "切片属于阶段三，不是第二次收款前置；运动/讲解与纯口播需要不同路线",
+      "constraints": [
+        "媒体不入Git",
+        "候选必须人审",
+        "可解码不等于编辑通过",
+        "不覆盖原录屏"
+      ],
+      "impact_check": [
+        "媒体存储",
+        "来源时间码",
+        "路线分类",
+        "人工审核",
+        "导出manifest"
+      ],
+      "files_to_read": [
+        "阶段三试播录屏",
+        "切片结构标准",
+        "素材路由规则"
+      ],
+      "files_to_modify": [],
+      "files_to_create": [
+        "src/live_clip/",
+        "scripts/run_live_clip_mvp.py",
+        "tests/test_live_clip_mvp.py",
+        "codex_reports/阶段三切片MVP报告_stage3_clip_mvp_report.md"
+      ],
+      "execution_steps": [
+        "素材路由",
+        "候选生成",
+        "人工复核",
+        "导出",
+        "manifest与复盘"
+      ],
+      "commands": [
+        "ffprobe只读媒体探测",
+        "python3 scripts/run_live_clip_mvp.py --dry-run",
+        "python3 -m unittest tests.test_live_clip_mvp -v"
+      ],
+      "tests": [
+        "路线分类",
+        "timecode/source hash",
+        "无越界媒体",
+        "人审状态不被自动覆盖"
+      ],
+      "done_when": [
+        "至少一组人工确认、可追源、可复跑的短视频样片"
+      ],
+      "blocked_if": [
+        "阶段三素材或验收标准缺失",
+        "无人承担人工复核"
+      ],
+      "rollback": "git revert代码/manifest；保留原媒体",
+      "output_format": "task_id/status/commands/result/failed_items/files_changed/tests/evidence_paths/commit/push/remote_head/blocked_reason/next_step"
+    },
+    {
+      "task_id": "C55-P2-03",
+      "priority": "P2",
+      "goal": "仅在出现实际瓶颈后评估LangGraph和飞书工作流",
+      "context": "阶段二不要求LangGraph、飞书、CRM、数据看板或多角色后台",
+      "constraints": [
+        "先ADR和成本/权限评估",
+        "新依赖和飞书权限必须书面批准",
+        "未批准不安装/实施"
+      ],
+      "impact_check": [
+        "依赖许可",
+        "飞书权限",
+        "数据留存",
+        "幂等/重试",
+        "人工闸门",
+        "运维成本"
+      ],
+      "files_to_read": [
+        "实际瓶颈数据",
+        "客户变更单",
+        "飞书官方API文档",
+        "当前orchestrator"
+      ],
+      "files_to_modify": [],
+      "files_to_create": [
+        "docs/adr/ADR_workflow_orchestration.md",
+        "docs/change_requests/feishu_workflow_scope_cost.md"
+      ],
+      "execution_steps": [
+        "量化瓶颈",
+        "比较当前pipeline与LangGraph",
+        "设计飞书人工闸门",
+        "报价并签署变更"
+      ],
+      "commands": [
+        "仅执行官方文档与依赖许可证只读核验",
+        "批准前不运行package install"
+      ],
+      "tests": [
+        "ADR覆盖采用和拒绝理由",
+        "原型如批准需验证幂等/重试/权限隔离/审计"
+      ],
+      "done_when": [
+        "形成明确采用或拒绝决策及签署范围"
+      ],
+      "blocked_if": [
+        "无量化痛点",
+        "无授权或预算",
+        "新增依赖未批准"
+      ],
+      "rollback": "设计阶段无运行影响；实现阶段git revert独立commit",
+      "output_format": "task_id/status/commands/result/failed_items/files_changed/tests/evidence_paths/commit/push/remote_head/blocked_reason/next_step"
+    },
+    {
+      "task_id": "C55-P2-04",
+      "priority": "P2",
+      "goal": "第四阶段完成4至5小时Beta稳定性验收和培训交接",
+      "context": "长时稳定性属于阶段四，不能从短demo或20分钟试播外推",
+      "constraints": [
+        "保留人工中控",
+        "书面授权和费用上限",
+        "一次短测不能外推长时稳定性"
+      ],
+      "impact_check": [
+        "高账号/平台/费用风险",
+        "observability",
+        "故障恢复",
+        "日志存储",
+        "人工值守"
+      ],
+      "files_to_read": [
+        "阶段三报告",
+        "异常记录",
+        "有效阶段四合同",
+        "runbook"
+      ],
+      "files_to_modify": [
+        "src/live_brain/"
+      ],
+      "files_to_create": [
+        "scripts/run_stage4_beta.py",
+        "docs/stage4_beta_runbook.md",
+        "tests/test_stage4_resilience.py",
+        "codex_reports/阶段四Beta稳定性报告_stage4_beta_stability_report.md"
+      ],
+      "execution_steps": [
+        "容量准备",
+        "故障注入",
+        "长时运行",
+        "日志核对",
+        "人审",
+        "培训和签署"
+      ],
+      "commands": [
+        "python3 -m unittest tests.test_stage4_resilience -v",
+        "经书面授权执行python3 scripts/run_stage4_beta.py --duration-hours 4"
+      ],
+      "tests": [
+        "断线/重连",
+        "API限流",
+        "avatar故障",
+        "日志存储",
+        "人工接管",
+        "恢复时间"
+      ],
+      "done_when": [
+        "不少于4小时连续证据",
+        "完整录屏和日志",
+        "客户能按SOP操作"
+      ],
+      "blocked_if": [
+        "阶段三未通过",
+        "账号/费用/值守人员未确认"
+      ],
+      "rollback": "终止会话、恢复安全配置并git revert；保留供应商审计记录",
+      "output_format": "task_id/status/commands/result/failed_items/files_changed/tests/evidence_paths/commit/push/remote_head/blocked_reason/next_step"
+    }
+  ]
+}
