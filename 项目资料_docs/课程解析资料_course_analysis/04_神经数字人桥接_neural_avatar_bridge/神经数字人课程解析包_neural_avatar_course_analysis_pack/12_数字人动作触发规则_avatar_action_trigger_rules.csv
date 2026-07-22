@@ -1,0 +1,5 @@
+﻿rule_id,condition,avatar_action_label,avatar_emotion,camera_state,confidence,review_flag
+AR001,prosody_label == normal_explain,neutral_idle,neutral,slide_side_by_side,medium,ok_after_manual_courseware_review
+AR002,prosody_label == warning_reminder,serious_emphasis,serious,front_medium,low,待复核_keyword_based
+AR003,prosody_label == question_prompt,hand_open_explain,curious,front_close,low,待复核_keyword_based
+AR004,review_flag contains 待复核,neutral_idle,neutral,slide_side_by_side,low,requires_human_review_before_auto_play

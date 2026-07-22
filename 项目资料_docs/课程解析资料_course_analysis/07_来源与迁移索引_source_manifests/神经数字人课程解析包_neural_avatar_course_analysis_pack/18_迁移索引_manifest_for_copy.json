@@ -1,0 +1,347 @@
+{
+  "pack_name": "神经数字人课程解析交付包_neural_avatar_course_analysis_pack",
+  "created_at": "2026-07-03 18:12:50",
+  "status": "partial_completed_action_low_confidence_needs_review; partial_completed_ocr_needs_manual_review",
+  "source_workspace": "\\\\192.168.10.102\\市场营销中心\\品牌部\\所有课程",
+  "previous_transcript_pack": "C:\\Users\\Cooler\\Desktop\\课程逐字稿解析工作区_所有课程_20260630_170152\\课程逐字稿解析交付包_course_transcript_analysis_pack",
+  "output_dir": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack",
+  "files_to_copy": [
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\00_执行报告_execution_report.md",
+      "relative_path": "00_执行报告_execution_report.md",
+      "size_bytes": 1828,
+      "purpose": "执行环境、边界和降级说明",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\01_课程素材总清单_course_material_inventory.csv",
+      "relative_path": "01_课程素材总清单_course_material_inventory.csv",
+      "size_bytes": 1115620,
+      "purpose": "全量素材清单",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\02_视频分块清单_video_chunk_manifest.csv",
+      "relative_path": "02_视频分块清单_video_chunk_manifest.csv",
+      "size_bytes": 7022970,
+      "purpose": "视频 chunk manifest",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\03_课件画面对照表_courseware_visual_alignment.csv",
+      "relative_path": "03_课件画面对照表_courseware_visual_alignment.csv",
+      "size_bytes": 8868108,
+      "purpose": "课件/画面时间窗口",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\04_课件画面摘要_courseware_visual_summary.md",
+      "relative_path": "04_课件画面摘要_courseware_visual_summary.md",
+      "size_bytes": 520,
+      "purpose": "画面解析摘要",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\05_逐字稿时间轴_transcript_timeline.csv",
+      "relative_path": "05_逐字稿时间轴_transcript_timeline.csv",
+      "size_bytes": 6399518,
+      "purpose": "逐字稿 chunk 时间轴",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\06_讲师动作时间轴_presenter_action_timeline.csv",
+      "relative_path": "06_讲师动作时间轴_presenter_action_timeline.csv",
+      "size_bytes": 6643074,
+      "purpose": "讲师动作低置信度时间轴",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\07_动作标签库_action_label_library.md",
+      "relative_path": "07_动作标签库_action_label_library.md",
+      "size_bytes": 1205,
+      "purpose": "动作标签定义",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\08_语气节奏时间轴_prosody_pacing_timeline.csv",
+      "relative_path": "08_语气节奏时间轴_prosody_pacing_timeline.csv",
+      "size_bytes": 4480641,
+      "purpose": "语气节奏低置信度时间轴",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\09_逐字稿_课件_动作三线对照表_transcript_courseware_action_alignment.csv",
+      "relative_path": "09_逐字稿_课件_动作三线对照表_transcript_courseware_action_alignment.csv",
+      "size_bytes": 11221457,
+      "purpose": "三线对照主表",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\10_三线对照阅读版_transcript_courseware_action_alignment_readable.md",
+      "relative_path": "10_三线对照阅读版_transcript_courseware_action_alignment_readable.md",
+      "size_bytes": 102477,
+      "purpose": "三线对照阅读版样例",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\11_神经数字人可复刻字段_neural_avatar_reproduction_fields.md",
+      "relative_path": "11_神经数字人可复刻字段_neural_avatar_reproduction_fields.md",
+      "size_bytes": 522,
+      "purpose": "神经数字人桥接说明",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\12_数字人动作触发规则_avatar_action_trigger_rules.csv",
+      "relative_path": "12_数字人动作触发规则_avatar_action_trigger_rules.csv",
+      "size_bytes": 547,
+      "purpose": "数字人动作触发规则",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\13_不适合数字人复刻动作清单_avatar_unsuitable_actions.md",
+      "relative_path": "13_不适合数字人复刻动作清单_avatar_unsuitable_actions.md",
+      "size_bytes": 641,
+      "purpose": "不适合复刻动作清单",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\14_适合迁入直播项目的桥接字段_live_project_bridge_fields.md",
+      "relative_path": "14_适合迁入直播项目的桥接字段_live_project_bridge_fields.md",
+      "size_bytes": 341,
+      "purpose": "直播项目桥接说明",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\15_人工复核清单_manual_review_list.md",
+      "relative_path": "15_人工复核清单_manual_review_list.md",
+      "size_bytes": 543,
+      "purpose": "人工复核清单",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\16_质量检查报告_quality_review_report.md",
+      "relative_path": "16_质量检查报告_quality_review_report.md",
+      "size_bytes": 976,
+      "purpose": "质量检查报告",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\17_神经数字人课程解析总包_neural_avatar_course_analysis_master.md",
+      "relative_path": "17_神经数字人课程解析总包_neural_avatar_course_analysis_master.md",
+      "size_bytes": 1525,
+      "purpose": "总文档",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\18_迁移索引_manifest_for_copy.json",
+      "relative_path": "18_迁移索引_manifest_for_copy.json",
+      "size_bytes": 12869,
+      "purpose": "迁移索引",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\data\\chunk_manifest.jsonl",
+      "relative_path": "data/chunk_manifest.jsonl",
+      "size_bytes": 10763343,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\data\\courseware_frames.jsonl",
+      "relative_path": "data/courseware_frames.jsonl",
+      "size_bytes": 14317713,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\data\\lesson_id_mapping.json",
+      "relative_path": "data/lesson_id_mapping.json",
+      "size_bytes": 874653,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\data\\live_project_bridge_fields.csv",
+      "relative_path": "data/live_project_bridge_fields.csv",
+      "size_bytes": 7022863,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\data\\neural_avatar_bridge_fields.jsonl",
+      "relative_path": "data/neural_avatar_bridge_fields.jsonl",
+      "size_bytes": 14436837,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\data\\presenter_actions.jsonl",
+      "relative_path": "data/presenter_actions.jsonl",
+      "size_bytes": 11013324,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\data\\previous_transcript_index.json",
+      "relative_path": "data/previous_transcript_index.json",
+      "size_bytes": 1278140,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\data\\prosody_pacing.jsonl",
+      "relative_path": "data/prosody_pacing.jsonl",
+      "size_bytes": 8209926,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\data\\source_inventory.json",
+      "relative_path": "data/source_inventory.json",
+      "size_bytes": 2144069,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\data\\transcript_timeline.jsonl",
+      "relative_path": "data/transcript_timeline.jsonl",
+      "size_bytes": 12229439,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\data\\tri_alignment.jsonl",
+      "relative_path": "data/tri_alignment.jsonl",
+      "size_bytes": 17105217,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\frames_preview\\L0337_probe_01_000023s.jpg",
+      "relative_path": "frames_preview/L0337_probe_01_000023s.jpg",
+      "size_bytes": 13768,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\frames_preview\\L0337_probe_02_000119s.jpg",
+      "relative_path": "frames_preview/L0337_probe_02_000119s.jpg",
+      "size_bytes": 15185,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\frames_preview\\L0337_probe_03_000215s.jpg",
+      "relative_path": "frames_preview/L0337_probe_03_000215s.jpg",
+      "size_bytes": 14301,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\_agent_outputs\\agent_00_总控协调_coordinator.md",
+      "relative_path": "_agent_outputs/agent_00_总控协调_coordinator.md",
+      "size_bytes": 248,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\_agent_outputs\\agent_01_素材清单_inventory.md",
+      "relative_path": "_agent_outputs/agent_01_素材清单_inventory.md",
+      "size_bytes": 1029,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\_agent_outputs\\agent_02_分块时间轴_chunk_timeline.md",
+      "relative_path": "_agent_outputs/agent_02_分块时间轴_chunk_timeline.md",
+      "size_bytes": 236,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\_agent_outputs\\agent_03_课件画面_courseware_vision.md",
+      "relative_path": "_agent_outputs/agent_03_课件画面_courseware_vision.md",
+      "size_bytes": 252,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\_agent_outputs\\agent_04_逐字稿对齐_transcript_alignment.md",
+      "relative_path": "_agent_outputs/agent_04_逐字稿对齐_transcript_alignment.md",
+      "size_bytes": 1222,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\_agent_outputs\\agent_05_讲师动作_presenter_action.md",
+      "relative_path": "_agent_outputs/agent_05_讲师动作_presenter_action.md",
+      "size_bytes": 241,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\_agent_outputs\\agent_06_语气节奏_prosody_pacing.md",
+      "relative_path": "_agent_outputs/agent_06_语气节奏_prosody_pacing.md",
+      "size_bytes": 233,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\_agent_outputs\\agent_07_三线对照_tri_alignment.md",
+      "relative_path": "_agent_outputs/agent_07_三线对照_tri_alignment.md",
+      "size_bytes": 235,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\_agent_outputs\\agent_08_神经数字人桥接_neural_avatar_bridge.md",
+      "relative_path": "_agent_outputs/agent_08_神经数字人桥接_neural_avatar_bridge.md",
+      "size_bytes": 251,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\_agent_outputs\\agent_09_直播项目桥接_live_project_bridge.md",
+      "relative_path": "_agent_outputs/agent_09_直播项目桥接_live_project_bridge.md",
+      "size_bytes": 253,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\_agent_outputs\\agent_10_质量检查_quality_review.md",
+      "relative_path": "_agent_outputs/agent_10_质量检查_quality_review.md",
+      "size_bytes": 914,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    },
+    {
+      "path": "C:\\Users\\Cooler\\Desktop\\神经数字人课程解析交付包_neural_avatar_course_analysis_pack\\_logs\\00_minimal_probe_report.md",
+      "relative_path": "_logs/00_minimal_probe_report.md",
+      "size_bytes": 1420,
+      "purpose": "数据/日志/agent 输出文件",
+      "copy_to_other_project": true
+    }
+  ],
+  "files_not_to_copy": [
+    "_cache/",
+    "原始视频",
+    "原始音频",
+    "secret",
+    ".env",
+    "token",
+    "cookie"
+  ],
+  "lesson_count": 1610,
+  "video_count": 1610,
+  "chunk_count": 19424,
+  "transcript_rows": 18630,
+  "action_rows": 19424,
+  "tri_alignment_rows": 19424,
+  "review_items_count": 58272,
+  "known_limitations": [
+    "OCR unavailable; courseware visual text pending review.",
+    "OpenCV/body pose unavailable; presenter actions are low-confidence chunk windows.",
+    "Full transcript is referenced via previous pack source_ref instead of duplicated in full.",
+    "docx not generated because pandoc is unavailable in PATH."
+  ]
+}
