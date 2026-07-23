@@ -1,0 +1,61 @@
+{
+  "root": "docs/直播录屏解析方案_live_recording_analysis/最新直播实质全量解析_latest_live_actual_full_analysis",
+  "missing_root_files": [],
+  "missing_dirs": [],
+  "parse_errors": [],
+  "blockers": [],
+  "counts": {
+    "baseline_missing_window_count": 526,
+    "missing_status_rows": 526,
+    "ledger_rows": 542,
+    "unique_missing_windows_with_new_call": 526,
+    "missing_window_set_diff_count": 0,
+    "ledger_window_set_diff_count": 0,
+    "duplicate_new_call_id_count": 0,
+    "old_call_reuse_for_missing_count": 0,
+    "blank_provider_request_id_count": 0,
+    "invalid_sha256_count": 0,
+    "missing_or_hash_mismatched_raw_response_count": 0,
+    "terminal_window_states": {
+      "observed_new_qwen": 523,
+      "model_execution_failed_after_full_fallback": 3
+    },
+    "unknown_with_forbidden_reason_count": 0,
+    "semantic_events": 1594,
+    "semantic_duplicate_event_ids": 0,
+    "transcript_rows": 7296,
+    "comment_change_samples": 39566,
+    "comment_rows": 1275,
+    "new_comment_from_missing_window_count": 1069,
+    "first_seen_ms_mod_300000_count": 210,
+    "reply_type_counts": {
+      "insufficient_source_evidence": 748,
+      "topic_related_not_causal": 525,
+      "comment_visible_but_unanswered": 2
+    },
+    "direct_reply_without_speech_and_visual_evidence_count": 0,
+    "action_source_limited_unknown_count": 5,
+    "new_visual_evidence_event_count": 1267,
+    "volume_measured_count": 1594,
+    "not_measured_source_limit_count": 0,
+    "valid_course_match_without_source_ref_count": 0,
+    "topic_similarity_only_valid_match_count": 0,
+    "rule_without_valid_evidence_foreign_keys_count": 0,
+    "final_status": "actual_full_multimodal_analysis_completed_with_true_source_limits",
+    "secret_hit_count": 0,
+    "signed_url_hit_count": 0,
+    "phone_hit_count": 0,
+    "email_hit_count": 0,
+    "wechat_hit_count": 0,
+    "media_file_count": 0,
+    "api_raw_payload_file_count": 0,
+    "appledouble_count": 0,
+    "hit_samples": []
+  },
+  "qa": {
+    "missing_ledger_columns": [],
+    "raw_failures_sample": [],
+    "forbidden_unknowns_sample": []
+  },
+  "overall_status": "passed"
+}
