@@ -1,0 +1,120 @@
+{
+  "run_id": "full_20260723_155512",
+  "created_at": "2026-07-23T15:55:52+08:00",
+  "local_runtime_root": "_local_runtime/最新直播全量解析_latest_live_full_analysis",
+  "source_dir": "最新直播",
+  "user_authorized_alibaba_multimodal_api": true,
+  "sessions": [
+    {
+      "session_id": "latest_live_01",
+      "local_session_dir": "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_01",
+      "asr_status": "succeeded",
+      "vision_windows": 20,
+      "raw_local_only": [
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_01/asr_raw/latest_live_01_asr_result.json",
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_01/api_private/asr_query_response.json",
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_01/api_private/asr_upload_private.json"
+      ]
+    },
+    {
+      "session_id": "latest_live_02",
+      "local_session_dir": "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_02",
+      "asr_status": "succeeded",
+      "vision_windows": 20,
+      "raw_local_only": [
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_02/asr_raw/latest_live_02_asr_result.json",
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_02/api_private/asr_query_response.json",
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_02/api_private/asr_upload_private.json"
+      ]
+    },
+    {
+      "session_id": "latest_live_03",
+      "local_session_dir": "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_03",
+      "asr_status": "succeeded",
+      "vision_windows": 9,
+      "raw_local_only": [
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_03/asr_raw/latest_live_03_asr_result.json",
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_03/api_private/asr_query_response.json",
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_03/api_private/asr_upload_private.json"
+      ]
+    },
+    {
+      "session_id": "latest_live_04",
+      "local_session_dir": "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_04",
+      "asr_status": "succeeded",
+      "vision_windows": 6,
+      "raw_local_only": [
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_04/asr_raw/latest_live_04_asr_result.json",
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_04/api_private/asr_query_response.json",
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_04/api_private/asr_upload_private.json"
+      ]
+    },
+    {
+      "session_id": "latest_live_05",
+      "local_session_dir": "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_05",
+      "asr_status": "succeeded",
+      "vision_windows": 7,
+      "raw_local_only": [
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_05/asr_raw/latest_live_05_asr_result.json",
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_05/api_private/asr_query_response.json",
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_05/api_private/asr_upload_private.json"
+      ]
+    },
+    {
+      "session_id": "latest_live_06",
+      "local_session_dir": "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_06",
+      "asr_status": "succeeded",
+      "vision_windows": 12,
+      "raw_local_only": [
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_06/asr_raw/latest_live_06_asr_result.json",
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_06/api_private/asr_query_response.json",
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_06/api_private/asr_upload_private.json"
+      ]
+    },
+    {
+      "session_id": "latest_live_07",
+      "local_session_dir": "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_07",
+      "asr_status": "succeeded",
+      "vision_windows": 20,
+      "raw_local_only": [
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_07/asr_raw/latest_live_07_asr_result.json",
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_07/api_private/asr_query_response.json",
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_07/api_private/asr_upload_private.json"
+      ]
+    },
+    {
+      "session_id": "latest_live_08",
+      "local_session_dir": "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_08",
+      "asr_status": "succeeded",
+      "vision_windows": 14,
+      "raw_local_only": [
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_08/asr_raw/latest_live_08_asr_result.json",
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_08/api_private/asr_query_response.json",
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_08/api_private/asr_upload_private.json"
+      ]
+    },
+    {
+      "session_id": "latest_live_09",
+      "local_session_dir": "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_09",
+      "asr_status": "succeeded",
+      "vision_windows": 8,
+      "raw_local_only": [
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_09/asr_raw/latest_live_09_asr_result.json",
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_09/api_private/asr_query_response.json",
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_09/api_private/asr_upload_private.json"
+      ]
+    },
+    {
+      "session_id": "latest_live_10",
+      "local_session_dir": "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_10",
+      "asr_status": "succeeded",
+      "vision_windows": 22,
+      "raw_local_only": [
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_10/asr_raw/latest_live_10_asr_result.json",
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_10/api_private/asr_query_response.json",
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/latest_live_10/api_private/asr_upload_private.json"
+      ]
+    }
+  ],
+  "private_data_note": "signed URLs, raw ASR JSON, raw model responses, audio and video clips remain local-only"
+}

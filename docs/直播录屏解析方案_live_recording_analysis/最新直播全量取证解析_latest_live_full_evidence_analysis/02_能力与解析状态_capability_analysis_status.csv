@@ -1,0 +1,9 @@
+﻿capability,status,evidence,fallback_route,review_flag
+workspace_remote_boundary,confirmed,pwd/git remote checked before pipeline,,
+source_inventory,confirmed,identified_non_appledouble_media=10,record_actual_count_no_scope_expansion,
+ffprobe_video_decode_metadata,confirmed,ffprobe metadata read for each source,blocked_file_level_if_unreadable,
+ffmpeg_audio_clip_extraction,confirmed,local ffmpeg only for audit_or_input_preparation_not_fallback,mark audio_extract_failed,
+alibaba_fun_asr,confirmed,user_authorized_alibaba_multimodal_api=true,manual_audio_review,asr_human_review_required
+qwen_vl_video_window_observation,confirmed,short compressed video windows via DashScope compatible chat,critical_window_manual_review,visual_human_review_required
+comment_ocr_dedupe,partially_true,Qwen-VL sampled/dense windows; raw usernames not committed,comment_ocr_unavailable_or_pending_review,comment_ocr_pending_human_review
+course_alignment,partially_true,local bridge CSV ngram candidate only; max confidence capped at 0.69,course_alignment_candidate_only,course_alignment_pending_review

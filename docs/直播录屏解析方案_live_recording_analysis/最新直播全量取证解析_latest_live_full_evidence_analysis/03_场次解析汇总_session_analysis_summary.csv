@@ -1,0 +1,11 @@
+﻿session_id,source_video,duration_min,asr_status,asr_sentence_count,vision_status,vision_window_count,comment_area_visible,comment_event_count,reply_candidate_count,course_candidate_count,manual_review_count,analysis_status
+latest_live_01,Record_2026-07-20-10-26-37_2332cb9b27b851b548ba47a91682926c.mp4,98.92,succeeded,1108,connected,20,yes,49,20,1100,80,completed_pending_5_6_review
+latest_live_02,Record_2026-07-21-10-28-42_2332cb9b27b851b548ba47a91682926c.mp4,96.85,succeeded,999,connected,20,yes,48,19,996,80,completed_pending_5_6_review
+latest_live_03,ScreenRecording_07-18-2026 10-41-09_1.MP4,41.65,succeeded,497,connected,9,yes,18,9,493,80,completed_pending_5_6_review
+latest_live_04,ScreenRecording_07-18-2026 11-27-55_1.MP4,26.54,succeeded,280,connected,6,yes,12,6,280,80,completed_pending_5_6_review
+latest_live_05,ScreenRecording_07-19-2026 10-44-37_1.MP4,32.37,succeeded,343,connected,7,yes,10,7,343,80,completed_pending_5_6_review
+latest_live_06,ScreenRecording_07-19-2026 11-17-44_1.MP4,56.66,succeeded,642,connected,12,yes,28,12,637,80,completed_pending_5_6_review
+latest_live_07,SVID_20260721_103042_1.mp4,95.01,succeeded,998,connected,20,yes,39,19,990,80,completed_pending_5_6_review
+latest_live_08,SVID_20260722_104105_1.mp4,65.6,succeeded,775,connected,14,yes,34,13,771,80,completed_pending_5_6_review
+latest_live_09,SVID_20260722_104105_2.mp4,37.98,succeeded,450,connected,8,yes,22,8,447,80,completed_pending_5_6_review
+latest_live_10,SVID_20260722_104154_1.mp4,107.87,succeeded,1204,connected,22,yes,42,21,1194,80,completed_pending_5_6_review
