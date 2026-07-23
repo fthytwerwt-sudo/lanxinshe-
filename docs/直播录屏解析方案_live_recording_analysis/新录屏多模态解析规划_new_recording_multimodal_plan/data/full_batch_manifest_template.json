@@ -1,0 +1,127 @@
+{
+  "manifest_version": "1.0.0",
+  "schema_version": "{{approved_schema_version}}",
+  "task_type": "multimodal_full_batch_execution",
+  "status": "blocked",
+  "blocked_reason": "blocked_until_pilot_review_approved",
+  "full_execution_allowed": false,
+  "run_id": "{{run_id}}",
+  "workspace": "/Volumes/WD_BLACK/澜心社直播",
+  "approval": {
+    "pilot_review_decision": "{{approved}}",
+    "approved_by": "{{Codex 5.6 sol}}",
+    "approved_at": "{{ISO-8601}}",
+    "pilot_run_id": "{{pilot_run_id}}",
+    "decision_record": "{{path_to_machine_readable_review}}"
+  },
+  "execution_scope": {
+    "source_root": "最新直播",
+    "source_allowlist": [
+      {
+        "source_video": "{{workspace_relative_path}}",
+        "source_hash": "sha256:{{64_hex}}",
+        "source_duration_ms": "{{positive_integer}}",
+        "session_id": "{{LXR-date-hash8}}"
+      }
+    ],
+    "excluded_sources": [],
+    "full_execution_allowed": false,
+    "activation_condition": "approval.pilot_review_decision == approved"
+  },
+  "privacy": {
+    "raw_output_root": "local_only_reports/新录屏多模态全量_new_recording_multimodal_full/{{run_id}}/raw_local",
+    "redacted_output_root": "local_only_reports/新录屏多模态全量_new_recording_multimodal_full/{{run_id}}/merged_redacted",
+    "repo_promotion_automatic": false,
+    "pii_fail_closed": true,
+    "raw_media_commit_allowed": false
+  },
+  "batching": {
+    "management_window_ms": 1200000,
+    "overlap_ms": 30000,
+    "semantic_event_segmentation_required": true,
+    "max_parallel_sources": "{{approved_parallelism}}",
+    "max_parallel_lanes_per_batch": 4
+  },
+  "lanes": [
+    {
+      "name": "audio",
+      "extractor_name": "{{approved_asr_and_prosody_extractor}}",
+      "extractor_version": "{{version}}",
+      "parallel": true
+    },
+    {
+      "name": "comment",
+      "extractor_name": "{{approved_ocr_tracker_and_redactor}}",
+      "extractor_version": "{{version}}",
+      "parallel": true
+    },
+    {
+      "name": "visual",
+      "extractor_name": "{{approved_visual_observation_extractor}}",
+      "extractor_version": "{{version}}",
+      "parallel": true
+    },
+    {
+      "name": "course_candidate",
+      "extractor_name": "{{approved_course_candidate_retriever}}",
+      "extractor_version": "{{version}}",
+      "parallel": true
+    }
+  ],
+  "serial_steps": [
+    "source_registration",
+    "overlap_stitch",
+    "timeline_merge",
+    "comment_reply_relation",
+    "course_final_alignment",
+    "brain_rule_candidate_generation",
+    "manual_review_merge",
+    "privacy_validation",
+    "controlled_repo_promotion"
+  ],
+  "checkpoint": {
+    "state_root": "local_only_reports/新录屏多模态全量_new_recording_multimodal_full/{{run_id}}/checkpoints",
+    "idempotency_formula": "sha256(schema_version+source_hash+lane+window_start_ms+window_end_ms+extractor_version)",
+    "max_attempts": 2,
+    "skip_completed_on_matching_fingerprint": true,
+    "invalidate_on_schema_major_change": true
+  },
+  "review_sampling": {
+    "asr_gold_seconds_per_30_minutes": 60,
+    "asr_min_samples_per_source": 3,
+    "comments_per_30_minutes": 30,
+    "reply_links_per_source": 30,
+    "course_alignments_per_source": 20,
+    "actions_per_source": 30,
+    "brain_rule_candidates_review_rate": 1.0
+  },
+  "quality_gates": {
+    "schema_validation_rate": 1.0,
+    "time_validation_rate": 1.0,
+    "event_id_duplicate_count": 0,
+    "pii_leak_count": 0,
+    "media_secret_cache_leak_count": 0,
+    "resume_duplicate_count": 0,
+    "threshold_source": "{{approved_pilot_thresholds}}"
+  },
+  "outputs": {
+    "run_manifest": "run_manifest.json",
+    "events": "merged_redacted/events.jsonl",
+    "comment_reply_links": "merged_redacted/comment_reply_links.jsonl",
+    "course_alignments": "merged_redacted/course_alignments.jsonl",
+    "brain_rule_candidates": "merged_redacted/brain_rule_candidates.jsonl",
+    "review_queue": "review_queue/review_queue.csv",
+    "validation_report": "validation/validation_report.json",
+    "execution_report": "validation/full_execution_report.md"
+  },
+  "blocked_if": [
+    "pilot_review_not_approved",
+    "schema_version_mismatch",
+    "source_hash_missing_or_changed",
+    "extractor_not_approved",
+    "privacy_boundary_unavailable",
+    "course_exact_alignment_required_but_source_unavailable",
+    "workspace_or_remote_mismatch",
+    "unresolved_critical_validation_error"
+  ]
+}

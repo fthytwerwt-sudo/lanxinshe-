@@ -1,0 +1,924 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fthytwerwt-sudo/lanxinshe-/schemas/new-recording-multimodal-event-1.0.0.json",
+  "title": "新直播录屏多模态事件",
+  "description": "用于 pilot/full 的脱敏事件合同；原始评论身份和媒体不得进入 redacted_repo。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "session_id",
+    "source_video",
+    "source_hash",
+    "source_duration_ms",
+    "event_id",
+    "event_type",
+    "start_ms",
+    "end_ms",
+    "evidence_type",
+    "evidence_ref",
+    "observation_status",
+    "confidence",
+    "review_flag",
+    "manual_review_result",
+    "privacy_tier",
+    "processing_level",
+    "idempotency_key"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "session_id": {
+      "type": "string",
+      "pattern": "^LXR-[A-Za-z0-9._-]+$"
+    },
+    "source_video": {
+      "type": "string",
+      "minLength": 1,
+      "not": {
+        "pattern": "^(https?://|/Users/|C:\\\\)"
+      }
+    },
+    "source_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "source_duration_ms": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "event_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._-]+$"
+    },
+    "event_type": {
+      "enum": [
+        "speaker_utterance",
+        "comment",
+        "response_link",
+        "visual_action",
+        "prosody",
+        "course_alignment",
+        "live_stage_transition",
+        "risk_or_takeover",
+        "brain_rule_candidate",
+        "composite"
+      ]
+    },
+    "start_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "end_ms": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "evidence_type": {
+      "enum": [
+        "video_frame",
+        "audio_segment",
+        "asr_segment",
+        "comment_frame_track",
+        "manual_annotation",
+        "derived_timeline",
+        "course_chunk",
+        "course_source_quote"
+      ]
+    },
+    "evidence_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observation_status": {
+      "enum": [
+        "observed",
+        "derived",
+        "inferred",
+        "manual_verified"
+      ]
+    },
+    "confidence": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "review_flag": {
+      "type": "boolean"
+    },
+    "manual_review_result": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "approved",
+        "revised",
+        "rejected",
+        "unreviewed",
+        null
+      ]
+    },
+    "privacy_tier": {
+      "enum": [
+        "raw_local",
+        "redacted_repo"
+      ]
+    },
+    "processing_level": {
+      "enum": [
+        "pilot",
+        "full",
+        "fallback",
+        "failed"
+      ]
+    },
+    "idempotency_key": {
+      "type": "string",
+      "minLength": 16
+    },
+    "speaker_text_raw": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "speaker_text_clean": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "asr_confidence": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "live_stage": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "opening",
+        "audience_warmup",
+        "topic_entry",
+        "course_explanation",
+        "demonstration",
+        "comment_interaction",
+        "objection_handling",
+        "benefit_explanation",
+        "offer_or_rights",
+        "promotion",
+        "call_to_action",
+        "transition",
+        "closing",
+        "interruption_or_abnormal",
+        "unknown",
+        null
+      ]
+    },
+    "utterance_function": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "greeting",
+        "attention_hook",
+        "agenda_setting",
+        "knowledge_definition",
+        "step_instruction",
+        "demonstration_narration",
+        "example_or_story",
+        "question_to_audience",
+        "comment_readback",
+        "direct_answer",
+        "aggregated_answer",
+        "clarification",
+        "empathy_or_validation",
+        "risk_disclaimer",
+        "benefit_statement",
+        "offer_explanation",
+        "urgency_or_scarcity",
+        "social_proof",
+        "objection_response",
+        "topic_transition",
+        "recap",
+        "next_hook",
+        "manual_takeover_notice",
+        "filler_or_repetition",
+        "unknown",
+        null
+      ]
+    },
+    "audience_state": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "new_arrival",
+        "curious",
+        "needs_basic_context",
+        "asking_how_to",
+        "asking_suitability",
+        "asking_price_or_rights",
+        "doubt_or_objection",
+        "risk_or_compliance_question",
+        "ready_for_action",
+        "confused",
+        "low_engagement",
+        "mixed_or_unknown",
+        null
+      ]
+    },
+    "response_goal": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "orient",
+        "retain_attention",
+        "explain",
+        "teach_step",
+        "clarify",
+        "answer",
+        "reduce_uncertainty",
+        "handle_objection",
+        "set_boundary",
+        "transition_to_offer",
+        "prompt_action",
+        "invite_comment",
+        "route_to_human",
+        "recover_flow",
+        "unknown",
+        null
+      ]
+    },
+    "response_strategy": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "direct_factual_answer",
+        "definition_then_example",
+        "problem_cause_solution",
+        "acknowledge_then_reframe",
+        "question_then_tailor",
+        "group_similar_questions",
+        "course_reference",
+        "demonstration",
+        "benefit_with_boundary",
+        "social_proof_with_source",
+        "offer_breakdown",
+        "risk_disclaimer",
+        "defer_and_takeover",
+        "repeat_or_filler",
+        "unknown",
+        null
+      ]
+    },
+    "utterance_structure": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "hook",
+          "acknowledge",
+          "restate_question",
+          "answer_core",
+          "reason",
+          "example",
+          "step",
+          "boundary",
+          "course_reference",
+          "offer",
+          "call_to_action",
+          "next_question",
+          "recap"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "comment_event_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "comment_text_redacted": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "comment_intent": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "greeting_or_presence",
+        "request_explanation",
+        "how_to",
+        "suitability",
+        "symptom_or_problem",
+        "course_content",
+        "price",
+        "offer_or_rights",
+        "purchase_or_order",
+        "refund_or_after_sales",
+        "trust_or_evidence",
+        "effect_or_outcome",
+        "objection",
+        "complaint",
+        "risk_or_compliance",
+        "off_topic",
+        "spam_or_duplicate",
+        "unreadable",
+        "unknown",
+        null
+      ]
+    },
+    "comment_risk": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "none",
+        "pii",
+        "health_or_medical",
+        "effect_guarantee",
+        "minor_or_sensitive",
+        "refund_or_legal",
+        "payment_or_account",
+        "harassment",
+        "platform_compliance",
+        "unknown",
+        null
+      ]
+    },
+    "response_link_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "direct_explicit",
+        "likely_direct",
+        "aggregated",
+        "topic_only",
+        "prompted_by_host",
+        "unanswered",
+        "uncertain",
+        "none",
+        null
+      ]
+    },
+    "response_latency_ms": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "reply_target": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "link_confidence": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "unanswered_reason": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "not_seen",
+        "duplicate_or_spam",
+        "out_of_scope",
+        "risk_requires_human",
+        "time_limit",
+        "host_changed_topic",
+        "unreadable",
+        "unknown",
+        null
+      ]
+    },
+    "related_comment_event_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "reply_event_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "observed_action": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "neutral_idle",
+        "head_nod",
+        "head_shake",
+        "lean_forward",
+        "lean_back",
+        "open_palm",
+        "pointing",
+        "counting_gesture",
+        "hands_together",
+        "clap",
+        "hold_prop",
+        "demonstrate_with_prop",
+        "touch_courseware_or_screen",
+        "stand_or_sit_transition",
+        "large_body_demonstration",
+        "off_camera",
+        "unclear",
+        null
+      ]
+    },
+    "observed_action_confidence": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "facial_expression": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "neutral",
+        "smile",
+        "serious",
+        "surprised",
+        "questioning",
+        "emphasis",
+        "unclear",
+        null
+      ]
+    },
+    "gaze_target": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "camera",
+        "comment_area",
+        "courseware",
+        "prop",
+        "off_screen_person_or_device",
+        "unknown",
+        null
+      ]
+    },
+    "body_posture": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "seated_upright",
+        "seated_leaning",
+        "standing",
+        "demonstration_posture",
+        "partially_occluded",
+        "off_camera",
+        "unknown",
+        null
+      ]
+    },
+    "hand_gesture": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "none",
+        "open_hand",
+        "single_finger_point",
+        "counting",
+        "shape_or_size",
+        "hold_object",
+        "two_hand_emphasis",
+        "unknown",
+        null
+      ]
+    },
+    "prop_or_courseware_interaction": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "inferred_action_meaning": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "avatar_action_candidate": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "neutral_idle",
+        "small_nod",
+        "small_open_palm",
+        "single_emphasis",
+        "question_prompt",
+        "serious_emphasis",
+        "courseware_point",
+        "product_or_prop_reference",
+        "manual_takeover_idle",
+        "unsuitable_for_avatar",
+        null
+      ]
+    },
+    "avatar_action_trigger": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "action_duration": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "action_cooldown": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "action_conflict": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "avatar_suitability": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "suitable",
+        "suitable_with_substitution",
+        "unsuitable",
+        "unknown",
+        null
+      ]
+    },
+    "action_review_flag": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "speaking_rate": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "pause_before_ms": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "pause_after_ms": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "emphasis_words": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "volume_change": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "prosody_label": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "normal_explain",
+        "slow_step_instruction",
+        "question_prompt",
+        "emphasis",
+        "warning_or_boundary",
+        "empathetic_acknowledgement",
+        "offer_explanation",
+        "call_to_action",
+        "transition",
+        "conclusion_summary",
+        "unclear",
+        null
+      ]
+    },
+    "emotion_observed": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "neutral_expression",
+        "smiling_expression",
+        "serious_expression",
+        "raised_volume",
+        "softened_volume",
+        "faster_delivery",
+        "slower_delivery",
+        "unclear",
+        null
+      ]
+    },
+    "prosody_confidence": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "course_lesson_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "course_chunk_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "course_source_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "course_topic": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "alignment_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "direct_course_quote",
+        "spoken_paraphrase",
+        "example_or_story",
+        "comment_driven_extension",
+        "course_to_sales_transition",
+        "unrelated",
+        "possible_insufficient_evidence",
+        null
+      ]
+    },
+    "alignment_confidence": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "course_fidelity": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "exact_source_verified",
+        "meaning_preserved",
+        "partial_with_omissions",
+        "expanded_with_supported_content",
+        "expanded_unsupported",
+        "chunk_or_topic_only",
+        "source_unavailable",
+        "not_applicable",
+        null
+      ]
+    },
+    "live_transformation_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "definition_to_plain_language",
+        "step_to_demonstration",
+        "principle_to_example",
+        "knowledge_to_answer",
+        "knowledge_to_objection_handling",
+        "knowledge_to_benefit",
+        "knowledge_to_sales",
+        "knowledge_to_hook",
+        "unrelated",
+        null
+      ]
+    },
+    "live_example_or_story": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "omitted_prerequisite": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "unsupported_addition": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "compliance_risk": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "trigger_type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "trigger_pattern": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "decision_goal": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "response_template_structure": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "prosody_candidate": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "next_question_or_hook": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "risk_level": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "blocked",
+        null
+      ]
+    },
+    "human_takeover_required": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "fallback_route": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "review_status": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "unreviewed",
+        "needs_review",
+        "in_review",
+        "approved",
+        "revised",
+        "rejected",
+        "blocked",
+        null
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "privacy_tier": {
+            "const": "redacted_repo"
+          }
+        },
+        "required": [
+          "privacy_tier"
+        ]
+      },
+      "then": {
+        "properties": {
+          "comment_text_redacted": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "observation_status": {
+            "const": "manual_verified"
+          }
+        },
+        "required": [
+          "observation_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "manual_review_result": {
+            "enum": [
+              "approved",
+              "revised",
+              "rejected"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
