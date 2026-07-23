@@ -1,0 +1,138 @@
+{
+  "version": "1.0",
+  "execution_order": [
+    "preflight_source_hash_and_api_check",
+    "stage_0_contract_preflight_pilot_gate",
+    "stage_1_independent_audio_and_visual_base",
+    "stage_2_comment_action_prosody_course_cleanup",
+    "stage_3_semantic_timeline_and_reply_arbitration",
+    "stage_4_brain_rule_regeneration",
+    "stage_5_final_merge_and_5_6_acceptance"
+  ],
+  "parallel_groups": {
+    "stage_0_required_before_pilot": [
+      "AGENT-CONTRACT-PREFLIGHT"
+    ],
+    "stage_1_independent": [
+      "AGENT-AUDIO-ASR",
+      "AGENT-VISION-COMMENT-ACTION"
+    ],
+    "stage_2_after_base_scan": [
+      "AGENT-VISION-COMMENT-ACTION",
+      "AGENT-COURSE-RULES"
+    ],
+    "stage_3_after_timeline": [
+      "AGENT-REPLY-ARBITER"
+    ],
+    "stage_4_after_arbitration": [
+      "AGENT-COURSE-RULES"
+    ],
+    "stage_5_final": [
+      "AGENT-FINAL-MERGE-QA"
+    ]
+  },
+  "hard_dependencies": [
+    {
+      "before": "course_alignment_cleanup",
+      "after": "audio_source_classification",
+      "reason": "non-host audio must not enter course matching"
+    },
+    {
+      "before": "reply_causality_arbitration",
+      "after": "comment_tracking_redaction",
+      "reason": "reply relation needs comment lifecycle"
+    },
+    {
+      "before": "brain_rule_regeneration",
+      "after": "reply_causality_arbitration,course_alignment_cleanup,visual_action_extraction,prosody_feature_extraction",
+      "reason": "rules must be generated from validated evidence, not templates"
+    }
+  ],
+  "write_conflict_policy": "one agent owns one remediation subdirectory; final merge is serial",
+  "tasks": [
+    {
+      "task_id": "RT-001",
+      "gap_id": "GAP-CONTRACT-001",
+      "lane": "contract_preflight",
+      "agent_goal_id": "AGENT-CONTRACT-PREFLIGHT",
+      "parallel_group": "stage_0_required_before_pilot"
+    },
+    {
+      "task_id": "RT-002",
+      "gap_id": "GAP-AUDIO-001",
+      "lane": "audio_source_classification",
+      "agent_goal_id": "AGENT-AUDIO-ASR",
+      "parallel_group": "stage_1_independent"
+    },
+    {
+      "task_id": "RT-003",
+      "gap_id": "GAP-EVENT-001",
+      "lane": "semantic_segmentation",
+      "agent_goal_id": "AGENT-EVENT-SEGMENT",
+      "parallel_group": "stage_2_after_audio_and_vision_base"
+    },
+    {
+      "task_id": "RT-004",
+      "gap_id": "GAP-VISION-001",
+      "lane": "qwen_vl_base_dense_scan",
+      "agent_goal_id": "AGENT-VISION-COMMENT-ACTION",
+      "parallel_group": "stage_1_independent"
+    },
+    {
+      "task_id": "RT-005",
+      "gap_id": "GAP-VISION-002",
+      "lane": "qwen_vl_base_dense_scan",
+      "agent_goal_id": "AGENT-VISION-COMMENT-ACTION",
+      "parallel_group": "stage_1_independent"
+    },
+    {
+      "task_id": "RT-006",
+      "gap_id": "GAP-COMMENT-001",
+      "lane": "comment_tracking_redaction",
+      "agent_goal_id": "AGENT-VISION-COMMENT-ACTION",
+      "parallel_group": "stage_2_after_base_scan"
+    },
+    {
+      "task_id": "RT-007",
+      "gap_id": "GAP-REPLY-001",
+      "lane": "reply_causality_arbitration",
+      "agent_goal_id": "AGENT-REPLY-ARBITER",
+      "parallel_group": "stage_3_after_timeline"
+    },
+    {
+      "task_id": "RT-008",
+      "gap_id": "GAP-ACTION-001",
+      "lane": "visual_action_extraction",
+      "agent_goal_id": "AGENT-VISION-COMMENT-ACTION",
+      "parallel_group": "stage_2_after_dense_scan"
+    },
+    {
+      "task_id": "RT-009",
+      "gap_id": "GAP-PROSODY-001",
+      "lane": "prosody_feature_extraction",
+      "agent_goal_id": "AGENT-AUDIO-ASR",
+      "parallel_group": "stage_2_after_audio"
+    },
+    {
+      "task_id": "RT-010",
+      "gap_id": "GAP-COURSE-001",
+      "lane": "course_alignment_cleanup",
+      "agent_goal_id": "AGENT-COURSE-RULES",
+      "parallel_group": "stage_2_after_semantic_text"
+    },
+    {
+      "task_id": "RT-011",
+      "gap_id": "GAP-RULE-001",
+      "lane": "brain_rule_regeneration",
+      "agent_goal_id": "AGENT-COURSE-RULES",
+      "parallel_group": "stage_4_after_arbitration"
+    },
+    {
+      "task_id": "RT-012",
+      "gap_id": "GAP-REVIEW-001",
+      "lane": "manual_review_prioritization",
+      "agent_goal_id": "AGENT-FINAL-MERGE-QA",
+      "parallel_group": "stage_5_final"
+    }
+  ]
+}

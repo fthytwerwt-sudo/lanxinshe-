@@ -1,0 +1,117 @@
+{
+  "version": "1.0",
+  "agent_goals": [
+    {
+      "agent_goal_id": "AGENT-CONTRACT-PREFLIGHT",
+      "model": "gpt-5.6-sol",
+      "role": "contract_preflight_and_pilot_gate",
+      "goal": "lock schema migration, source hash validation, pilot scope, checkpoint/resume and full-execution stop line",
+      "owned_tasks": [
+        "RT-001"
+      ],
+      "write_scope": "remediation/contract_preflight/",
+      "must_not_write": [
+        "baseline evidence directory",
+        "_local_runtime raw private manifests",
+        "source videos"
+      ],
+      "done_when": "pilot_remediation_only is ready and full remediation remains blocked until 5.6 approves pilot results"
+    },
+    {
+      "agent_goal_id": "AGENT-AUDIO-ASR",
+      "model": "gpt-5.5",
+      "role": "audio_asr_prosody_lane",
+      "goal": "classify ASR/audio source, mark usable host speech, derive prosody features and low-quality spans",
+      "owned_tasks": [
+        "RT-002",
+        "RT-009"
+      ],
+      "write_scope": "remediation/audio_asr_prosody/",
+      "must_not_write": [
+        "baseline evidence directory",
+        "_local_runtime raw private manifests",
+        "source videos"
+      ],
+      "done_when": "all ASR-derived events have source classification and prosody confidence where observable"
+    },
+    {
+      "agent_goal_id": "AGENT-VISION-COMMENT-ACTION",
+      "model": "gpt-5.5",
+      "role": "qwen_vl_visual_comment_action_lane",
+      "goal": "run Alibaba Qwen-VL base/dense visual scan, track redacted comments and observable actions",
+      "owned_tasks": [
+        "RT-004",
+        "RT-005",
+        "RT-006",
+        "RT-008"
+      ],
+      "write_scope": "remediation/vision_comment_action/",
+      "must_not_write": [
+        "baseline evidence directory",
+        "raw media into Git",
+        "unredacted comments"
+      ],
+      "done_when": "base/dense scan outputs exist and comment/action gaps are either filled or not_observable/source_limit"
+    },
+    {
+      "agent_goal_id": "AGENT-EVENT-SEGMENT",
+      "model": "gpt-5.5",
+      "role": "semantic_timeline_lane",
+      "goal": "merge raw ASR/comment/visual records into semantic live events with transition markers",
+      "owned_tasks": [
+        "RT-003"
+      ],
+      "write_scope": "remediation/semantic_timeline/",
+      "must_not_write": [
+        "baseline evidence directory"
+      ],
+      "done_when": "timeline events are semantically segmented and preserve source event ids"
+    },
+    {
+      "agent_goal_id": "AGENT-REPLY-ARBITER",
+      "model": "gpt-5.5",
+      "role": "comment_reply_causality_lane",
+      "goal": "arbitrate comment-reply relations without treating temporal proximity as causality",
+      "owned_tasks": [
+        "RT-007"
+      ],
+      "write_scope": "remediation/reply_arbitration/",
+      "must_not_write": [
+        "unredacted comments",
+        "baseline evidence directory"
+      ],
+      "done_when": "high-value links are direct/merged/prompted/topic_only/unanswered/insufficient_evidence"
+    },
+    {
+      "agent_goal_id": "AGENT-COURSE-RULES",
+      "model": "gpt-5.5",
+      "role": "course_alignment_and_rules_lane",
+      "goal": "clean course alignment and regenerate traceable live-brain rules from validated evidence",
+      "owned_tasks": [
+        "RT-010",
+        "RT-011"
+      ],
+      "write_scope": "remediation/course_rules/",
+      "must_not_write": [
+        "baseline evidence directory"
+      ],
+      "done_when": "false course matches are removed and rules bind real event evidence"
+    },
+    {
+      "agent_goal_id": "AGENT-FINAL-MERGE-QA",
+      "model": "gpt-5.6-sol",
+      "role": "final_merge_and_acceptance_lane",
+      "goal": "merge 5.5 outputs, validate contracts, generate final acceptance evidence for 5.6 review",
+      "owned_tasks": [
+        "RT-012"
+      ],
+      "write_scope": "remediation/final_merge/",
+      "must_not_write": [
+        "raw media",
+        "private manifests",
+        "unredacted comments"
+      ],
+      "done_when": "machine acceptance checks pass and residual blocked items are explicit"
+    }
+  ]
+}

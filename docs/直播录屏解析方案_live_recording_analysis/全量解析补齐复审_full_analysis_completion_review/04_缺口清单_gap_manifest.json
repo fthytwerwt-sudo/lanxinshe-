@@ -1,0 +1,140 @@
+{
+  "version": "1.0",
+  "created_at": "2026-07-23T17:12:50.603882",
+  "gaps": [
+    {
+      "gap_id": "GAP-CONTRACT-001",
+      "lane": "contract_preflight",
+      "severity": "critical",
+      "source": "5.6-sol controller review and planning schema",
+      "status": "missing",
+      "problem": "Baseline full run skipped the pilot approval gate and event rows are not fully compliant with the planning schema.",
+      "affected_sessions": "all",
+      "task": "lock schema migration, source hash validation, pilot scope, checkpoint/resume and disjoint output directories before any full remediation.",
+      "done_when": "machine approval remains full_execution=false until pilot_review_decision=approved and all preflight checks pass."
+    },
+    {
+      "gap_id": "GAP-AUDIO-001",
+      "lane": "audio_source_classification",
+      "severity": "critical",
+      "source": "baseline ASR events and raw ASR evidence",
+      "status": "missing",
+      "problem": "ASR succeeded but audio_source_type/speaker_role/asr_quality/host_speech_usable are absent.",
+      "affected_sessions": "all",
+      "task": "classify each ASR segment as host speech, song/background/platform/other speaker/noise; flag usable host speech.",
+      "done_when": "all ASR-derived speaker events have classification fields and non-host audio is excluded from course/rule generation."
+    },
+    {
+      "gap_id": "GAP-EVENT-001",
+      "lane": "semantic_segmentation",
+      "severity": "high",
+      "source": "04 event timeline",
+      "status": "partial",
+      "problem": "Timeline is still dominated by ASR sentence rows rather than semantic live events.",
+      "affected_sessions": "all",
+      "task": "merge/split events around topic switches, comment appearances, replies, course segments, sales nodes and anomalies.",
+      "done_when": "each semantic event has source event ids, start/end, event_type, trigger and review status."
+    },
+    {
+      "gap_id": "GAP-VISION-001",
+      "lane": "qwen_vl_base_dense_scan",
+      "severity": "critical",
+      "source": "session manifests and 03 summary",
+      "status": "invalid",
+      "problem": "Sparse visual sampling is the only visual evidence; base_scan_60s_estimated_windows=663, dense20_estimated_windows=1982.",
+      "affected_sessions": "all",
+      "task": "use Alibaba Qwen-VL for 60s base scan and dense scans on comment/action/transition windows.",
+      "done_when": "all sessions have base scan coverage and dense scan task records; uncovered spans are explicitly not_observable/source_limit."
+    },
+    {
+      "gap_id": "GAP-VISION-002",
+      "lane": "qwen_vl_base_dense_scan",
+      "severity": "high",
+      "source": "local runtime api_raw and vision_clips inventory",
+      "status": "missing",
+      "problem": "latest_live_07 has a visual clip without a matching non-AppleDouble API raw response.",
+      "affected_sessions": [
+        "latest_live_07"
+      ],
+      "task": "backfill or explicitly invalidate the missing latest_live_07 visual raw response before downstream use.",
+      "done_when": "vision_clips and api_raw counts match for every evidence-bearing window, or missing windows are excluded with reason."
+    },
+    {
+      "gap_id": "GAP-COMMENT-001",
+      "lane": "comment_tracking_redaction",
+      "severity": "high",
+      "source": "Qwen-VL sparse windows and comment event rows",
+      "status": "partial",
+      "problem": "Comment events do not track lifecycle, dedup group, first/last seen or final state.",
+      "affected_sessions": "all",
+      "task": "track redacted comments across frames, distinguish username/body/system message, and store lifecycle fields.",
+      "done_when": "each observable comment has stable redacted id, first_seen_ms, last_seen_ms, dedup_key, intent, risk, final_state."
+    },
+    {
+      "gap_id": "GAP-REPLY-001",
+      "lane": "reply_causality_arbitration",
+      "severity": "high",
+      "source": "05 comment reply candidates",
+      "status": "invalid",
+      "problem": "Candidate rows do not prove direct response, merged response, prompted comment, topic-only, unanswered or insufficient evidence.",
+      "affected_sessions": "all",
+      "task": "arbitrate high-value relations using comment lifecycle, ASR semantic events and visual windows.",
+      "done_when": "each high-value relation has response_link_type, evidence spans, alternatives, confidence and review outcome."
+    },
+    {
+      "gap_id": "GAP-ACTION-001",
+      "lane": "visual_action_extraction",
+      "severity": "high",
+      "source": "06 host logic/action/prosody candidates",
+      "status": "missing",
+      "problem": "Most action/expression/gaze/posture/gesture/courseware fields are empty.",
+      "affected_sessions": "all",
+      "task": "extract observable actions from dense Qwen-VL windows and mark not_observable where needed.",
+      "done_when": "key events have action fields or explicit not_observable with evidence_ref and confidence."
+    },
+    {
+      "gap_id": "GAP-PROSODY-001",
+      "lane": "prosody_feature_extraction",
+      "severity": "medium",
+      "source": "06 host logic/action/prosody candidates",
+      "status": "partial",
+      "problem": "Text-derived prosody labels exist but pause_before/volume/emphasis evidence is not measured.",
+      "affected_sessions": "all",
+      "task": "derive speech rate, pause before/after and emphasis from ASR timestamps/audio metadata; keep confidence.",
+      "done_when": "usable host speech events include measured/derived prosody features and confidence."
+    },
+    {
+      "gap_id": "GAP-COURSE-001",
+      "lane": "course_alignment_cleanup",
+      "severity": "high",
+      "source": "07 course candidates and course bridge files",
+      "status": "invalid",
+      "problem": "All rows are topic_similarity_only; full raw source refs are partly historical previous_pack refs.",
+      "affected_sessions": "all",
+      "task": "remove false matches, allow no_match, use available bridge/source_quote refs, and mark exact alignment blocked where source is missing.",
+      "done_when": "course_alignment contains direct/rewritten/case/comment-driven/no_match/source_blocked with auditable source_ref."
+    },
+    {
+      "gap_id": "GAP-RULE-001",
+      "lane": "brain_rule_regeneration",
+      "severity": "critical",
+      "source": "10 provisional rules",
+      "status": "invalid",
+      "problem": "Rules are template-like and not bound to event_id/trigger evidence/action/prosody basis.",
+      "affected_sessions": "all",
+      "task": "regenerate rules only after reply/course/action/prosody validation.",
+      "done_when": "each rule binds event ids, trigger evidence, user state, strategy, course/action/prosody basis and risk."
+    },
+    {
+      "gap_id": "GAP-REVIEW-001",
+      "lane": "manual_review_prioritization",
+      "severity": "medium",
+      "source": "09 manual review queue",
+      "status": "invalid",
+      "problem": "Queue is fixed at 80 per session instead of post-arbitration risk ranking.",
+      "affected_sessions": "all",
+      "task": "rebuild queue after agent arbitration with evidence, alternatives and review action.",
+      "done_when": "final queue contains only unresolved high-risk or low-confidence items ranked by priority."
+    }
+  ]
+}

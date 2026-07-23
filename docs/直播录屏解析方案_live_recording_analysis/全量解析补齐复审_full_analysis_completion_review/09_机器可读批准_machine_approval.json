@@ -1,0 +1,83 @@
+{
+  "review_status": "request_changes_pilot_remediation_only",
+  "baseline_commit": "82fdab783aa8384fa428e393368f450fd0d87fdc",
+  "planning_commit": "cea8092f6d20524a516aaea74dd5e2854467c59e",
+  "gap_manifest_path": "docs/直播录屏解析方案_live_recording_analysis/全量解析补齐复审_full_analysis_completion_review/04_缺口清单_gap_manifest.json",
+  "remediation_tasks_path": "docs/直播录屏解析方案_live_recording_analysis/全量解析补齐复审_full_analysis_completion_review/05_补跑任务清单_remediation_tasks.json",
+  "agent_goals_path": "docs/直播录屏解析方案_live_recording_analysis/全量解析补齐复审_full_analysis_completion_review/06_Agent目标分工_agent_goals.json",
+  "allowed_execution": false,
+  "allowed_execution_scope": "full_remediation_blocked_until_5_6_pilot_review_approved",
+  "pilot_remediation_allowed": true,
+  "supports_5_6_sol": true,
+  "supports_5_5_multi_agent": true,
+  "alibaba_multimodal_authorized": true,
+  "alibaba_route": {
+    "asr": "existing Alibaba Fun-ASR route; first-pass 10/10 succeeded",
+    "multimodal": "Alibaba Qwen-VL route authorized by user for this task",
+    "new_supplier_allowed": false
+  },
+  "spawned_agents": [
+    {
+      "agent_id": "019f8e36-8d13-7643-b389-df586f909427",
+      "model": "gpt-5.6-sol",
+      "role": "review_controller"
+    },
+    {
+      "agent_id": "019f8e36-f330-7751-a8af-2252844324b9",
+      "model": "gpt-5.5",
+      "role": "audio_asr_gap_review"
+    },
+    {
+      "agent_id": "019f8e36-f414-7aa0-bc30-2bdebc155c4a",
+      "model": "gpt-5.5",
+      "role": "vision_comment_reply_gap_review"
+    },
+    {
+      "agent_id": "019f8e36-f654-7773-9c76-3d50b69ae2d1",
+      "model": "gpt-5.5",
+      "role": "course_rules_review_queue_gap_review"
+    }
+  ],
+  "approved_gaps": [
+    "GAP-CONTRACT-001",
+    "GAP-AUDIO-001",
+    "GAP-EVENT-001",
+    "GAP-VISION-001",
+    "GAP-VISION-002",
+    "GAP-COMMENT-001",
+    "GAP-REPLY-001",
+    "GAP-ACTION-001",
+    "GAP-PROSODY-001",
+    "GAP-COURSE-001",
+    "GAP-RULE-001",
+    "GAP-REVIEW-001"
+  ],
+  "approved_tasks": [
+    "RT-001",
+    "RT-002",
+    "RT-003",
+    "RT-004",
+    "RT-005",
+    "RT-006",
+    "RT-007",
+    "RT-008",
+    "RT-009",
+    "RT-010",
+    "RT-011",
+    "RT-012"
+  ],
+  "preconditions": [
+    "source hashes unchanged",
+    "raw_local and redacted_repo remain physically separated",
+    "5.5 agents write only to disjoint remediation subdirectories",
+    "5.6 final merge is serial and validates parse/security gates",
+    "pilot_review_decision=approved before any 10-session full remediation"
+  ],
+  "blocked_lanes": [
+    {
+      "lane": "course_exact_alignment",
+      "status": "blocked_source_limit_if_full_transcript_clean_jsonl_missing",
+      "continue_other_lanes": true
+    }
+  ]
+}

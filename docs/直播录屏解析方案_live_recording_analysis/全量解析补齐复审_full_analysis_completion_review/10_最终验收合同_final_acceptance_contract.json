@@ -1,0 +1,39 @@
+{
+  "contract_version": "1.0",
+  "final_review_owner": "gpt-5.6-sol",
+  "baseline_commit": "82fdab783aa8384fa428e393368f450fd0d87fdc",
+  "required_status_values": [
+    "passed",
+    "partial",
+    "missing",
+    "invalid",
+    "blocked_source_limit",
+    "not_applicable"
+  ],
+  "hard_gates": [
+    "10/10 source videos hash unchanged",
+    "all JSON/JSONL/CSV parse",
+    "no raw media, raw comments, signed URLs, API keys, or private manifests in Git",
+    "visual coverage no longer relies only on 300s/8s sparse windows",
+    "ASR host speech excludes song/background/platform/other-speaker segments",
+    "comment-reply relations have evidence or are explicitly insufficient_evidence/unanswered/topic_only",
+    "course alignment does not count topic_similarity_only as valid",
+    "live brain rules bind real event ids and are not duplicated templates",
+    "manual review queue is risk-ranked after arbitration"
+  ],
+  "quantitative_minimums": {
+    "source_sessions": 10,
+    "base_scan_60s_estimated_windows": 663,
+    "dense_scan_20s_estimated_windows_reference": 1982,
+    "duplicate_event_ids": 0,
+    "topic_similarity_only_valid_course_match_allowed": 0,
+    "template_rule_batch_allowed": 0
+  },
+  "completion_boundary": "Passing this contract means full analysis evidence is ready for human/project review; it does not mean customer acceptance, business outcome, or digital-human production readiness.",
+  "blocked_policy": {
+    "course_exact_alignment_source_missing": "lane may be blocked_source_limit while other lanes continue",
+    "comment_unobservable": "write source_limit/not_observable, never invent comments",
+    "action_unobservable": "write not_observable with evidence_ref",
+    "api_failure": "blocked_api_permission_or_balance, no local fallback impersonation"
+  }
+}

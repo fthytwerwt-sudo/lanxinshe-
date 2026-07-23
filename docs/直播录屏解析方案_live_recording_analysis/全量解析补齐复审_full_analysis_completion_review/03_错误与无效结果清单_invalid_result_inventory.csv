@@ -1,0 +1,8 @@
+﻿invalid_id,scope,affected_count,invalid_type,evidence,severity,required_fix
+INV-001,visual_coverage,10,sparse_sampling_used_as_coverage,vision uses 300s interval and 8s clips; <=3.01% visual coverage per session,critical,run base scan and dense scan before visual/comment/action completion claims
+INV-002,course_alignment,7251,topic_similarity_only,all course rows are topic_similarity_only/course_alignment_candidate_only,high,remove false precision; classify as direct/rewritten/case/comment-driven/no_match/source_blocked
+INV-003,brain_rules,133,template_batch,all rules share one response_template_structure and lack event_id column,critical,regenerate only from validated events with rule_event_refs
+INV-004,comment_reply,134,candidate_without_causality,all link_status values are candidate_pending_review,high,perform causal arbitration and downgrade uncertain/topic-only links
+INV-005,action_fields,7299,missing_observable_action,observed_action and paired visual fields empty for most host rows,high,extract from Qwen-VL windows or mark not_observable
+INV-006,manual_review,800,fixed_quota_queue,manual_review_queue is exactly 80 rows per session,medium,re-rank after arbitration by risk and uncertainty
+INV-007,vision_raw_traceability,1,clip_without_matching_api_raw,latest_live_07 has 20 vision clips but 19 non-AppleDouble api_raw files,high,re-run or mark the missing visual window raw response before using it as evidence

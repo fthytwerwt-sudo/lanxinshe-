@@ -1,0 +1,280 @@
+{
+  "version": "1.0",
+  "tasks": [
+    {
+      "task_id": "RT-001",
+      "gap_id": "GAP-CONTRACT-001",
+      "lane": "contract_preflight",
+      "severity": "critical",
+      "agent_goal_id": "AGENT-CONTRACT-PREFLIGHT",
+      "parallel_group": "stage_0_required_before_pilot",
+      "task": "lock schema migration, source hash validation, pilot scope, checkpoint/resume and disjoint output directories before any full remediation.",
+      "input_paths": [
+        "docs/直播录屏解析方案_live_recording_analysis/新录屏多模态解析规划_new_recording_multimodal_plan/data/event_schema.json",
+        "docs/直播录屏解析方案_live_recording_analysis/全量解析补齐复审_full_analysis_completion_review/04_缺口清单_gap_manifest.json"
+      ],
+      "output_contract": "pilot_preflight_contract.json + schema_migration_map.csv",
+      "alibaba_api_route": "capability check only; no raw payload committed",
+      "done_when": "machine approval remains full_execution=false until pilot_review_decision=approved and all preflight checks pass.",
+      "write_scope": "5.5 remediation output directory only; first-pass baseline remains read-only",
+      "blocked_if": [
+        "source_hash_changed",
+        "raw_or_signed_url_would_enter_repo",
+        "api_permission_or_balance_failed",
+        "required_course_source_missing_for_exact_alignment"
+      ]
+    },
+    {
+      "task_id": "RT-002",
+      "gap_id": "GAP-AUDIO-001",
+      "lane": "audio_source_classification",
+      "severity": "critical",
+      "agent_goal_id": "AGENT-AUDIO-ASR",
+      "parallel_group": "stage_1_independent",
+      "task": "classify each ASR segment as host speech, song/background/platform/other speaker/noise; flag usable host speech.",
+      "input_paths": [
+        "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512/*/asr_raw/",
+        "docs/直播录屏解析方案_live_recording_analysis/最新直播全量取证解析_latest_live_full_evidence_analysis/04_事件时间轴索引_event_timeline_index.csv"
+      ],
+      "output_contract": "audio_segment_classification.jsonl + updated redacted speaker event candidates",
+      "alibaba_api_route": "Fun-ASR existing results; no full ASR rerun unless low-quality spans are identified",
+      "done_when": "all ASR-derived speaker events have classification fields and non-host audio is excluded from course/rule generation.",
+      "write_scope": "5.5 remediation output directory only; first-pass baseline remains read-only",
+      "blocked_if": [
+        "source_hash_changed",
+        "raw_or_signed_url_would_enter_repo",
+        "api_permission_or_balance_failed",
+        "required_course_source_missing_for_exact_alignment"
+      ]
+    },
+    {
+      "task_id": "RT-003",
+      "gap_id": "GAP-EVENT-001",
+      "lane": "semantic_segmentation",
+      "severity": "high",
+      "agent_goal_id": "AGENT-EVENT-SEGMENT",
+      "parallel_group": "stage_2_after_audio_and_vision_base",
+      "task": "merge/split events around topic switches, comment appearances, replies, course segments, sales nodes and anomalies.",
+      "input_paths": [
+        "audio classifications",
+        "comment lifecycle",
+        "base visual scan"
+      ],
+      "output_contract": "semantic_event_timeline.jsonl",
+      "alibaba_api_route": "not required unless missing modality evidence needs Qwen-VL backfill",
+      "done_when": "each semantic event has source event ids, start/end, event_type, trigger and review status.",
+      "write_scope": "5.5 remediation output directory only; first-pass baseline remains read-only",
+      "blocked_if": [
+        "source_hash_changed",
+        "raw_or_signed_url_would_enter_repo",
+        "api_permission_or_balance_failed",
+        "required_course_source_missing_for_exact_alignment"
+      ]
+    },
+    {
+      "task_id": "RT-004",
+      "gap_id": "GAP-VISION-001",
+      "lane": "qwen_vl_base_dense_scan",
+      "severity": "critical",
+      "agent_goal_id": "AGENT-VISION-COMMENT-ACTION",
+      "parallel_group": "stage_1_independent",
+      "task": "use Alibaba Qwen-VL for 60s base scan and dense scans on comment/action/transition windows.",
+      "input_paths": [
+        "最新直播/*.mp4",
+        "session manifests"
+      ],
+      "output_contract": "redacted visual window observations + local-only raw responses",
+      "alibaba_api_route": "Qwen-VL via existing Alibaba route; estimated_base_scan_windows=663",
+      "done_when": "all sessions have base scan coverage and dense scan task records; uncovered spans are explicitly not_observable/source_limit.",
+      "write_scope": "5.5 remediation output directory only; first-pass baseline remains read-only",
+      "blocked_if": [
+        "source_hash_changed",
+        "raw_or_signed_url_would_enter_repo",
+        "api_permission_or_balance_failed",
+        "required_course_source_missing_for_exact_alignment"
+      ]
+    },
+    {
+      "task_id": "RT-005",
+      "gap_id": "GAP-VISION-002",
+      "lane": "qwen_vl_base_dense_scan",
+      "severity": "high",
+      "agent_goal_id": "AGENT-VISION-COMMENT-ACTION",
+      "parallel_group": "stage_1_independent",
+      "task": "backfill or explicitly invalidate the missing latest_live_07 visual raw response before downstream use.",
+      "input_paths": [
+        "最新直播/*.mp4",
+        "session manifests"
+      ],
+      "output_contract": "redacted visual window observations + local-only raw responses",
+      "alibaba_api_route": "Qwen-VL via existing Alibaba route; estimated_base_scan_windows=663",
+      "done_when": "vision_clips and api_raw counts match for every evidence-bearing window, or missing windows are excluded with reason.",
+      "write_scope": "5.5 remediation output directory only; first-pass baseline remains read-only",
+      "blocked_if": [
+        "source_hash_changed",
+        "raw_or_signed_url_would_enter_repo",
+        "api_permission_or_balance_failed",
+        "required_course_source_missing_for_exact_alignment"
+      ]
+    },
+    {
+      "task_id": "RT-006",
+      "gap_id": "GAP-COMMENT-001",
+      "lane": "comment_tracking_redaction",
+      "severity": "high",
+      "agent_goal_id": "AGENT-VISION-COMMENT-ACTION",
+      "parallel_group": "stage_2_after_base_scan",
+      "task": "track redacted comments across frames, distinguish username/body/system message, and store lifecycle fields.",
+      "input_paths": [
+        "base/dense visual scan outputs"
+      ],
+      "output_contract": "comment_lifecycle_redacted.jsonl",
+      "alibaba_api_route": "Qwen-VL for OCR where comments are visible",
+      "done_when": "each observable comment has stable redacted id, first_seen_ms, last_seen_ms, dedup_key, intent, risk, final_state.",
+      "write_scope": "5.5 remediation output directory only; first-pass baseline remains read-only",
+      "blocked_if": [
+        "source_hash_changed",
+        "raw_or_signed_url_would_enter_repo",
+        "api_permission_or_balance_failed",
+        "required_course_source_missing_for_exact_alignment"
+      ]
+    },
+    {
+      "task_id": "RT-007",
+      "gap_id": "GAP-REPLY-001",
+      "lane": "reply_causality_arbitration",
+      "severity": "high",
+      "agent_goal_id": "AGENT-REPLY-ARBITER",
+      "parallel_group": "stage_3_after_timeline",
+      "task": "arbitrate high-value relations using comment lifecycle, ASR semantic events and visual windows.",
+      "input_paths": [
+        "semantic_event_timeline",
+        "comment_lifecycle",
+        "audio classifications"
+      ],
+      "output_contract": "reply_relation_arbitrated.jsonl",
+      "alibaba_api_route": "not primary; use existing evidence and targeted Qwen-VL only for ambiguous windows",
+      "done_when": "each high-value relation has response_link_type, evidence spans, alternatives, confidence and review outcome.",
+      "write_scope": "5.5 remediation output directory only; first-pass baseline remains read-only",
+      "blocked_if": [
+        "source_hash_changed",
+        "raw_or_signed_url_would_enter_repo",
+        "api_permission_or_balance_failed",
+        "required_course_source_missing_for_exact_alignment"
+      ]
+    },
+    {
+      "task_id": "RT-008",
+      "gap_id": "GAP-ACTION-001",
+      "lane": "visual_action_extraction",
+      "severity": "high",
+      "agent_goal_id": "AGENT-VISION-COMMENT-ACTION",
+      "parallel_group": "stage_2_after_dense_scan",
+      "task": "extract observable actions from dense Qwen-VL windows and mark not_observable where needed.",
+      "input_paths": [
+        "dense visual windows",
+        "semantic event windows"
+      ],
+      "output_contract": "action_observation_candidates.jsonl",
+      "alibaba_api_route": "Qwen-VL action observation",
+      "done_when": "key events have action fields or explicit not_observable with evidence_ref and confidence.",
+      "write_scope": "5.5 remediation output directory only; first-pass baseline remains read-only",
+      "blocked_if": [
+        "source_hash_changed",
+        "raw_or_signed_url_would_enter_repo",
+        "api_permission_or_balance_failed",
+        "required_course_source_missing_for_exact_alignment"
+      ]
+    },
+    {
+      "task_id": "RT-009",
+      "gap_id": "GAP-PROSODY-001",
+      "lane": "prosody_feature_extraction",
+      "severity": "medium",
+      "agent_goal_id": "AGENT-AUDIO-ASR",
+      "parallel_group": "stage_2_after_audio",
+      "task": "derive speech rate, pause before/after and emphasis from ASR timestamps/audio metadata; keep confidence.",
+      "input_paths": [
+        "ASR timestamps",
+        "audio metadata"
+      ],
+      "output_contract": "prosody_features.jsonl",
+      "alibaba_api_route": "reuse ASR timestamps; no new supplier",
+      "done_when": "usable host speech events include measured/derived prosody features and confidence.",
+      "write_scope": "5.5 remediation output directory only; first-pass baseline remains read-only",
+      "blocked_if": [
+        "source_hash_changed",
+        "raw_or_signed_url_would_enter_repo",
+        "api_permission_or_balance_failed",
+        "required_course_source_missing_for_exact_alignment"
+      ]
+    },
+    {
+      "task_id": "RT-010",
+      "gap_id": "GAP-COURSE-001",
+      "lane": "course_alignment_cleanup",
+      "severity": "high",
+      "agent_goal_id": "AGENT-COURSE-RULES",
+      "parallel_group": "stage_2_after_semantic_text",
+      "task": "remove false matches, allow no_match, use available bridge/source_quote refs, and mark exact alignment blocked where source is missing.",
+      "input_paths": [
+        "course bridge CSV/MD",
+        "semantic host speech"
+      ],
+      "output_contract": "course_alignment_validated.jsonl",
+      "alibaba_api_route": "optional Qwen text structuring only; exact alignment blocked if source missing",
+      "done_when": "course_alignment contains direct/rewritten/case/comment-driven/no_match/source_blocked with auditable source_ref.",
+      "write_scope": "5.5 remediation output directory only; first-pass baseline remains read-only",
+      "blocked_if": [
+        "source_hash_changed",
+        "raw_or_signed_url_would_enter_repo",
+        "api_permission_or_balance_failed",
+        "required_course_source_missing_for_exact_alignment"
+      ]
+    },
+    {
+      "task_id": "RT-011",
+      "gap_id": "GAP-RULE-001",
+      "lane": "brain_rule_regeneration",
+      "severity": "critical",
+      "agent_goal_id": "AGENT-COURSE-RULES",
+      "parallel_group": "stage_4_after_arbitration",
+      "task": "regenerate rules only after reply/course/action/prosody validation.",
+      "input_paths": [
+        "validated reply/course/action/prosody outputs"
+      ],
+      "output_contract": "live_brain_rules_traceable.jsonl",
+      "alibaba_api_route": "Qwen text structuring allowed after evidence validation",
+      "done_when": "each rule binds event ids, trigger evidence, user state, strategy, course/action/prosody basis and risk.",
+      "write_scope": "5.5 remediation output directory only; first-pass baseline remains read-only",
+      "blocked_if": [
+        "source_hash_changed",
+        "raw_or_signed_url_would_enter_repo",
+        "api_permission_or_balance_failed",
+        "required_course_source_missing_for_exact_alignment"
+      ]
+    },
+    {
+      "task_id": "RT-012",
+      "gap_id": "GAP-REVIEW-001",
+      "lane": "manual_review_prioritization",
+      "severity": "medium",
+      "agent_goal_id": "AGENT-FINAL-MERGE-QA",
+      "parallel_group": "stage_5_final",
+      "task": "rebuild queue after agent arbitration with evidence, alternatives and review action.",
+      "input_paths": [
+        "all unresolved gap outputs"
+      ],
+      "output_contract": "risk_weighted_manual_review_queue.csv",
+      "alibaba_api_route": "not required",
+      "done_when": "final queue contains only unresolved high-risk or low-confidence items ranked by priority.",
+      "write_scope": "5.5 remediation output directory only; first-pass baseline remains read-only",
+      "blocked_if": [
+        "source_hash_changed",
+        "raw_or_signed_url_would_enter_repo",
+        "api_permission_or_balance_failed",
+        "required_course_source_missing_for_exact_alignment"
+      ]
+    }
+  ]
+}
