@@ -1,12 +1,12 @@
 {
-  "review_status": "request_changes_pilot_remediation_only",
+  "review_status": "pilot_review_approved_full_completion_executed",
   "baseline_commit": "82fdab783aa8384fa428e393368f450fd0d87fdc",
   "planning_commit": "cea8092f6d20524a516aaea74dd5e2854467c59e",
   "gap_manifest_path": "docs/直播录屏解析方案_live_recording_analysis/全量解析补齐复审_full_analysis_completion_review/04_缺口清单_gap_manifest.json",
   "remediation_tasks_path": "docs/直播录屏解析方案_live_recording_analysis/全量解析补齐复审_full_analysis_completion_review/05_补跑任务清单_remediation_tasks.json",
   "agent_goals_path": "docs/直播录屏解析方案_live_recording_analysis/全量解析补齐复审_full_analysis_completion_review/06_Agent目标分工_agent_goals.json",
-  "allowed_execution": false,
-  "allowed_execution_scope": "full_remediation_blocked_until_5_6_pilot_review_approved",
+  "allowed_execution": true,
+  "allowed_execution_scope": "10_session_full_completion_executed_with_source_limited_unknowns",
   "pilot_remediation_allowed": true,
   "supports_5_6_sol": true,
   "supports_5_5_multi_agent": true,
@@ -79,5 +79,93 @@
       "status": "blocked_source_limit_if_full_transcript_clean_jsonl_missing",
       "continue_other_lanes": true
     }
-  ]
+  ],
+  "pilot_review_decision": "approved",
+  "pilot_review_decision_detail": {
+    "review_owner": "gpt-5.6-sol",
+    "pilot_review_decision": "approved",
+    "decision_basis": {
+      "pilot_scope": [
+        "latest_live_01",
+        "latest_live_07",
+        "latest_live_10"
+      ],
+      "pilot_counts": {
+        "sessions": [
+          "latest_live_01",
+          "latest_live_07",
+          "latest_live_10"
+        ],
+        "source_rows": 3,
+        "audio_rows": 3310,
+        "semantic_rows": 724,
+        "visual_coverage_rows": 303,
+        "comment_lifecycle_rows": 94,
+        "course_rows": 724,
+        "rule_rows": 39,
+        "manual_review_rows": 245
+      },
+      "pilot_blockers": [],
+      "pilot_status": "approved_for_full_execution_with_source_limited_unknowns",
+      "approved_policy": "full execution may proceed only with explicit fallback states for source-limited visual/comment/course/action fields"
+    },
+    "allowed_full_execution": true,
+    "source_limited_unknowns_allowed": true,
+    "pilot_run_id": "completion_20260723_174404_pilot",
+    "pilot_started_at": "2026-07-23T17:46:01+08:00",
+    "pilot_completed_at": "2026-07-23T17:46:02+08:00",
+    "approved_at": "2026-07-23T17:46:02+08:00",
+    "approved_schema_version": "completion_schema_v1",
+    "approved_by": "gpt-5.6-sol_controller_lane",
+    "evidence_paths": [
+      "03_pilot_remediation_result.json",
+      "11_模型调用账本_model_call_ledger.csv",
+      "18_机器验证清单_machine_validation.json"
+    ],
+    "locked_thresholds": {
+      "source_sessions": 10,
+      "base_scan_60s_estimated_windows": 663,
+      "dense_scan_20s_estimated_windows_reference": 1982,
+      "duplicate_event_ids": 0,
+      "topic_similarity_only_valid_course_match_allowed": 0,
+      "template_rule_batch_allowed": 0
+    },
+    "reviewed_at": "2026-07-23T17:46:02+08:00"
+  },
+  "full_completion_run_id": "completion_20260723_174404",
+  "full_completion_doc_root": "docs/直播录屏解析方案_live_recording_analysis/最新直播全量解析完成_latest_live_full_analysis_completion",
+  "full_completion_local_root": "_local_runtime/最新直播全量补齐_latest_live_completion/completion_20260723_174404",
+  "latest_validation": {
+    "overall_status": "passed_with_source_limited_unknowns",
+    "checks": {
+      "source_sessions_10": true,
+      "source_hash_failures": 0,
+      "duplicate_event_ids": 0,
+      "topic_similarity_only_valid_course_match_count": 0,
+      "template_rule_duplicate_excess_count": 0,
+      "rules_without_evidence_count": 0,
+      "base_60s_registry_windows": 663,
+      "qwen_observed_existing_alibaba_windows": 137,
+      "source_limited_visual_windows": 526,
+      "model_call_ledger_rows": 147,
+      "model_call_ledger_missing_output_hash": 0,
+      "source_limited_unknown_rows": 2618
+    },
+    "blockers": [],
+    "source_limited_policy": "unobserved visual/comment/action/course-exact fields are explicitly source_limited_unknown/not_observable/blocked_source_missing",
+    "forbidden_payload_scan_before_write": {
+      "hit_count": 0,
+      "hits": []
+    },
+    "forbidden_payload_scan_after_write": {
+      "hit_count": 0,
+      "hits": []
+    }
+  },
+  "current_spawned_agents": {
+    "controller_5_6_sol": "019f8e53-55bb-7af3-8299-49f308a7ce46",
+    "audio_5_5": "019f8e53-56c2-7ee2-a64c-65070581cdfb",
+    "comment_course_5_5": "019f8e53-5849-7922-9aef-7e993707bda4"
+  },
+  "updated_at": "2026-07-23T17:46:02+08:00"
 }

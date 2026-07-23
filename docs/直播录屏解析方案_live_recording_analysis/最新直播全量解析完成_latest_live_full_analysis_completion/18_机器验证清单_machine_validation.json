@@ -1,0 +1,27 @@
+{
+  "overall_status": "passed_with_source_limited_unknowns",
+  "checks": {
+    "source_sessions_10": true,
+    "source_hash_failures": 0,
+    "duplicate_event_ids": 0,
+    "topic_similarity_only_valid_course_match_count": 0,
+    "template_rule_duplicate_excess_count": 0,
+    "rules_without_evidence_count": 0,
+    "base_60s_registry_windows": 663,
+    "qwen_observed_existing_alibaba_windows": 137,
+    "source_limited_visual_windows": 526,
+    "model_call_ledger_rows": 147,
+    "model_call_ledger_missing_output_hash": 0,
+    "source_limited_unknown_rows": 2618
+  },
+  "blockers": [],
+  "source_limited_policy": "unobserved visual/comment/action/course-exact fields are explicitly source_limited_unknown/not_observable/blocked_source_missing",
+  "forbidden_payload_scan_before_write": {
+    "hit_count": 0,
+    "hits": []
+  },
+  "forbidden_payload_scan_after_write": {
+    "hit_count": 0,
+    "hits": []
+  }
+}

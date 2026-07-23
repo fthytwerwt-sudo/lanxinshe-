@@ -1,0 +1,11 @@
+﻿session_id,source_video,duration_min,source_hash_status,asr_segments_total,host_speech_usable_segments,semantic_events,base_60s_windows,qwen_observed_windows,source_limited_visual_windows,comment_lifecycle_rows,reply_arbitration_rows,course_rows,valid_course_matches,rule_rows,manual_review_rows,completion_status
+latest_live_01,Record_2026-07-20-10-26-37_2332cb9b27b851b548ba47a91682926c.mp4,98.92,passed,1108,1089,241,99,20,79,42,42,241,0,13,160,completed_with_source_limited_unknowns
+latest_live_02,Record_2026-07-21-10-28-42_2332cb9b27b851b548ba47a91682926c.mp4,96.85,passed,999,985,220,97,20,77,35,35,220,0,13,75,completed_with_source_limited_unknowns
+latest_live_03,ScreenRecording_07-18-2026 10-41-09_1.MP4,41.65,passed,497,477,109,42,9,33,14,14,109,0,13,34,completed_with_source_limited_unknowns
+latest_live_04,ScreenRecording_07-18-2026 11-27-55_1.MP4,26.54,passed,280,273,60,27,6,21,6,6,60,0,11,13,completed_with_source_limited_unknowns
+latest_live_05,ScreenRecording_07-19-2026 10-44-37_1.MP4,32.37,passed,343,336,75,33,7,26,6,6,75,0,11,13,completed_with_source_limited_unknowns
+latest_live_06,ScreenRecording_07-19-2026 11-17-44_1.MP4,56.66,passed,642,625,144,57,12,45,10,10,144,0,13,27,completed_with_source_limited_unknowns
+latest_live_07,SVID_20260721_103042_1.mp4,95.01,passed,998,984,219,96,19,77,26,26,219,0,13,40,completed_with_source_limited_unknowns
+latest_live_08,SVID_20260722_104105_1.mp4,65.6,passed,775,737,168,66,14,52,30,30,168,0,13,68,completed_with_source_limited_unknowns
+latest_live_09,SVID_20260722_104105_2.mp4,37.98,passed,450,444,94,38,8,30,19,19,94,0,13,25,completed_with_source_limited_unknowns
+latest_live_10,SVID_20260722_104154_1.mp4,107.87,passed,1204,1185,264,108,22,86,26,26,264,0,13,45,completed_with_source_limited_unknowns

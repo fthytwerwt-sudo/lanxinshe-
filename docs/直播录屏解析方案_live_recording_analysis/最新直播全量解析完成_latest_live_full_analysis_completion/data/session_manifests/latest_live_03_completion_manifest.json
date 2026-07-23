@@ -1,0 +1,42 @@
+{
+  "run_id": "completion_20260723_174404",
+  "created_at": "2026-07-23T17:46:02+08:00",
+  "session": {
+    "session_id": "latest_live_03",
+    "source_video": "ScreenRecording_07-18-2026 10-41-09_1.MP4",
+    "source_path_local": "/Volumes/WD_BLACK/澜心社直播/最新直播/ScreenRecording_07-18-2026 10-41-09_1.MP4",
+    "source_hash": "88a22e46429c847c7c46e3905cdc0cd243c1f3929d19d6be3671c2505987d290",
+    "file_size": 4726428221,
+    "duration_ms": 2498846,
+    "width": 1320,
+    "height": 2868,
+    "fps": 56.462,
+    "audio_present": "yes",
+    "comment_area_visible": "pending_api_observation",
+    "decode_status": "decode_metadata_readable",
+    "analysis_status": "pending",
+    "video_codec": "hevc",
+    "audio_codec": "aac",
+    "audio_sample_rate": "44100"
+  },
+  "source_hash_validation": {
+    "session_id": "latest_live_03",
+    "source_video": "ScreenRecording_07-18-2026 10-41-09_1.MP4",
+    "source_path_local": "/Volumes/WD_BLACK/澜心社直播/最新直播/ScreenRecording_07-18-2026 10-41-09_1.MP4",
+    "duration_ms": 2498846,
+    "width": 1320,
+    "height": 2868,
+    "audio_present": "yes",
+    "baseline_source_hash": "88a22e46429c847c7c46e3905cdc0cd243c1f3929d19d6be3671c2505987d290",
+    "current_source_hash": "88a22e46429c847c7c46e3905cdc0cd243c1f3929d19d6be3671c2505987d290",
+    "source_hash_status": "passed",
+    "completion_status": "passed"
+  },
+  "baseline_manifest_ref": "docs/直播录屏解析方案_live_recording_analysis/最新直播全量取证解析_latest_live_full_evidence_analysis/data/session_manifests/latest_live_03_manifest.json",
+  "completion_counts": {
+    "semantic_events": 109,
+    "coverage_windows": 42,
+    "rules": 13
+  },
+  "completion_status": "completed_with_source_limited_unknowns"
+}

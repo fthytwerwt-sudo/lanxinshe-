@@ -1,0 +1,9 @@
+{
+  "run_id": "completion_20260723_174404",
+  "allowed_execution": true,
+  "pilot_review_decision": "approved",
+  "full_execution_entered": true,
+  "full_execution_completed": true,
+  "source_limited_unknowns_allowed": true,
+  "approval_status": "approved_with_source_limited_unknowns"
+}

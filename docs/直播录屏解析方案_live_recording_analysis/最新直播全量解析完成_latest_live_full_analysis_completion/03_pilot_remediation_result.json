@@ -1,0 +1,25 @@
+{
+  "pilot_scope": [
+    "latest_live_01",
+    "latest_live_07",
+    "latest_live_10"
+  ],
+  "pilot_counts": {
+    "sessions": [
+      "latest_live_01",
+      "latest_live_07",
+      "latest_live_10"
+    ],
+    "source_rows": 3,
+    "audio_rows": 3310,
+    "semantic_rows": 724,
+    "visual_coverage_rows": 303,
+    "comment_lifecycle_rows": 94,
+    "course_rows": 724,
+    "rule_rows": 39,
+    "manual_review_rows": 245
+  },
+  "pilot_blockers": [],
+  "pilot_status": "approved_for_full_execution_with_source_limited_unknowns",
+  "approved_policy": "full execution may proceed only with explicit fallback states for source-limited visual/comment/course/action fields"
+}

@@ -1,0 +1,21 @@
+{
+  "root": "docs/直播录屏解析方案_live_recording_analysis/最新直播全量解析完成_latest_live_full_analysis_completion",
+  "missing_root_files": [],
+  "missing_dirs": [],
+  "parse_errors": [],
+  "counts": {
+    "semantic_events": 1594,
+    "visual_coverage_rows": 663,
+    "model_call_ledger_rows": 147,
+    "source_limited_unknown_rows": 2618,
+    "rules": 126,
+    "course_rows": 1594
+  },
+  "semantic_duplicate_event_ids": 0,
+  "rules_without_evidence": 0,
+  "topic_similarity_valid_course_match_count": 0,
+  "forbidden_hits": [],
+  "appledouble_count": 0,
+  "blockers": [],
+  "overall_status": "passed"
+}

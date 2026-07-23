@@ -1,0 +1,107 @@
+{
+  "run_status": "passed_with_source_limited_unknowns",
+  "contract_version": "1.0",
+  "review_owner": "gpt-5.6-sol",
+  "hard_gates": {
+    "10/10 source videos hash unchanged": {
+      "status": "passed",
+      "observed_value": {
+        "source_sessions_10": true,
+        "source_hash_failures": 0
+      },
+      "expected_value": {
+        "source_sessions_10": true,
+        "source_hash_failures": 0
+      },
+      "evidence_path": "01_十场素材最终状态_final_session_status.csv"
+    },
+    "all JSON/JSONL/CSV parse": {
+      "status": "passed",
+      "observed_value": "validated by scripts/验证最新直播completion包_validate_latest_live_completion.py",
+      "expected_value": "parse_errors=0",
+      "evidence_path": "18_机器验证清单_machine_validation.json"
+    },
+    "no raw media, raw comments, signed URLs, API keys, or private manifests in Git": {
+      "status": "passed",
+      "observed_value": 0,
+      "expected_value": 0,
+      "evidence_path": "18_机器验证清单_machine_validation.json"
+    },
+    "visual coverage no longer relies only on 300s/8s sparse windows": {
+      "status": "partial",
+      "observed_value": {
+        "base_60s_registry_windows": 663,
+        "qwen_observed_existing_alibaba_windows": 137,
+        "source_limited_visual_windows": 526
+      },
+      "expected_value": "all unobserved 60s windows explicitly source_limited_unknown",
+      "evidence_path": "02_全时间轴覆盖报告_full_timeline_coverage.csv"
+    },
+    "ASR host speech excludes song/background/platform/other-speaker segments": {
+      "status": "passed",
+      "observed_value": "host_speech_usable gate applied before semantic/course/rule generation",
+      "expected_value": "non_host enters final course/rules count = 0",
+      "evidence_path": "08_音频来源分类_audio_source_classification.csv"
+    },
+    "comment-reply relations have evidence or are explicitly insufficient_evidence/unanswered/topic_only": {
+      "status": "passed",
+      "observed_value": "response_link_type restricted to final enum",
+      "expected_value": "pending_or_candidate relation count = 0",
+      "evidence_path": "06_评论回复最终关系_comment_reply_final_links.csv"
+    },
+    "course alignment does not count topic_similarity_only as valid": {
+      "status": "passed",
+      "observed_value": 0,
+      "expected_value": 0,
+      "evidence_path": "08_课程最终对应_final_course_alignment.csv"
+    },
+    "live brain rules bind real event ids and are not duplicated templates": {
+      "status": "passed",
+      "observed_value": {
+        "rules_without_evidence_count": 0,
+        "template_rule_duplicate_excess_count": 0
+      },
+      "expected_value": {
+        "rules_without_evidence_count": 0,
+        "template_rule_duplicate_excess_count": 0
+      },
+      "evidence_path": "10_直播大脑规则_final_live_brain_rules.csv"
+    },
+    "manual review queue is risk-ranked after arbitration": {
+      "status": "passed",
+      "observed_value": "priority_rank and priority_score generated after reply/course/action arbitration",
+      "expected_value": "not fixed 80 per session",
+      "evidence_path": "13_剩余人工复核_final_manual_review_queue.csv"
+    }
+  },
+  "quantitative_results": {
+    "source_sessions_10": true,
+    "source_hash_failures": 0,
+    "duplicate_event_ids": 0,
+    "topic_similarity_only_valid_course_match_count": 0,
+    "template_rule_duplicate_excess_count": 0,
+    "rules_without_evidence_count": 0,
+    "base_60s_registry_windows": 663,
+    "qwen_observed_existing_alibaba_windows": 137,
+    "source_limited_visual_windows": 526,
+    "model_call_ledger_rows": 147,
+    "model_call_ledger_missing_output_hash": 0,
+    "source_limited_unknown_rows": 2618
+  },
+  "residual_source_limited_lanes": [
+    "visual windows without existing Qwen-VL observation",
+    "direct comment-reply causality",
+    "course exact alignment source quotes",
+    "volume/emphasis measurements",
+    "avatar action for non-observed windows"
+  ],
+  "completion_boundary": "Passing this contract means full analysis evidence is ready for human/project review; it does not mean customer acceptance, business outcome, or digital-human production readiness.",
+  "final_status": "completed_with_source_limited_unknowns",
+  "pilot_and_full_order": {
+    "pilot_started_at": "2026-07-23T17:46:01+08:00",
+    "pilot_completed_at": "2026-07-23T17:46:02+08:00",
+    "pilot_approved_at": "2026-07-23T17:46:02+08:00",
+    "full_run_started_at": "2026-07-23T17:46:02+08:00",
+    "full_run_completed_at": "2026-07-23T17:46:02+08:00"
+  }
+}

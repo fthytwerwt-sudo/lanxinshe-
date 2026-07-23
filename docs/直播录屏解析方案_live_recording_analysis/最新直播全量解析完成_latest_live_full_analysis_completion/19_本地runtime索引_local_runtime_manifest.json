@@ -1,0 +1,8 @@
+{
+  "run_id": "completion_20260723_174404",
+  "local_runtime_root": "_local_runtime/最新直播全量补齐_latest_live_completion/completion_20260723_174404",
+  "previous_local_run_reused": "_local_runtime/最新直播全量解析_latest_live_full_analysis/full_20260723_155512",
+  "raw_local_policy": "raw API/audio/video evidence remains local-only and is not committed",
+  "git_doc_root": "docs/直播录屏解析方案_live_recording_analysis/最新直播全量解析完成_latest_live_full_analysis_completion",
+  "generated_at": "2026-07-23T17:46:02+08:00"
+}
